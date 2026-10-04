@@ -1,0 +1,6365 @@
+{
+  "subjects": [
+    {
+      "id": 1,
+      "name": "Anatomy",
+      "icon": "🦴"
+    },
+    {
+      "id": 2,
+      "name": "Physiology",
+      "icon": "🫀"
+    },
+    {
+      "id": 3,
+      "name": "Medical Biochemistry",
+      "icon": "🧪"
+    },
+    {
+      "id": 4,
+      "name": "Medical Genetics",
+      "icon": "🧬"
+    },
+    {
+      "id": 5,
+      "name": "Immunology",
+      "icon": "🛡️"
+    },
+    {
+      "id": 6,
+      "name": "Medical Microbiology",
+      "icon": "🦠"
+    },
+    {
+      "id": 7,
+      "name": "Parasitology",
+      "icon": "🪱"
+    },
+    {
+      "id": 8,
+      "name": "Pathology",
+      "icon": "🔬"
+    },
+    {
+      "id": 9,
+      "name": "Haematology",
+      "icon": "🩸"
+    },
+    {
+      "id": 10,
+      "name": "Chemical Pathology",
+      "icon": "⚗️"
+    },
+    {
+      "id": 11,
+      "name": "Pharmacology",
+      "icon": "💊"
+    },
+    {
+      "id": 12,
+      "name": "Community Medicine",
+      "icon": "🏥"
+    },
+    {
+      "id": 13,
+      "name": "Biostatistics",
+      "icon": "📊"
+    },
+    {
+      "id": 14,
+      "name": "Clinical Methods",
+      "icon": "🩺"
+    },
+    {
+      "id": 15,
+      "name": "Internal Medicine",
+      "icon": "🩺"
+    },
+    {
+      "id": 16,
+      "name": "Surgery",
+      "icon": "🔪"
+    },
+    {
+      "id": 17,
+      "name": "Paediatrics",
+      "icon": "👶"
+    },
+    {
+      "id": 18,
+      "name": "Obstetrics and Gynaecology",
+      "icon": "🤰"
+    },
+    {
+      "id": 19,
+      "name": "Psychiatry",
+      "icon": "🧠"
+    },
+    {
+      "id": 20,
+      "name": "Dermatology",
+      "icon": "🧴"
+    },
+    {
+      "id": 21,
+      "name": "Ophthalmology",
+      "icon": "👁️"
+    },
+    {
+      "id": 22,
+      "name": "Otorhinolaryngology",
+      "icon": "👂"
+    },
+    {
+      "id": 23,
+      "name": "Radiology",
+      "icon": "🩻"
+    },
+    {
+      "id": 24,
+      "name": "Anaesthesia",
+      "icon": "💉"
+    },
+    {
+      "id": 25,
+      "name": "Orthopaedics",
+      "icon": "🦴"
+    },
+    {
+      "id": 26,
+      "name": "Neurosurgery",
+      "icon": "🧠"
+    },
+    {
+      "id": 27,
+      "name": "Urology",
+      "icon": "🚻"
+    },
+    {
+      "id": 28,
+      "name": "Family Medicine",
+      "icon": "👨‍👩‍👧‍👦"
+    },
+    {
+      "id": 29,
+      "name": "Emergency Medicine",
+      "icon": "🚑"
+    },
+    {
+      "id": 30,
+      "name": "Forensic Medicine",
+      "icon": "⚖️"
+    },
+    {
+      "id": 31,
+      "name": "Medical Ethics and Law",
+      "icon": "⚖️"
+    },
+    {
+      "id": 32,
+      "name": "Nutrition and Dietetics",
+      "icon": "🥗"
+    },
+    {
+      "id": 33,
+      "name": "Research Methodology",
+      "icon": "🔎"
+    },
+    {
+      "id": 34,
+      "name": "Evidence-Based Medicine",
+      "icon": "📚"
+    },
+    {
+      "id": 35,
+      "name": "Medical Informatics",
+      "icon": "💻"
+    },
+    {
+      "id": 36,
+      "name": "Palliative Medicine",
+      "icon": "🕊️"
+    },
+    {
+      "id": 37,
+      "name": "Oncology",
+      "icon": "🎗️"
+    }
+  ],
+  "topics": [
+    {
+      "id": 1,
+      "subject_id": 1,
+      "name": "General Anatomy",
+      "icon": "🦴"
+    },
+    {
+      "id": 2,
+      "subject_id": 1,
+      "name": "Osteology",
+      "icon": "🦴"
+    },
+    {
+      "id": 3,
+      "subject_id": 1,
+      "name": "Arthrology",
+      "icon": "🦴"
+    },
+    {
+      "id": 4,
+      "subject_id": 1,
+      "name": "Myology",
+      "icon": "💪"
+    },
+    {
+      "id": 5,
+      "subject_id": 1,
+      "name": "Surface Anatomy",
+      "icon": "🦴"
+    },
+    {
+      "id": 6,
+      "subject_id": 1,
+      "name": "Histology",
+      "icon": "🔬"
+    },
+    {
+      "id": 7,
+      "subject_id": 1,
+      "name": "Embryology",
+      "icon": "👶"
+    },
+    {
+      "id": 8,
+      "subject_id": 1,
+      "name": "Upper Limb",
+      "icon": "🦴"
+    },
+    {
+      "id": 9,
+      "subject_id": 1,
+      "name": "Lower Limb",
+      "icon": "🦴"
+    },
+    {
+      "id": 10,
+      "subject_id": 1,
+      "name": "Thorax",
+      "icon": "🫁"
+    },
+    {
+      "id": 11,
+      "subject_id": 1,
+      "name": "Abdomen",
+      "icon": "🫃"
+    },
+    {
+      "id": 12,
+      "subject_id": 1,
+      "name": "Pelvis and Perineum",
+      "icon": "🦴"
+    },
+    {
+      "id": 13,
+      "subject_id": 1,
+      "name": "Head and Neck",
+      "icon": "🦴"
+    },
+    {
+      "id": 14,
+      "subject_id": 1,
+      "name": "Neuroanatomy",
+      "icon": "🧠"
+    },
+    {
+      "id": 15,
+      "subject_id": 1,
+      "name": "Cranial Nerves",
+      "icon": "🧠"
+    },
+    {
+      "id": 16,
+      "subject_id": 1,
+      "name": "Autonomic Nervous System",
+      "icon": "🦴"
+    },
+    {
+      "id": 17,
+      "subject_id": 1,
+      "name": "Spinal Cord",
+      "icon": "🧠"
+    },
+    {
+      "id": 18,
+      "subject_id": 1,
+      "name": "Brain and Brainstem",
+      "icon": "🧠"
+    },
+    {
+      "id": 19,
+      "subject_id": 1,
+      "name": "Cerebellum",
+      "icon": "🧠"
+    },
+    {
+      "id": 20,
+      "subject_id": 1,
+      "name": "Basal Ganglia",
+      "icon": "🧠"
+    },
+    {
+      "id": 21,
+      "subject_id": 1,
+      "name": "Meninges",
+      "icon": "🧠"
+    },
+    {
+      "id": 22,
+      "subject_id": 1,
+      "name": "Blood Supply of the Brain",
+      "icon": "🧠"
+    },
+    {
+      "id": 23,
+      "subject_id": 1,
+      "name": "Peripheral Nervous System",
+      "icon": "🦴"
+    },
+    {
+      "id": 24,
+      "subject_id": 1,
+      "name": "Developmental Anatomy",
+      "icon": "🧠"
+    },
+    {
+      "id": 25,
+      "subject_id": 1,
+      "name": "Congenital Anomalies",
+      "icon": "👶"
+    },
+    {
+      "id": 26,
+      "subject_id": 1,
+      "name": "Clinical Anatomy",
+      "icon": "🦴"
+    },
+    {
+      "id": 27,
+      "subject_id": 1,
+      "name": "Cross-sectional Anatomy",
+      "icon": "🩻"
+    },
+    {
+      "id": 28,
+      "subject_id": 2,
+      "name": "General Physiology",
+      "icon": "🫀"
+    },
+    {
+      "id": 29,
+      "subject_id": 2,
+      "name": "Cell Physiology",
+      "icon": "🔬"
+    },
+    {
+      "id": 30,
+      "subject_id": 2,
+      "name": "Homeostasis",
+      "icon": "🫀"
+    },
+    {
+      "id": 31,
+      "subject_id": 2,
+      "name": "Membrane Physiology",
+      "icon": "🫀"
+    },
+    {
+      "id": 32,
+      "subject_id": 2,
+      "name": "Body Fluid Compartments",
+      "icon": "🫀"
+    },
+    {
+      "id": 33,
+      "subject_id": 2,
+      "name": "Blood Physiology",
+      "icon": "🩸"
+    },
+    {
+      "id": 34,
+      "subject_id": 2,
+      "name": "Haemostasis",
+      "icon": "🩸"
+    },
+    {
+      "id": 35,
+      "subject_id": 2,
+      "name": "Cardiovascular Physiology",
+      "icon": "❤️"
+    },
+    {
+      "id": 36,
+      "subject_id": 2,
+      "name": "Cardiac Cycle",
+      "icon": "❤️"
+    },
+    {
+      "id": 37,
+      "subject_id": 2,
+      "name": "Cardiac Output",
+      "icon": "❤️"
+    },
+    {
+      "id": 38,
+      "subject_id": 2,
+      "name": "Blood Pressure",
+      "icon": "🩸"
+    },
+    {
+      "id": 39,
+      "subject_id": 2,
+      "name": "Respiratory Physiology",
+      "icon": "🫁"
+    },
+    {
+      "id": 40,
+      "subject_id": 2,
+      "name": "Pulmonary Ventilation",
+      "icon": "🫁"
+    },
+    {
+      "id": 41,
+      "subject_id": 2,
+      "name": "Gas Exchange",
+      "icon": "🫀"
+    },
+    {
+      "id": 42,
+      "subject_id": 2,
+      "name": "Acid-Base Physiology",
+      "icon": "🫀"
+    },
+    {
+      "id": 43,
+      "subject_id": 2,
+      "name": "Renal Physiology",
+      "icon": "🫘"
+    },
+    {
+      "id": 44,
+      "subject_id": 2,
+      "name": "Glomerular Filtration",
+      "icon": "🫀"
+    },
+    {
+      "id": 45,
+      "subject_id": 2,
+      "name": "Urine Formation",
+      "icon": "🫀"
+    },
+    {
+      "id": 46,
+      "subject_id": 2,
+      "name": "Water and Electrolyte Balance",
+      "icon": "🩻"
+    },
+    {
+      "id": 47,
+      "subject_id": 2,
+      "name": "Endocrine Physiology",
+      "icon": "🫀"
+    },
+    {
+      "id": 48,
+      "subject_id": 2,
+      "name": "Gastrointestinal Physiology",
+      "icon": "🫃"
+    },
+    {
+      "id": 49,
+      "subject_id": 2,
+      "name": "Digestion and Absorption",
+      "icon": "🫀"
+    },
+    {
+      "id": 50,
+      "subject_id": 2,
+      "name": "Reproductive Physiology",
+      "icon": "🤰"
+    },
+    {
+      "id": 51,
+      "subject_id": 2,
+      "name": "Neurophysiology",
+      "icon": "🧠"
+    },
+    {
+      "id": 52,
+      "subject_id": 2,
+      "name": "Sensory Physiology",
+      "icon": "🫀"
+    },
+    {
+      "id": 53,
+      "subject_id": 2,
+      "name": "Motor Physiology",
+      "icon": "🫀"
+    },
+    {
+      "id": 54,
+      "subject_id": 2,
+      "name": "Autonomic Physiology",
+      "icon": "🫀"
+    },
+    {
+      "id": 55,
+      "subject_id": 2,
+      "name": "Special Senses",
+      "icon": "🫀"
+    },
+    {
+      "id": 56,
+      "subject_id": 2,
+      "name": "Exercise Physiology",
+      "icon": "🫀"
+    },
+    {
+      "id": 57,
+      "subject_id": 2,
+      "name": "Temperature Regulation",
+      "icon": "🫀"
+    },
+    {
+      "id": 58,
+      "subject_id": 3,
+      "name": "Introduction to Biochemistry",
+      "icon": "🩻"
+    },
+    {
+      "id": 59,
+      "subject_id": 3,
+      "name": "Amino Acids",
+      "icon": "🧪"
+    },
+    {
+      "id": 60,
+      "subject_id": 3,
+      "name": "Proteins",
+      "icon": "🧪"
+    },
+    {
+      "id": 61,
+      "subject_id": 3,
+      "name": "Enzymes",
+      "icon": "🧪"
+    },
+    {
+      "id": 62,
+      "subject_id": 3,
+      "name": "Carbohydrates",
+      "icon": "🧪"
+    },
+    {
+      "id": 63,
+      "subject_id": 3,
+      "name": "Lipids",
+      "icon": "🧪"
+    },
+    {
+      "id": 64,
+      "subject_id": 3,
+      "name": "Nucleotides",
+      "icon": "🧪"
+    },
+    {
+      "id": 65,
+      "subject_id": 3,
+      "name": "Nucleic Acids",
+      "icon": "🧪"
+    },
+    {
+      "id": 66,
+      "subject_id": 3,
+      "name": "DNA Replication",
+      "icon": "🧪"
+    },
+    {
+      "id": 67,
+      "subject_id": 3,
+      "name": "RNA Transcription",
+      "icon": "🧪"
+    },
+    {
+      "id": 68,
+      "subject_id": 3,
+      "name": "Protein Synthesis",
+      "icon": "🧪"
+    },
+    {
+      "id": 69,
+      "subject_id": 3,
+      "name": "Vitamins",
+      "icon": "🥗"
+    },
+    {
+      "id": 70,
+      "subject_id": 3,
+      "name": "Minerals",
+      "icon": "🥗"
+    },
+    {
+      "id": 71,
+      "subject_id": 3,
+      "name": "Bioenergetics",
+      "icon": "🧪"
+    },
+    {
+      "id": 72,
+      "subject_id": 3,
+      "name": "Oxidative Phosphorylation",
+      "icon": "🧪"
+    },
+    {
+      "id": 73,
+      "subject_id": 3,
+      "name": "Glycolysis",
+      "icon": "🧪"
+    },
+    {
+      "id": 74,
+      "subject_id": 3,
+      "name": "Gluconeogenesis",
+      "icon": "🧪"
+    },
+    {
+      "id": 75,
+      "subject_id": 3,
+      "name": "Glycogen Metabolism",
+      "icon": "🧪"
+    },
+    {
+      "id": 76,
+      "subject_id": 3,
+      "name": "Pentose Phosphate Pathway",
+      "icon": "🧪"
+    },
+    {
+      "id": 77,
+      "subject_id": 3,
+      "name": "Citric Acid Cycle",
+      "icon": "🧪"
+    },
+    {
+      "id": 78,
+      "subject_id": 3,
+      "name": "Lipid Metabolism",
+      "icon": "🧪"
+    },
+    {
+      "id": 79,
+      "subject_id": 3,
+      "name": "Fatty Acid Oxidation",
+      "icon": "🧪"
+    },
+    {
+      "id": 80,
+      "subject_id": 3,
+      "name": "Cholesterol Metabolism",
+      "icon": "🧪"
+    },
+    {
+      "id": 81,
+      "subject_id": 3,
+      "name": "Amino Acid Metabolism",
+      "icon": "🧪"
+    },
+    {
+      "id": 82,
+      "subject_id": 3,
+      "name": "Urea Cycle",
+      "icon": "🧪"
+    },
+    {
+      "id": 83,
+      "subject_id": 3,
+      "name": "Purine Metabolism",
+      "icon": "🧪"
+    },
+    {
+      "id": 84,
+      "subject_id": 3,
+      "name": "Pyrimidine Metabolism",
+      "icon": "🧪"
+    },
+    {
+      "id": 85,
+      "subject_id": 3,
+      "name": "Heme Metabolism",
+      "icon": "🧪"
+    },
+    {
+      "id": 86,
+      "subject_id": 3,
+      "name": "Bilirubin Metabolism",
+      "icon": "🧪"
+    },
+    {
+      "id": 87,
+      "subject_id": 3,
+      "name": "Molecular Biology",
+      "icon": "🧪"
+    },
+    {
+      "id": 88,
+      "subject_id": 3,
+      "name": "Clinical Biochemistry",
+      "icon": "🧪"
+    },
+    {
+      "id": 89,
+      "subject_id": 3,
+      "name": "Inborn Errors of Metabolism",
+      "icon": "🧪"
+    },
+    {
+      "id": 90,
+      "subject_id": 4,
+      "name": "Principles of Genetics",
+      "icon": "🧬"
+    },
+    {
+      "id": 91,
+      "subject_id": 4,
+      "name": "Chromosomes",
+      "icon": "🧬"
+    },
+    {
+      "id": 92,
+      "subject_id": 4,
+      "name": "DNA and RNA",
+      "icon": "🧬"
+    },
+    {
+      "id": 93,
+      "subject_id": 4,
+      "name": "Gene Structure",
+      "icon": "🩻"
+    },
+    {
+      "id": 94,
+      "subject_id": 4,
+      "name": "Gene Expression",
+      "icon": "🧬"
+    },
+    {
+      "id": 95,
+      "subject_id": 4,
+      "name": "Mutations",
+      "icon": "🧬"
+    },
+    {
+      "id": 96,
+      "subject_id": 4,
+      "name": "Mendelian Inheritance",
+      "icon": "🧬"
+    },
+    {
+      "id": 97,
+      "subject_id": 4,
+      "name": "Autosomal Dominant Inheritance",
+      "icon": "🧬"
+    },
+    {
+      "id": 98,
+      "subject_id": 4,
+      "name": "Autosomal Recessive Inheritance",
+      "icon": "🧬"
+    },
+    {
+      "id": 99,
+      "subject_id": 4,
+      "name": "X-Linked Inheritance",
+      "icon": "🧬"
+    },
+    {
+      "id": 100,
+      "subject_id": 4,
+      "name": "Mitochondrial Inheritance",
+      "icon": "🧬"
+    },
+    {
+      "id": 101,
+      "subject_id": 4,
+      "name": "Pedigree Analysis",
+      "icon": "🧬"
+    },
+    {
+      "id": 102,
+      "subject_id": 4,
+      "name": "Chromosomal Abnormalities",
+      "icon": "🧬"
+    },
+    {
+      "id": 103,
+      "subject_id": 4,
+      "name": "Genetic Variation",
+      "icon": "🧬"
+    },
+    {
+      "id": 104,
+      "subject_id": 4,
+      "name": "Epigenetics",
+      "icon": "🧬"
+    },
+    {
+      "id": 105,
+      "subject_id": 4,
+      "name": "Pharmacogenetics",
+      "icon": "💊"
+    },
+    {
+      "id": 106,
+      "subject_id": 4,
+      "name": "Cancer Genetics",
+      "icon": "🎗️"
+    },
+    {
+      "id": 107,
+      "subject_id": 4,
+      "name": "Genetic Counselling",
+      "icon": "🧬"
+    },
+    {
+      "id": 108,
+      "subject_id": 4,
+      "name": "Prenatal Diagnosis",
+      "icon": "🧬"
+    },
+    {
+      "id": 109,
+      "subject_id": 4,
+      "name": "Newborn Screening",
+      "icon": "🧬"
+    },
+    {
+      "id": 110,
+      "subject_id": 4,
+      "name": "Congenital Disorders",
+      "icon": "👶"
+    },
+    {
+      "id": 111,
+      "subject_id": 4,
+      "name": "Molecular Diagnostic Techniques",
+      "icon": "🧬"
+    },
+    {
+      "id": 112,
+      "subject_id": 5,
+      "name": "Innate Immunity",
+      "icon": "🛡️"
+    },
+    {
+      "id": 113,
+      "subject_id": 5,
+      "name": "Adaptive Immunity",
+      "icon": "🛡️"
+    },
+    {
+      "id": 114,
+      "subject_id": 5,
+      "name": "Immune Cells",
+      "icon": "🛡️"
+    },
+    {
+      "id": 115,
+      "subject_id": 5,
+      "name": "Antigens",
+      "icon": "🛡️"
+    },
+    {
+      "id": 116,
+      "subject_id": 5,
+      "name": "Antibodies",
+      "icon": "🛡️"
+    },
+    {
+      "id": 117,
+      "subject_id": 5,
+      "name": "B Cells",
+      "icon": "🔬"
+    },
+    {
+      "id": 118,
+      "subject_id": 5,
+      "name": "T Cells",
+      "icon": "🔬"
+    },
+    {
+      "id": 119,
+      "subject_id": 5,
+      "name": "MHC",
+      "icon": "🛡️"
+    },
+    {
+      "id": 120,
+      "subject_id": 5,
+      "name": "Antigen Presentation",
+      "icon": "🛡️"
+    },
+    {
+      "id": 121,
+      "subject_id": 5,
+      "name": "Complement System",
+      "icon": "🛡️"
+    },
+    {
+      "id": 122,
+      "subject_id": 5,
+      "name": "Cytokines",
+      "icon": "🛡️"
+    },
+    {
+      "id": 123,
+      "subject_id": 5,
+      "name": "Inflammation",
+      "icon": "🛡️"
+    },
+    {
+      "id": 124,
+      "subject_id": 5,
+      "name": "Hypersensitivity",
+      "icon": "🛡️"
+    },
+    {
+      "id": 125,
+      "subject_id": 5,
+      "name": "Autoimmunity",
+      "icon": "🛡️"
+    },
+    {
+      "id": 126,
+      "subject_id": 5,
+      "name": "Immunodeficiency",
+      "icon": "🛡️"
+    },
+    {
+      "id": 127,
+      "subject_id": 5,
+      "name": "Transplantation Immunology",
+      "icon": "🛡️"
+    },
+    {
+      "id": 128,
+      "subject_id": 5,
+      "name": "Tumour Immunology",
+      "icon": "🛡️"
+    },
+    {
+      "id": 129,
+      "subject_id": 5,
+      "name": "Vaccination and Immunization",
+      "icon": "🛡️"
+    },
+    {
+      "id": 130,
+      "subject_id": 5,
+      "name": "Mucosal Immunity",
+      "icon": "🛡️"
+    },
+    {
+      "id": 131,
+      "subject_id": 5,
+      "name": "HIV and the Immune System",
+      "icon": "🛡️"
+    },
+    {
+      "id": 132,
+      "subject_id": 6,
+      "name": "General Microbiology",
+      "icon": "🦠"
+    },
+    {
+      "id": 133,
+      "subject_id": 6,
+      "name": "Bacteriology",
+      "icon": "🦠"
+    },
+    {
+      "id": 134,
+      "subject_id": 6,
+      "name": "Bacterial Structure",
+      "icon": "🦠"
+    },
+    {
+      "id": 135,
+      "subject_id": 6,
+      "name": "Bacterial Classification",
+      "icon": "🦠"
+    },
+    {
+      "id": 136,
+      "subject_id": 6,
+      "name": "Bacterial Genetics",
+      "icon": "🦠"
+    },
+    {
+      "id": 137,
+      "subject_id": 6,
+      "name": "Sterilization and Disinfection",
+      "icon": "🦠"
+    },
+    {
+      "id": 138,
+      "subject_id": 6,
+      "name": "Gram-Positive Bacteria",
+      "icon": "🦠"
+    },
+    {
+      "id": 139,
+      "subject_id": 6,
+      "name": "Gram-Negative Bacteria",
+      "icon": "🦠"
+    },
+    {
+      "id": 140,
+      "subject_id": 6,
+      "name": "Mycobacteria",
+      "icon": "🦠"
+    },
+    {
+      "id": 141,
+      "subject_id": 6,
+      "name": "Spirochaetes",
+      "icon": "🦠"
+    },
+    {
+      "id": 142,
+      "subject_id": 6,
+      "name": "Chlamydia",
+      "icon": "🦠"
+    },
+    {
+      "id": 143,
+      "subject_id": 6,
+      "name": "Mycoplasma",
+      "icon": "🦠"
+    },
+    {
+      "id": 144,
+      "subject_id": 6,
+      "name": "Virology",
+      "icon": "🦠"
+    },
+    {
+      "id": 145,
+      "subject_id": 6,
+      "name": "Viral Structure",
+      "icon": "🩻"
+    },
+    {
+      "id": 146,
+      "subject_id": 6,
+      "name": "Viral Replication",
+      "icon": "🦠"
+    },
+    {
+      "id": 147,
+      "subject_id": 6,
+      "name": "DNA Viruses",
+      "icon": "🦠"
+    },
+    {
+      "id": 148,
+      "subject_id": 6,
+      "name": "RNA Viruses",
+      "icon": "🦠"
+    },
+    {
+      "id": 149,
+      "subject_id": 6,
+      "name": "Respiratory Viruses",
+      "icon": "🫁"
+    },
+    {
+      "id": 150,
+      "subject_id": 6,
+      "name": "Hepatitis Viruses",
+      "icon": "🦠"
+    },
+    {
+      "id": 151,
+      "subject_id": 6,
+      "name": "HIV",
+      "icon": "🦠"
+    },
+    {
+      "id": 152,
+      "subject_id": 6,
+      "name": "Fungal Infections",
+      "icon": "🦠"
+    },
+    {
+      "id": 153,
+      "subject_id": 6,
+      "name": "Medical Mycology",
+      "icon": "🦠"
+    },
+    {
+      "id": 154,
+      "subject_id": 6,
+      "name": "Parasitology",
+      "icon": "🦠"
+    },
+    {
+      "id": 155,
+      "subject_id": 6,
+      "name": "Protozoa",
+      "icon": "🦠"
+    },
+    {
+      "id": 156,
+      "subject_id": 6,
+      "name": "Helminths",
+      "icon": "🦠"
+    },
+    {
+      "id": 157,
+      "subject_id": 6,
+      "name": "Medical Entomology",
+      "icon": "🦠"
+    },
+    {
+      "id": 158,
+      "subject_id": 6,
+      "name": "Hospital-Acquired Infections",
+      "icon": "🦠"
+    },
+    {
+      "id": 159,
+      "subject_id": 6,
+      "name": "Antimicrobial Resistance",
+      "icon": "🦠"
+    },
+    {
+      "id": 160,
+      "subject_id": 6,
+      "name": "Microbiological Diagnosis",
+      "icon": "🦠"
+    },
+    {
+      "id": 161,
+      "subject_id": 6,
+      "name": "Infection Prevention and Control",
+      "icon": "🦠"
+    },
+    {
+      "id": 162,
+      "subject_id": 7,
+      "name": "Protozoan Parasites",
+      "icon": "🦠"
+    },
+    {
+      "id": 163,
+      "subject_id": 7,
+      "name": "Amoebiasis",
+      "icon": "🪱"
+    },
+    {
+      "id": 164,
+      "subject_id": 7,
+      "name": "Giardiasis",
+      "icon": "🪱"
+    },
+    {
+      "id": 165,
+      "subject_id": 7,
+      "name": "Trichomoniasis",
+      "icon": "🪱"
+    },
+    {
+      "id": 166,
+      "subject_id": 7,
+      "name": "Trypanosomiasis",
+      "icon": "🪱"
+    },
+    {
+      "id": 167,
+      "subject_id": 7,
+      "name": "Leishmaniasis",
+      "icon": "🪱"
+    },
+    {
+      "id": 168,
+      "subject_id": 7,
+      "name": "Toxoplasmosis",
+      "icon": "🪱"
+    },
+    {
+      "id": 169,
+      "subject_id": 7,
+      "name": "Cryptosporidiosis",
+      "icon": "🪱"
+    },
+    {
+      "id": 170,
+      "subject_id": 7,
+      "name": "Malaria",
+      "icon": "🪱"
+    },
+    {
+      "id": 171,
+      "subject_id": 7,
+      "name": "Plasmodium Species",
+      "icon": "🪱"
+    },
+    {
+      "id": 172,
+      "subject_id": 7,
+      "name": "Malaria Life Cycle",
+      "icon": "🪱"
+    },
+    {
+      "id": 173,
+      "subject_id": 7,
+      "name": "Malaria Diagnosis",
+      "icon": "🪱"
+    },
+    {
+      "id": 174,
+      "subject_id": 7,
+      "name": "Malaria Prevention",
+      "icon": "🪱"
+    },
+    {
+      "id": 175,
+      "subject_id": 7,
+      "name": "Helminths",
+      "icon": "🦠"
+    },
+    {
+      "id": 176,
+      "subject_id": 7,
+      "name": "Nematodes",
+      "icon": "🪱"
+    },
+    {
+      "id": 177,
+      "subject_id": 7,
+      "name": "Cestodes",
+      "icon": "🪱"
+    },
+    {
+      "id": 178,
+      "subject_id": 7,
+      "name": "Trematodes",
+      "icon": "🪱"
+    },
+    {
+      "id": 179,
+      "subject_id": 7,
+      "name": "Schistosomiasis",
+      "icon": "🪱"
+    },
+    {
+      "id": 180,
+      "subject_id": 7,
+      "name": "Onchocerciasis",
+      "icon": "🪱"
+    },
+    {
+      "id": 181,
+      "subject_id": 7,
+      "name": "Lymphatic Filariasis",
+      "icon": "🪱"
+    },
+    {
+      "id": 182,
+      "subject_id": 7,
+      "name": "Loiasis",
+      "icon": "🪱"
+    },
+    {
+      "id": 183,
+      "subject_id": 7,
+      "name": "Ascariasis",
+      "icon": "🪱"
+    },
+    {
+      "id": 184,
+      "subject_id": 7,
+      "name": "Hookworm Infection",
+      "icon": "🦠"
+    },
+    {
+      "id": 185,
+      "subject_id": 7,
+      "name": "Strongyloidiasis",
+      "icon": "🪱"
+    },
+    {
+      "id": 186,
+      "subject_id": 7,
+      "name": "Trichuriasis",
+      "icon": "🪱"
+    },
+    {
+      "id": 187,
+      "subject_id": 7,
+      "name": "Enterobiasis",
+      "icon": "🪱"
+    },
+    {
+      "id": 188,
+      "subject_id": 7,
+      "name": "Taeniasis",
+      "icon": "🪱"
+    },
+    {
+      "id": 189,
+      "subject_id": 7,
+      "name": "Echinococcosis",
+      "icon": "🪱"
+    },
+    {
+      "id": 190,
+      "subject_id": 7,
+      "name": "Fascioliasis",
+      "icon": "🪱"
+    },
+    {
+      "id": 191,
+      "subject_id": 7,
+      "name": "Medical Entomology",
+      "icon": "🪱"
+    },
+    {
+      "id": 192,
+      "subject_id": 8,
+      "name": "General Pathology",
+      "icon": "🔬"
+    },
+    {
+      "id": 193,
+      "subject_id": 8,
+      "name": "Cell Injury",
+      "icon": "🔬"
+    },
+    {
+      "id": 194,
+      "subject_id": 8,
+      "name": "Cell Death",
+      "icon": "🔬"
+    },
+    {
+      "id": 195,
+      "subject_id": 8,
+      "name": "Cell Adaptations",
+      "icon": "🔬"
+    },
+    {
+      "id": 196,
+      "subject_id": 8,
+      "name": "Inflammation",
+      "icon": "🔬"
+    },
+    {
+      "id": 197,
+      "subject_id": 8,
+      "name": "Acute Inflammation",
+      "icon": "🔬"
+    },
+    {
+      "id": 198,
+      "subject_id": 8,
+      "name": "Chronic Inflammation",
+      "icon": "🔬"
+    },
+    {
+      "id": 199,
+      "subject_id": 8,
+      "name": "Tissue Repair",
+      "icon": "🔬"
+    },
+    {
+      "id": 200,
+      "subject_id": 8,
+      "name": "Oedema",
+      "icon": "🔬"
+    },
+    {
+      "id": 201,
+      "subject_id": 8,
+      "name": "Thrombosis",
+      "icon": "🔬"
+    },
+    {
+      "id": 202,
+      "subject_id": 8,
+      "name": "Embolism",
+      "icon": "🔬"
+    },
+    {
+      "id": 203,
+      "subject_id": 8,
+      "name": "Infarction",
+      "icon": "🩻"
+    },
+    {
+      "id": 204,
+      "subject_id": 8,
+      "name": "Shock",
+      "icon": "🔬"
+    },
+    {
+      "id": 205,
+      "subject_id": 8,
+      "name": "Neoplasia",
+      "icon": "🔬"
+    },
+    {
+      "id": 206,
+      "subject_id": 8,
+      "name": "Benign Tumours",
+      "icon": "🎗️"
+    },
+    {
+      "id": 207,
+      "subject_id": 8,
+      "name": "Malignant Tumours",
+      "icon": "🎗️"
+    },
+    {
+      "id": 208,
+      "subject_id": 8,
+      "name": "Carcinogenesis",
+      "icon": "🔬"
+    },
+    {
+      "id": 209,
+      "subject_id": 8,
+      "name": "Genetic Disorders",
+      "icon": "🔬"
+    },
+    {
+      "id": 210,
+      "subject_id": 8,
+      "name": "Nutritional Disorders",
+      "icon": "🥗"
+    },
+    {
+      "id": 211,
+      "subject_id": 8,
+      "name": "Infectious Pathology",
+      "icon": "🩻"
+    },
+    {
+      "id": 212,
+      "subject_id": 8,
+      "name": "Cardiovascular Pathology",
+      "icon": "❤️"
+    },
+    {
+      "id": 213,
+      "subject_id": 8,
+      "name": "Respiratory Pathology",
+      "icon": "🫁"
+    },
+    {
+      "id": 214,
+      "subject_id": 8,
+      "name": "Gastrointestinal Pathology",
+      "icon": "🫃"
+    },
+    {
+      "id": 215,
+      "subject_id": 8,
+      "name": "Hepatobiliary Pathology",
+      "icon": "🧫"
+    },
+    {
+      "id": 216,
+      "subject_id": 8,
+      "name": "Renal Pathology",
+      "icon": "🫘"
+    },
+    {
+      "id": 217,
+      "subject_id": 8,
+      "name": "Endocrine Pathology",
+      "icon": "🔬"
+    },
+    {
+      "id": 218,
+      "subject_id": 8,
+      "name": "Reproductive Pathology",
+      "icon": "🤰"
+    },
+    {
+      "id": 219,
+      "subject_id": 8,
+      "name": "Nervous System Pathology",
+      "icon": "🔬"
+    },
+    {
+      "id": 220,
+      "subject_id": 8,
+      "name": "Musculoskeletal Pathology",
+      "icon": "🦴"
+    },
+    {
+      "id": 221,
+      "subject_id": 8,
+      "name": "Skin Pathology",
+      "icon": "🧴"
+    },
+    {
+      "id": 222,
+      "subject_id": 8,
+      "name": "Breast Pathology",
+      "icon": "🔬"
+    },
+    {
+      "id": 223,
+      "subject_id": 9,
+      "name": "Haematopoiesis",
+      "icon": "🩸"
+    },
+    {
+      "id": 224,
+      "subject_id": 9,
+      "name": "Bone Marrow",
+      "icon": "🦴"
+    },
+    {
+      "id": 225,
+      "subject_id": 9,
+      "name": "Red Blood Cells",
+      "icon": "🩸"
+    },
+    {
+      "id": 226,
+      "subject_id": 9,
+      "name": "Haemoglobin",
+      "icon": "🩸"
+    },
+    {
+      "id": 227,
+      "subject_id": 9,
+      "name": "Red Cell Indices",
+      "icon": "🔬"
+    },
+    {
+      "id": 228,
+      "subject_id": 9,
+      "name": "Anaemia",
+      "icon": "🩸"
+    },
+    {
+      "id": 229,
+      "subject_id": 9,
+      "name": "Iron Deficiency Anaemia",
+      "icon": "🩸"
+    },
+    {
+      "id": 230,
+      "subject_id": 9,
+      "name": "Megaloblastic Anaemia",
+      "icon": "🩸"
+    },
+    {
+      "id": 231,
+      "subject_id": 9,
+      "name": "Haemolytic Anaemia",
+      "icon": "🩸"
+    },
+    {
+      "id": 232,
+      "subject_id": 9,
+      "name": "Sickle Cell Disease",
+      "icon": "🔬"
+    },
+    {
+      "id": 233,
+      "subject_id": 9,
+      "name": "Thalassaemia",
+      "icon": "🩸"
+    },
+    {
+      "id": 234,
+      "subject_id": 9,
+      "name": "White Blood Cells",
+      "icon": "🩸"
+    },
+    {
+      "id": 235,
+      "subject_id": 9,
+      "name": "Leukaemias",
+      "icon": "🩸"
+    },
+    {
+      "id": 236,
+      "subject_id": 9,
+      "name": "Lymphomas",
+      "icon": "🩸"
+    },
+    {
+      "id": 237,
+      "subject_id": 9,
+      "name": "Multiple Myeloma",
+      "icon": "🩸"
+    },
+    {
+      "id": 238,
+      "subject_id": 9,
+      "name": "Myelodysplastic Syndromes",
+      "icon": "🩸"
+    },
+    {
+      "id": 239,
+      "subject_id": 9,
+      "name": "Platelet Disorders",
+      "icon": "🩸"
+    },
+    {
+      "id": 240,
+      "subject_id": 9,
+      "name": "Thrombocytopenia",
+      "icon": "🩸"
+    },
+    {
+      "id": 241,
+      "subject_id": 9,
+      "name": "Coagulation",
+      "icon": "🩸"
+    },
+    {
+      "id": 242,
+      "subject_id": 9,
+      "name": "Haemophilia",
+      "icon": "🩸"
+    },
+    {
+      "id": 243,
+      "subject_id": 9,
+      "name": "Von Willebrand Disease",
+      "icon": "🩸"
+    },
+    {
+      "id": 244,
+      "subject_id": 9,
+      "name": "DIC",
+      "icon": "🩸"
+    },
+    {
+      "id": 245,
+      "subject_id": 9,
+      "name": "Blood Groups",
+      "icon": "🩸"
+    },
+    {
+      "id": 246,
+      "subject_id": 9,
+      "name": "Blood Transfusion",
+      "icon": "🩸"
+    },
+    {
+      "id": 247,
+      "subject_id": 9,
+      "name": "Transfusion Reactions",
+      "icon": "🩻"
+    },
+    {
+      "id": 248,
+      "subject_id": 9,
+      "name": "Haemolytic Disease of the Newborn",
+      "icon": "🩸"
+    },
+    {
+      "id": 249,
+      "subject_id": 9,
+      "name": "Bone Marrow Examination",
+      "icon": "🦴"
+    },
+    {
+      "id": 250,
+      "subject_id": 10,
+      "name": "Laboratory Medicine",
+      "icon": "⚗️"
+    },
+    {
+      "id": 251,
+      "subject_id": 10,
+      "name": "Quality Control",
+      "icon": "⚗️"
+    },
+    {
+      "id": 252,
+      "subject_id": 10,
+      "name": "Plasma Proteins",
+      "icon": "⚗️"
+    },
+    {
+      "id": 253,
+      "subject_id": 10,
+      "name": "Electrolytes",
+      "icon": "🩻"
+    },
+    {
+      "id": 254,
+      "subject_id": 10,
+      "name": "Acid-Base Balance",
+      "icon": "⚗️"
+    },
+    {
+      "id": 255,
+      "subject_id": 10,
+      "name": "Renal Function Tests",
+      "icon": "🫘"
+    },
+    {
+      "id": 256,
+      "subject_id": 10,
+      "name": "Liver Function Tests",
+      "icon": "🧫"
+    },
+    {
+      "id": 257,
+      "subject_id": 10,
+      "name": "Cardiac Function Tests",
+      "icon": "❤️"
+    },
+    {
+      "id": 258,
+      "subject_id": 10,
+      "name": "Pancreatic Function Tests",
+      "icon": "🩻"
+    },
+    {
+      "id": 259,
+      "subject_id": 10,
+      "name": "Glucose and Diabetes Mellitus",
+      "icon": "⚗️"
+    },
+    {
+      "id": 260,
+      "subject_id": 10,
+      "name": "Lipid Profile",
+      "icon": "⚗️"
+    },
+    {
+      "id": 261,
+      "subject_id": 10,
+      "name": "Thyroid Function Tests",
+      "icon": "🩻"
+    },
+    {
+      "id": 262,
+      "subject_id": 10,
+      "name": "Adrenal Function Tests",
+      "icon": "🫘"
+    },
+    {
+      "id": 263,
+      "subject_id": 10,
+      "name": "Pituitary Function Tests",
+      "icon": "🩻"
+    },
+    {
+      "id": 264,
+      "subject_id": 10,
+      "name": "Reproductive Hormones",
+      "icon": "🤰"
+    },
+    {
+      "id": 265,
+      "subject_id": 10,
+      "name": "Calcium and Phosphate Metabolism",
+      "icon": "⚗️"
+    },
+    {
+      "id": 266,
+      "subject_id": 10,
+      "name": "Bone Metabolism",
+      "icon": "🦴"
+    },
+    {
+      "id": 267,
+      "subject_id": 10,
+      "name": "Enzymes in Disease",
+      "icon": "⚗️"
+    },
+    {
+      "id": 268,
+      "subject_id": 10,
+      "name": "Tumour Markers",
+      "icon": "🎗️"
+    },
+    {
+      "id": 269,
+      "subject_id": 10,
+      "name": "Therapeutic Drug Monitoring",
+      "icon": "💊"
+    },
+    {
+      "id": 270,
+      "subject_id": 10,
+      "name": "Toxicology",
+      "icon": "💊"
+    },
+    {
+      "id": 271,
+      "subject_id": 10,
+      "name": "Inborn Errors of Metabolism",
+      "icon": "⚗️"
+    },
+    {
+      "id": 272,
+      "subject_id": 10,
+      "name": "Laboratory Interpretation",
+      "icon": "⚗️"
+    },
+    {
+      "id": 273,
+      "subject_id": 11,
+      "name": "General Pharmacology",
+      "icon": "💊"
+    },
+    {
+      "id": 274,
+      "subject_id": 11,
+      "name": "Pharmacokinetics",
+      "icon": "💊"
+    },
+    {
+      "id": 275,
+      "subject_id": 11,
+      "name": "Pharmacodynamics",
+      "icon": "💊"
+    },
+    {
+      "id": 276,
+      "subject_id": 11,
+      "name": "Drug Absorption",
+      "icon": "💊"
+    },
+    {
+      "id": 277,
+      "subject_id": 11,
+      "name": "Drug Distribution",
+      "icon": "💊"
+    },
+    {
+      "id": 278,
+      "subject_id": 11,
+      "name": "Drug Metabolism",
+      "icon": "💊"
+    },
+    {
+      "id": 279,
+      "subject_id": 11,
+      "name": "Drug Excretion",
+      "icon": "💊"
+    },
+    {
+      "id": 280,
+      "subject_id": 11,
+      "name": "Drug Receptors",
+      "icon": "💊"
+    },
+    {
+      "id": 281,
+      "subject_id": 11,
+      "name": "Dose-Response Relationships",
+      "icon": "💊"
+    },
+    {
+      "id": 282,
+      "subject_id": 11,
+      "name": "Drug Interactions",
+      "icon": "💊"
+    },
+    {
+      "id": 283,
+      "subject_id": 11,
+      "name": "Adverse Drug Reactions",
+      "icon": "💊"
+    },
+    {
+      "id": 284,
+      "subject_id": 11,
+      "name": "Drug Toxicity",
+      "icon": "💊"
+    },
+    {
+      "id": 285,
+      "subject_id": 11,
+      "name": "Pharmacogenetics",
+      "icon": "💊"
+    },
+    {
+      "id": 286,
+      "subject_id": 11,
+      "name": "Pharmacovigilance",
+      "icon": "💊"
+    },
+    {
+      "id": 287,
+      "subject_id": 11,
+      "name": "Autonomic Pharmacology",
+      "icon": "💊"
+    },
+    {
+      "id": 288,
+      "subject_id": 11,
+      "name": "Cholinergic Drugs",
+      "icon": "💊"
+    },
+    {
+      "id": 289,
+      "subject_id": 11,
+      "name": "Anticholinergic Drugs",
+      "icon": "💊"
+    },
+    {
+      "id": 290,
+      "subject_id": 11,
+      "name": "Adrenergic Drugs",
+      "icon": "💊"
+    },
+    {
+      "id": 291,
+      "subject_id": 11,
+      "name": "Antiadrenergic Drugs",
+      "icon": "💊"
+    },
+    {
+      "id": 292,
+      "subject_id": 11,
+      "name": "Cardiovascular Pharmacology",
+      "icon": "❤️"
+    },
+    {
+      "id": 293,
+      "subject_id": 11,
+      "name": "Antihypertensive Drugs",
+      "icon": "💊"
+    },
+    {
+      "id": 294,
+      "subject_id": 11,
+      "name": "Antianginal Drugs",
+      "icon": "💊"
+    },
+    {
+      "id": 295,
+      "subject_id": 11,
+      "name": "Antiarrhythmic Drugs",
+      "icon": "💊"
+    },
+    {
+      "id": 296,
+      "subject_id": 11,
+      "name": "Drugs for Heart Failure",
+      "icon": "❤️"
+    },
+    {
+      "id": 297,
+      "subject_id": 11,
+      "name": "Diuretics",
+      "icon": "💊"
+    },
+    {
+      "id": 298,
+      "subject_id": 11,
+      "name": "Anticoagulants",
+      "icon": "💊"
+    },
+    {
+      "id": 299,
+      "subject_id": 11,
+      "name": "Antiplatelet Drugs",
+      "icon": "💊"
+    },
+    {
+      "id": 300,
+      "subject_id": 11,
+      "name": "Thrombolytic Drugs",
+      "icon": "💊"
+    },
+    {
+      "id": 301,
+      "subject_id": 11,
+      "name": "Respiratory Pharmacology",
+      "icon": "🫁"
+    },
+    {
+      "id": 302,
+      "subject_id": 11,
+      "name": "Bronchodilators",
+      "icon": "💊"
+    },
+    {
+      "id": 303,
+      "subject_id": 11,
+      "name": "Gastrointestinal Pharmacology",
+      "icon": "🫃"
+    },
+    {
+      "id": 304,
+      "subject_id": 11,
+      "name": "Antiemetics",
+      "icon": "💊"
+    },
+    {
+      "id": 305,
+      "subject_id": 11,
+      "name": "Endocrine Pharmacology",
+      "icon": "💊"
+    },
+    {
+      "id": 306,
+      "subject_id": 11,
+      "name": "Antidiabetic Drugs",
+      "icon": "💊"
+    },
+    {
+      "id": 307,
+      "subject_id": 11,
+      "name": "Corticosteroids",
+      "icon": "🦴"
+    },
+    {
+      "id": 308,
+      "subject_id": 11,
+      "name": "CNS Pharmacology",
+      "icon": "💊"
+    },
+    {
+      "id": 309,
+      "subject_id": 11,
+      "name": "Antiepileptic Drugs",
+      "icon": "💊"
+    },
+    {
+      "id": 310,
+      "subject_id": 11,
+      "name": "Antipsychotic Drugs",
+      "icon": "💊"
+    },
+    {
+      "id": 311,
+      "subject_id": 11,
+      "name": "Antidepressants",
+      "icon": "💊"
+    },
+    {
+      "id": 312,
+      "subject_id": 11,
+      "name": "Analgesics",
+      "icon": "💊"
+    },
+    {
+      "id": 313,
+      "subject_id": 11,
+      "name": "Anaesthetics",
+      "icon": "💉"
+    },
+    {
+      "id": 314,
+      "subject_id": 11,
+      "name": "Antibacterial Drugs",
+      "icon": "🦠"
+    },
+    {
+      "id": 315,
+      "subject_id": 11,
+      "name": "Antiviral Drugs",
+      "icon": "💊"
+    },
+    {
+      "id": 316,
+      "subject_id": 11,
+      "name": "Antifungal Drugs",
+      "icon": "🦠"
+    },
+    {
+      "id": 317,
+      "subject_id": 11,
+      "name": "Antiparasitic Drugs",
+      "icon": "💊"
+    },
+    {
+      "id": 318,
+      "subject_id": 11,
+      "name": "Anticancer Drugs",
+      "icon": "💊"
+    },
+    {
+      "id": 319,
+      "subject_id": 11,
+      "name": "Drug Use in Pregnancy",
+      "icon": "🤰"
+    },
+    {
+      "id": 320,
+      "subject_id": 11,
+      "name": "Rational Drug Use",
+      "icon": "💊"
+    },
+    {
+      "id": 321,
+      "subject_id": 12,
+      "name": "Public Health",
+      "icon": "🏥"
+    },
+    {
+      "id": 322,
+      "subject_id": 12,
+      "name": "Concepts of Health and Disease",
+      "icon": "🏥"
+    },
+    {
+      "id": 323,
+      "subject_id": 12,
+      "name": "Determinants of Health",
+      "icon": "🏥"
+    },
+    {
+      "id": 324,
+      "subject_id": 12,
+      "name": "Levels of Prevention",
+      "icon": "🏥"
+    },
+    {
+      "id": 325,
+      "subject_id": 12,
+      "name": "Primary Health Care",
+      "icon": "🏥"
+    },
+    {
+      "id": 326,
+      "subject_id": 12,
+      "name": "Community Diagnosis",
+      "icon": "🏥"
+    },
+    {
+      "id": 327,
+      "subject_id": 12,
+      "name": "Health Promotion",
+      "icon": "🏥"
+    },
+    {
+      "id": 328,
+      "subject_id": 12,
+      "name": "Health Education",
+      "icon": "🏥"
+    },
+    {
+      "id": 329,
+      "subject_id": 12,
+      "name": "Epidemiology",
+      "icon": "📊"
+    },
+    {
+      "id": 330,
+      "subject_id": 12,
+      "name": "Descriptive Epidemiology",
+      "icon": "📊"
+    },
+    {
+      "id": 331,
+      "subject_id": 12,
+      "name": "Analytical Epidemiology",
+      "icon": "📊"
+    },
+    {
+      "id": 332,
+      "subject_id": 12,
+      "name": "Disease Surveillance",
+      "icon": "🏥"
+    },
+    {
+      "id": 333,
+      "subject_id": 12,
+      "name": "Outbreak Investigation",
+      "icon": "🏥"
+    },
+    {
+      "id": 334,
+      "subject_id": 12,
+      "name": "Screening",
+      "icon": "🏥"
+    },
+    {
+      "id": 335,
+      "subject_id": 12,
+      "name": "Biostatistics",
+      "icon": "📊"
+    },
+    {
+      "id": 336,
+      "subject_id": 12,
+      "name": "Vital Statistics",
+      "icon": "📊"
+    },
+    {
+      "id": 337,
+      "subject_id": 12,
+      "name": "Demography",
+      "icon": "🏥"
+    },
+    {
+      "id": 338,
+      "subject_id": 12,
+      "name": "Maternal and Child Health",
+      "icon": "👶"
+    },
+    {
+      "id": 339,
+      "subject_id": 12,
+      "name": "Reproductive Health",
+      "icon": "🤰"
+    },
+    {
+      "id": 340,
+      "subject_id": 12,
+      "name": "Family Planning",
+      "icon": "🏥"
+    },
+    {
+      "id": 341,
+      "subject_id": 12,
+      "name": "Immunization",
+      "icon": "🛡️"
+    },
+    {
+      "id": 342,
+      "subject_id": 12,
+      "name": "Nutrition",
+      "icon": "🥗"
+    },
+    {
+      "id": 343,
+      "subject_id": 12,
+      "name": "Environmental Health",
+      "icon": "🧠"
+    },
+    {
+      "id": 344,
+      "subject_id": 12,
+      "name": "Water and Sanitation",
+      "icon": "🏥"
+    },
+    {
+      "id": 345,
+      "subject_id": 12,
+      "name": "Food Hygiene",
+      "icon": "🏥"
+    },
+    {
+      "id": 346,
+      "subject_id": 12,
+      "name": "Occupational Health",
+      "icon": "🏥"
+    },
+    {
+      "id": 347,
+      "subject_id": 12,
+      "name": "School Health",
+      "icon": "🏥"
+    },
+    {
+      "id": 348,
+      "subject_id": 12,
+      "name": "Adolescent Health",
+      "icon": "🏥"
+    },
+    {
+      "id": 349,
+      "subject_id": 12,
+      "name": "Communicable Disease Control",
+      "icon": "🏥"
+    },
+    {
+      "id": 350,
+      "subject_id": 12,
+      "name": "Non-Communicable Diseases",
+      "icon": "🏥"
+    },
+    {
+      "id": 351,
+      "subject_id": 12,
+      "name": "Health Policy",
+      "icon": "🏥"
+    },
+    {
+      "id": 352,
+      "subject_id": 12,
+      "name": "Health Economics",
+      "icon": "🏥"
+    },
+    {
+      "id": 353,
+      "subject_id": 12,
+      "name": "Health Systems",
+      "icon": "🏥"
+    },
+    {
+      "id": 354,
+      "subject_id": 12,
+      "name": "Primary Health Care in Nigeria",
+      "icon": "🏥"
+    },
+    {
+      "id": 355,
+      "subject_id": 12,
+      "name": "Disaster Management",
+      "icon": "🏥"
+    },
+    {
+      "id": 356,
+      "subject_id": 12,
+      "name": "Global Health",
+      "icon": "🏥"
+    },
+    {
+      "id": 357,
+      "subject_id": 13,
+      "name": "Types of Data",
+      "icon": "💻"
+    },
+    {
+      "id": 358,
+      "subject_id": 13,
+      "name": "Data Collection",
+      "icon": "🩻"
+    },
+    {
+      "id": 359,
+      "subject_id": 13,
+      "name": "Data Presentation",
+      "icon": "💻"
+    },
+    {
+      "id": 360,
+      "subject_id": 13,
+      "name": "Measures of Central Tendency",
+      "icon": "📊"
+    },
+    {
+      "id": 361,
+      "subject_id": 13,
+      "name": "Measures of Dispersion",
+      "icon": "📊"
+    },
+    {
+      "id": 362,
+      "subject_id": 13,
+      "name": "Probability",
+      "icon": "📊"
+    },
+    {
+      "id": 363,
+      "subject_id": 13,
+      "name": "Normal Distribution",
+      "icon": "📊"
+    },
+    {
+      "id": 364,
+      "subject_id": 13,
+      "name": "Sampling",
+      "icon": "📊"
+    },
+    {
+      "id": 365,
+      "subject_id": 13,
+      "name": "Sample Size Determination",
+      "icon": "📊"
+    },
+    {
+      "id": 366,
+      "subject_id": 13,
+      "name": "Confidence Intervals",
+      "icon": "📊"
+    },
+    {
+      "id": 367,
+      "subject_id": 13,
+      "name": "Hypothesis Testing",
+      "icon": "📊"
+    },
+    {
+      "id": 368,
+      "subject_id": 13,
+      "name": "P Values",
+      "icon": "📊"
+    },
+    {
+      "id": 369,
+      "subject_id": 13,
+      "name": "Type I and Type II Errors",
+      "icon": "📊"
+    },
+    {
+      "id": 370,
+      "subject_id": 13,
+      "name": "Correlation",
+      "icon": "📊"
+    },
+    {
+      "id": 371,
+      "subject_id": 13,
+      "name": "Regression",
+      "icon": "📊"
+    },
+    {
+      "id": 372,
+      "subject_id": 13,
+      "name": "Sensitivity and Specificity",
+      "icon": "📊"
+    },
+    {
+      "id": 373,
+      "subject_id": 13,
+      "name": "Predictive Values",
+      "icon": "🩻"
+    },
+    {
+      "id": 374,
+      "subject_id": 13,
+      "name": "Likelihood Ratios",
+      "icon": "📊"
+    },
+    {
+      "id": 375,
+      "subject_id": 13,
+      "name": "Relative Risk",
+      "icon": "📊"
+    },
+    {
+      "id": 376,
+      "subject_id": 13,
+      "name": "Odds Ratio",
+      "icon": "📊"
+    },
+    {
+      "id": 377,
+      "subject_id": 13,
+      "name": "Statistical Tests",
+      "icon": "📊"
+    },
+    {
+      "id": 378,
+      "subject_id": 13,
+      "name": "Chi-Square Test",
+      "icon": "📊"
+    },
+    {
+      "id": 379,
+      "subject_id": 13,
+      "name": "T-Test",
+      "icon": "📊"
+    },
+    {
+      "id": 380,
+      "subject_id": 13,
+      "name": "ANOVA",
+      "icon": "📊"
+    },
+    {
+      "id": 381,
+      "subject_id": 13,
+      "name": "Non-Parametric Tests",
+      "icon": "📊"
+    },
+    {
+      "id": 382,
+      "subject_id": 13,
+      "name": "Survival Analysis",
+      "icon": "📊"
+    },
+    {
+      "id": 383,
+      "subject_id": 13,
+      "name": "Meta-Analysis",
+      "icon": "📊"
+    },
+    {
+      "id": 384,
+      "subject_id": 14,
+      "name": "History Taking",
+      "icon": "🩺"
+    },
+    {
+      "id": 385,
+      "subject_id": 14,
+      "name": "Physical Examination",
+      "icon": "🩺"
+    },
+    {
+      "id": 386,
+      "subject_id": 14,
+      "name": "Vital Signs",
+      "icon": "🩺"
+    },
+    {
+      "id": 387,
+      "subject_id": 14,
+      "name": "General Examination",
+      "icon": "🩺"
+    },
+    {
+      "id": 388,
+      "subject_id": 14,
+      "name": "Cardiovascular Examination",
+      "icon": "❤️"
+    },
+    {
+      "id": 389,
+      "subject_id": 14,
+      "name": "Respiratory Examination",
+      "icon": "🫁"
+    },
+    {
+      "id": 390,
+      "subject_id": 14,
+      "name": "Abdominal Examination",
+      "icon": "🩺"
+    },
+    {
+      "id": 391,
+      "subject_id": 14,
+      "name": "Neurological Examination",
+      "icon": "🧠"
+    },
+    {
+      "id": 392,
+      "subject_id": 14,
+      "name": "Musculoskeletal Examination",
+      "icon": "🦴"
+    },
+    {
+      "id": 393,
+      "subject_id": 14,
+      "name": "Endocrine Examination",
+      "icon": "🩺"
+    },
+    {
+      "id": 394,
+      "subject_id": 14,
+      "name": "Breast Examination",
+      "icon": "🩺"
+    },
+    {
+      "id": 395,
+      "subject_id": 14,
+      "name": "Genitourinary Examination",
+      "icon": "🫘"
+    },
+    {
+      "id": 396,
+      "subject_id": 14,
+      "name": "Obstetric Examination",
+      "icon": "🤰"
+    },
+    {
+      "id": 397,
+      "subject_id": 14,
+      "name": "Gynaecological Examination",
+      "icon": "🤰"
+    },
+    {
+      "id": 398,
+      "subject_id": 14,
+      "name": "Paediatric Examination",
+      "icon": "👶"
+    },
+    {
+      "id": 399,
+      "subject_id": 14,
+      "name": "Mental State Examination",
+      "icon": "📊"
+    },
+    {
+      "id": 400,
+      "subject_id": 14,
+      "name": "Clinical Reasoning",
+      "icon": "🩺"
+    },
+    {
+      "id": 401,
+      "subject_id": 14,
+      "name": "Differential Diagnosis",
+      "icon": "🩺"
+    },
+    {
+      "id": 402,
+      "subject_id": 14,
+      "name": "Clinical Documentation",
+      "icon": "🩺"
+    },
+    {
+      "id": 403,
+      "subject_id": 14,
+      "name": "Case Presentation",
+      "icon": "🩺"
+    },
+    {
+      "id": 404,
+      "subject_id": 14,
+      "name": "Clinical Communication",
+      "icon": "🩺"
+    },
+    {
+      "id": 405,
+      "subject_id": 14,
+      "name": "Aseptic Technique",
+      "icon": "🩺"
+    },
+    {
+      "id": 406,
+      "subject_id": 14,
+      "name": "Venepuncture",
+      "icon": "🩻"
+    },
+    {
+      "id": 407,
+      "subject_id": 14,
+      "name": "Intravenous Access",
+      "icon": "🩺"
+    },
+    {
+      "id": 408,
+      "subject_id": 14,
+      "name": "Urinary Catheterization",
+      "icon": "🫘"
+    },
+    {
+      "id": 409,
+      "subject_id": 14,
+      "name": "Nasogastric Tube Insertion",
+      "icon": "🩺"
+    },
+    {
+      "id": 410,
+      "subject_id": 14,
+      "name": "Basic Life Support",
+      "icon": "🩺"
+    },
+    {
+      "id": 411,
+      "subject_id": 15,
+      "name": "General Internal Medicine",
+      "icon": "🩺"
+    },
+    {
+      "id": 412,
+      "subject_id": 15,
+      "name": "Cardiology",
+      "icon": "🩺"
+    },
+    {
+      "id": 413,
+      "subject_id": 15,
+      "name": "Hypertension",
+      "icon": "🩺"
+    },
+    {
+      "id": 414,
+      "subject_id": 15,
+      "name": "Ischaemic Heart Disease",
+      "icon": "❤️"
+    },
+    {
+      "id": 415,
+      "subject_id": 15,
+      "name": "Heart Failure",
+      "icon": "❤️"
+    },
+    {
+      "id": 416,
+      "subject_id": 15,
+      "name": "Valvular Heart Disease",
+      "icon": "❤️"
+    },
+    {
+      "id": 417,
+      "subject_id": 15,
+      "name": "Arrhythmias",
+      "icon": "🩺"
+    },
+    {
+      "id": 418,
+      "subject_id": 15,
+      "name": "Pulmonology",
+      "icon": "🩺"
+    },
+    {
+      "id": 419,
+      "subject_id": 15,
+      "name": "Asthma",
+      "icon": "🩺"
+    },
+    {
+      "id": 420,
+      "subject_id": 15,
+      "name": "COPD",
+      "icon": "🩺"
+    },
+    {
+      "id": 421,
+      "subject_id": 15,
+      "name": "Pneumonia",
+      "icon": "🩺"
+    },
+    {
+      "id": 422,
+      "subject_id": 15,
+      "name": "Tuberculosis",
+      "icon": "🩺"
+    },
+    {
+      "id": 423,
+      "subject_id": 15,
+      "name": "Pleural Diseases",
+      "icon": "🩺"
+    },
+    {
+      "id": 424,
+      "subject_id": 15,
+      "name": "Pulmonary Embolism",
+      "icon": "🫁"
+    },
+    {
+      "id": 425,
+      "subject_id": 15,
+      "name": "Gastroenterology",
+      "icon": "🫃"
+    },
+    {
+      "id": 426,
+      "subject_id": 15,
+      "name": "Peptic Ulcer Disease",
+      "icon": "🩺"
+    },
+    {
+      "id": 427,
+      "subject_id": 15,
+      "name": "Inflammatory Bowel Disease",
+      "icon": "🫃"
+    },
+    {
+      "id": 428,
+      "subject_id": 15,
+      "name": "Gastrointestinal Bleeding",
+      "icon": "🫃"
+    },
+    {
+      "id": 429,
+      "subject_id": 15,
+      "name": "Liver Disease",
+      "icon": "🧫"
+    },
+    {
+      "id": 430,
+      "subject_id": 15,
+      "name": "Hepatitis",
+      "icon": "🩺"
+    },
+    {
+      "id": 431,
+      "subject_id": 15,
+      "name": "Cirrhosis",
+      "icon": "🩺"
+    },
+    {
+      "id": 432,
+      "subject_id": 15,
+      "name": "Nephrology",
+      "icon": "🩺"
+    },
+    {
+      "id": 433,
+      "subject_id": 15,
+      "name": "Acute Kidney Injury",
+      "icon": "🫘"
+    },
+    {
+      "id": 434,
+      "subject_id": 15,
+      "name": "Chronic Kidney Disease",
+      "icon": "🫘"
+    },
+    {
+      "id": 435,
+      "subject_id": 15,
+      "name": "Glomerular Diseases",
+      "icon": "🩺"
+    },
+    {
+      "id": 436,
+      "subject_id": 15,
+      "name": "Electrolyte Disorders",
+      "icon": "🩻"
+    },
+    {
+      "id": 437,
+      "subject_id": 15,
+      "name": "Neurology",
+      "icon": "🧠"
+    },
+    {
+      "id": 438,
+      "subject_id": 15,
+      "name": "Stroke",
+      "icon": "🩺"
+    },
+    {
+      "id": 439,
+      "subject_id": 15,
+      "name": "Epilepsy",
+      "icon": "🩺"
+    },
+    {
+      "id": 440,
+      "subject_id": 15,
+      "name": "Headache Disorders",
+      "icon": "🩺"
+    },
+    {
+      "id": 441,
+      "subject_id": 15,
+      "name": "Endocrinology",
+      "icon": "🩺"
+    },
+    {
+      "id": 442,
+      "subject_id": 15,
+      "name": "Diabetes Mellitus",
+      "icon": "🩺"
+    },
+    {
+      "id": 443,
+      "subject_id": 15,
+      "name": "Thyroid Disorders",
+      "icon": "🩺"
+    },
+    {
+      "id": 444,
+      "subject_id": 15,
+      "name": "Adrenal Disorders",
+      "icon": "🫘"
+    },
+    {
+      "id": 445,
+      "subject_id": 15,
+      "name": "Rheumatology",
+      "icon": "🩺"
+    },
+    {
+      "id": 446,
+      "subject_id": 15,
+      "name": "Rheumatoid Arthritis",
+      "icon": "🦴"
+    },
+    {
+      "id": 447,
+      "subject_id": 15,
+      "name": "SLE",
+      "icon": "🩺"
+    },
+    {
+      "id": 448,
+      "subject_id": 15,
+      "name": "Gout",
+      "icon": "🩺"
+    },
+    {
+      "id": 449,
+      "subject_id": 15,
+      "name": "Infectious Diseases",
+      "icon": "🩻"
+    },
+    {
+      "id": 450,
+      "subject_id": 15,
+      "name": "HIV/AIDS",
+      "icon": "🩺"
+    },
+    {
+      "id": 451,
+      "subject_id": 15,
+      "name": "Tropical Medicine",
+      "icon": "🩺"
+    },
+    {
+      "id": 452,
+      "subject_id": 16,
+      "name": "Principles of Surgery",
+      "icon": "🔪"
+    },
+    {
+      "id": 453,
+      "subject_id": 16,
+      "name": "Preoperative Assessment",
+      "icon": "🔪"
+    },
+    {
+      "id": 454,
+      "subject_id": 16,
+      "name": "Postoperative Care",
+      "icon": "🔪"
+    },
+    {
+      "id": 455,
+      "subject_id": 16,
+      "name": "Surgical Infections",
+      "icon": "🦠"
+    },
+    {
+      "id": 456,
+      "subject_id": 16,
+      "name": "Wound Healing",
+      "icon": "🔪"
+    },
+    {
+      "id": 457,
+      "subject_id": 16,
+      "name": "Wound Management",
+      "icon": "🔪"
+    },
+    {
+      "id": 458,
+      "subject_id": 16,
+      "name": "Fluid and Electrolyte Management",
+      "icon": "🩻"
+    },
+    {
+      "id": 459,
+      "subject_id": 16,
+      "name": "Shock",
+      "icon": "🔪"
+    },
+    {
+      "id": 460,
+      "subject_id": 16,
+      "name": "Blood Transfusion",
+      "icon": "🩸"
+    },
+    {
+      "id": 461,
+      "subject_id": 16,
+      "name": "Surgical Nutrition",
+      "icon": "🥗"
+    },
+    {
+      "id": 462,
+      "subject_id": 16,
+      "name": "Trauma",
+      "icon": "🚑"
+    },
+    {
+      "id": 463,
+      "subject_id": 16,
+      "name": "Head Injury",
+      "icon": "🔪"
+    },
+    {
+      "id": 464,
+      "subject_id": 16,
+      "name": "Chest Trauma",
+      "icon": "🚑"
+    },
+    {
+      "id": 465,
+      "subject_id": 16,
+      "name": "Abdominal Trauma",
+      "icon": "🚑"
+    },
+    {
+      "id": 466,
+      "subject_id": 16,
+      "name": "Burns",
+      "icon": "🔪"
+    },
+    {
+      "id": 467,
+      "subject_id": 16,
+      "name": "Acute Abdomen",
+      "icon": "🫃"
+    },
+    {
+      "id": 468,
+      "subject_id": 16,
+      "name": "Appendicitis",
+      "icon": "🔪"
+    },
+    {
+      "id": 469,
+      "subject_id": 16,
+      "name": "Intestinal Obstruction",
+      "icon": "🫃"
+    },
+    {
+      "id": 470,
+      "subject_id": 16,
+      "name": "Peritonitis",
+      "icon": "🔪"
+    },
+    {
+      "id": 471,
+      "subject_id": 16,
+      "name": "Hernias",
+      "icon": "🔪"
+    },
+    {
+      "id": 472,
+      "subject_id": 16,
+      "name": "Gastrointestinal Surgery",
+      "icon": "🫃"
+    },
+    {
+      "id": 473,
+      "subject_id": 16,
+      "name": "Colorectal Surgery",
+      "icon": "🩻"
+    },
+    {
+      "id": 474,
+      "subject_id": 16,
+      "name": "Hepatobiliary Surgery",
+      "icon": "🧫"
+    },
+    {
+      "id": 475,
+      "subject_id": 16,
+      "name": "Pancreatic Surgery",
+      "icon": "🔪"
+    },
+    {
+      "id": 476,
+      "subject_id": 16,
+      "name": "Breast Surgery",
+      "icon": "🔪"
+    },
+    {
+      "id": 477,
+      "subject_id": 16,
+      "name": "Thyroid Surgery",
+      "icon": "🔪"
+    },
+    {
+      "id": 478,
+      "subject_id": 16,
+      "name": "Vascular Surgery",
+      "icon": "🔪"
+    },
+    {
+      "id": 479,
+      "subject_id": 16,
+      "name": "Urological Surgery",
+      "icon": "🔪"
+    },
+    {
+      "id": 480,
+      "subject_id": 16,
+      "name": "Paediatric Surgery",
+      "icon": "👶"
+    },
+    {
+      "id": 481,
+      "subject_id": 16,
+      "name": "Neurosurgery",
+      "icon": "🧠"
+    },
+    {
+      "id": 482,
+      "subject_id": 16,
+      "name": "Orthopaedic Surgery",
+      "icon": "🦴"
+    },
+    {
+      "id": 483,
+      "subject_id": 16,
+      "name": "Plastic and Reconstructive Surgery",
+      "icon": "🩻"
+    },
+    {
+      "id": 484,
+      "subject_id": 16,
+      "name": "Surgical Oncology",
+      "icon": "🎗️"
+    },
+    {
+      "id": 485,
+      "subject_id": 16,
+      "name": "Minimally Invasive Surgery",
+      "icon": "🔪"
+    },
+    {
+      "id": 486,
+      "subject_id": 16,
+      "name": "Surgical Emergencies",
+      "icon": "🔪"
+    },
+    {
+      "id": 487,
+      "subject_id": 17,
+      "name": "Growth and Development",
+      "icon": "👶"
+    },
+    {
+      "id": 488,
+      "subject_id": 17,
+      "name": "Developmental Assessment",
+      "icon": "🧠"
+    },
+    {
+      "id": 489,
+      "subject_id": 17,
+      "name": "Paediatric History Taking",
+      "icon": "👶"
+    },
+    {
+      "id": 490,
+      "subject_id": 17,
+      "name": "Neonatology",
+      "icon": "👶"
+    },
+    {
+      "id": 491,
+      "subject_id": 17,
+      "name": "Newborn Examination",
+      "icon": "👶"
+    },
+    {
+      "id": 492,
+      "subject_id": 17,
+      "name": "Prematurity",
+      "icon": "👶"
+    },
+    {
+      "id": 493,
+      "subject_id": 17,
+      "name": "Low Birth Weight",
+      "icon": "👶"
+    },
+    {
+      "id": 494,
+      "subject_id": 17,
+      "name": "Birth Asphyxia",
+      "icon": "👶"
+    },
+    {
+      "id": 495,
+      "subject_id": 17,
+      "name": "Neonatal Jaundice",
+      "icon": "👶"
+    },
+    {
+      "id": 496,
+      "subject_id": 17,
+      "name": "Neonatal Sepsis",
+      "icon": "👶"
+    },
+    {
+      "id": 497,
+      "subject_id": 17,
+      "name": "Congenital Disorders",
+      "icon": "👶"
+    },
+    {
+      "id": 498,
+      "subject_id": 17,
+      "name": "Breastfeeding",
+      "icon": "👶"
+    },
+    {
+      "id": 499,
+      "subject_id": 17,
+      "name": "Infant Nutrition",
+      "icon": "🥗"
+    },
+    {
+      "id": 500,
+      "subject_id": 17,
+      "name": "Childhood Nutrition",
+      "icon": "👶"
+    },
+    {
+      "id": 501,
+      "subject_id": 17,
+      "name": "Malnutrition",
+      "icon": "🥗"
+    },
+    {
+      "id": 502,
+      "subject_id": 17,
+      "name": "Immunization",
+      "icon": "🛡️"
+    },
+    {
+      "id": 503,
+      "subject_id": 17,
+      "name": "Paediatric Infections",
+      "icon": "👶"
+    },
+    {
+      "id": 504,
+      "subject_id": 17,
+      "name": "Malaria in Children",
+      "icon": "👶"
+    },
+    {
+      "id": 505,
+      "subject_id": 17,
+      "name": "Tuberculosis in Children",
+      "icon": "👶"
+    },
+    {
+      "id": 506,
+      "subject_id": 17,
+      "name": "HIV in Children",
+      "icon": "👶"
+    },
+    {
+      "id": 507,
+      "subject_id": 17,
+      "name": "Pneumonia",
+      "icon": "👶"
+    },
+    {
+      "id": 508,
+      "subject_id": 17,
+      "name": "Diarrhoeal Diseases",
+      "icon": "👶"
+    },
+    {
+      "id": 509,
+      "subject_id": 17,
+      "name": "Meningitis",
+      "icon": "🧠"
+    },
+    {
+      "id": 510,
+      "subject_id": 17,
+      "name": "Paediatric Cardiology",
+      "icon": "👶"
+    },
+    {
+      "id": 511,
+      "subject_id": 17,
+      "name": "Congenital Heart Disease",
+      "icon": "❤️"
+    },
+    {
+      "id": 512,
+      "subject_id": 17,
+      "name": "Paediatric Respiratory Diseases",
+      "icon": "🫁"
+    },
+    {
+      "id": 513,
+      "subject_id": 17,
+      "name": "Paediatric Gastroenterology",
+      "icon": "🫃"
+    },
+    {
+      "id": 514,
+      "subject_id": 17,
+      "name": "Paediatric Nephrology",
+      "icon": "👶"
+    },
+    {
+      "id": 515,
+      "subject_id": 17,
+      "name": "Paediatric Neurology",
+      "icon": "🧠"
+    },
+    {
+      "id": 516,
+      "subject_id": 17,
+      "name": "Paediatric Endocrinology",
+      "icon": "👶"
+    },
+    {
+      "id": 517,
+      "subject_id": 17,
+      "name": "Paediatric Haematology",
+      "icon": "👶"
+    },
+    {
+      "id": 518,
+      "subject_id": 17,
+      "name": "Sickle Cell Disease",
+      "icon": "🔬"
+    },
+    {
+      "id": 519,
+      "subject_id": 17,
+      "name": "Paediatric Oncology",
+      "icon": "👶"
+    },
+    {
+      "id": 520,
+      "subject_id": 17,
+      "name": "Childhood Emergencies",
+      "icon": "👶"
+    },
+    {
+      "id": 521,
+      "subject_id": 17,
+      "name": "Adolescent Medicine",
+      "icon": "👶"
+    },
+    {
+      "id": 522,
+      "subject_id": 18,
+      "name": "Antenatal Care",
+      "icon": "🤰"
+    },
+    {
+      "id": 523,
+      "subject_id": 18,
+      "name": "Normal Pregnancy",
+      "icon": "🤰"
+    },
+    {
+      "id": 524,
+      "subject_id": 18,
+      "name": "Physiological Changes in Pregnancy",
+      "icon": "🤰"
+    },
+    {
+      "id": 525,
+      "subject_id": 18,
+      "name": "Fetal Development",
+      "icon": "👶"
+    },
+    {
+      "id": 526,
+      "subject_id": 18,
+      "name": "Placental Development",
+      "icon": "👶"
+    },
+    {
+      "id": 527,
+      "subject_id": 18,
+      "name": "Fetal Assessment",
+      "icon": "🤰"
+    },
+    {
+      "id": 528,
+      "subject_id": 18,
+      "name": "High-Risk Pregnancy",
+      "icon": "🤰"
+    },
+    {
+      "id": 529,
+      "subject_id": 18,
+      "name": "Hypertensive Disorders of Pregnancy",
+      "icon": "🤰"
+    },
+    {
+      "id": 530,
+      "subject_id": 18,
+      "name": "Gestational Diabetes",
+      "icon": "📊"
+    },
+    {
+      "id": 531,
+      "subject_id": 18,
+      "name": "Anaemia in Pregnancy",
+      "icon": "🤰"
+    },
+    {
+      "id": 532,
+      "subject_id": 18,
+      "name": "Infections in Pregnancy",
+      "icon": "🤰"
+    },
+    {
+      "id": 533,
+      "subject_id": 18,
+      "name": "HIV in Pregnancy",
+      "icon": "🤰"
+    },
+    {
+      "id": 534,
+      "subject_id": 18,
+      "name": "Malaria in Pregnancy",
+      "icon": "🤰"
+    },
+    {
+      "id": 535,
+      "subject_id": 18,
+      "name": "Multiple Pregnancy",
+      "icon": "🤰"
+    },
+    {
+      "id": 536,
+      "subject_id": 18,
+      "name": "Ectopic Pregnancy",
+      "icon": "🤰"
+    },
+    {
+      "id": 537,
+      "subject_id": 18,
+      "name": "Miscarriage",
+      "icon": "🤰"
+    },
+    {
+      "id": 538,
+      "subject_id": 18,
+      "name": "Antepartum Haemorrhage",
+      "icon": "🩸"
+    },
+    {
+      "id": 539,
+      "subject_id": 18,
+      "name": "Placenta Praevia",
+      "icon": "🤰"
+    },
+    {
+      "id": 540,
+      "subject_id": 18,
+      "name": "Placental Abruption",
+      "icon": "🤰"
+    },
+    {
+      "id": 541,
+      "subject_id": 18,
+      "name": "Normal Labour",
+      "icon": "🤰"
+    },
+    {
+      "id": 542,
+      "subject_id": 18,
+      "name": "Stages of Labour",
+      "icon": "🤰"
+    },
+    {
+      "id": 543,
+      "subject_id": 18,
+      "name": "Mechanism of Labour",
+      "icon": "🤰"
+    },
+    {
+      "id": 544,
+      "subject_id": 18,
+      "name": "Monitoring Labour",
+      "icon": "🤰"
+    },
+    {
+      "id": 545,
+      "subject_id": 18,
+      "name": "Abnormal Labour",
+      "icon": "🤰"
+    },
+    {
+      "id": 546,
+      "subject_id": 18,
+      "name": "Obstructed Labour",
+      "icon": "🩻"
+    },
+    {
+      "id": 547,
+      "subject_id": 18,
+      "name": "Malpresentation",
+      "icon": "🤰"
+    },
+    {
+      "id": 548,
+      "subject_id": 18,
+      "name": "Caesarean Section",
+      "icon": "🩻"
+    },
+    {
+      "id": 549,
+      "subject_id": 18,
+      "name": "Postpartum Haemorrhage",
+      "icon": "🩸"
+    },
+    {
+      "id": 550,
+      "subject_id": 18,
+      "name": "Puerperium",
+      "icon": "🤰"
+    },
+    {
+      "id": 551,
+      "subject_id": 18,
+      "name": "Postnatal Care",
+      "icon": "🤰"
+    },
+    {
+      "id": 552,
+      "subject_id": 18,
+      "name": "Lactation",
+      "icon": "🩻"
+    },
+    {
+      "id": 553,
+      "subject_id": 18,
+      "name": "Family Planning",
+      "icon": "🤰"
+    },
+    {
+      "id": 554,
+      "subject_id": 18,
+      "name": "Contraception",
+      "icon": "🤰"
+    },
+    {
+      "id": 555,
+      "subject_id": 18,
+      "name": "Menstrual Disorders",
+      "icon": "🤰"
+    },
+    {
+      "id": 556,
+      "subject_id": 18,
+      "name": "Amenorrhoea",
+      "icon": "🤰"
+    },
+    {
+      "id": 557,
+      "subject_id": 18,
+      "name": "Abnormal Uterine Bleeding",
+      "icon": "🤰"
+    },
+    {
+      "id": 558,
+      "subject_id": 18,
+      "name": "Pelvic Inflammatory Disease",
+      "icon": "🤰"
+    },
+    {
+      "id": 559,
+      "subject_id": 18,
+      "name": "Endometriosis",
+      "icon": "🤰"
+    },
+    {
+      "id": 560,
+      "subject_id": 18,
+      "name": "Uterine Fibroids",
+      "icon": "🤰"
+    },
+    {
+      "id": 561,
+      "subject_id": 18,
+      "name": "Ovarian Disorders",
+      "icon": "🤰"
+    },
+    {
+      "id": 562,
+      "subject_id": 18,
+      "name": "Cervical Cancer",
+      "icon": "🎗️"
+    },
+    {
+      "id": 563,
+      "subject_id": 18,
+      "name": "Infertility",
+      "icon": "🤰"
+    },
+    {
+      "id": 564,
+      "subject_id": 18,
+      "name": "Menopause",
+      "icon": "🤰"
+    },
+    {
+      "id": 565,
+      "subject_id": 18,
+      "name": "Gynaecological Emergencies",
+      "icon": "🤰"
+    },
+    {
+      "id": 566,
+      "subject_id": 19,
+      "name": "Psychiatric History Taking",
+      "icon": "🧠"
+    },
+    {
+      "id": 567,
+      "subject_id": 19,
+      "name": "Mental State Examination",
+      "icon": "📊"
+    },
+    {
+      "id": 568,
+      "subject_id": 19,
+      "name": "Psychopathology",
+      "icon": "🧠"
+    },
+    {
+      "id": 569,
+      "subject_id": 19,
+      "name": "Mood Disorders",
+      "icon": "🧠"
+    },
+    {
+      "id": 570,
+      "subject_id": 19,
+      "name": "Depressive Disorders",
+      "icon": "🧠"
+    },
+    {
+      "id": 571,
+      "subject_id": 19,
+      "name": "Bipolar Disorder",
+      "icon": "🧠"
+    },
+    {
+      "id": 572,
+      "subject_id": 19,
+      "name": "Anxiety Disorders",
+      "icon": "🧠"
+    },
+    {
+      "id": 573,
+      "subject_id": 19,
+      "name": "Panic Disorder",
+      "icon": "🧠"
+    },
+    {
+      "id": 574,
+      "subject_id": 19,
+      "name": "Obsessive-Compulsive Disorder",
+      "icon": "🧠"
+    },
+    {
+      "id": 575,
+      "subject_id": 19,
+      "name": "PTSD",
+      "icon": "🧠"
+    },
+    {
+      "id": 576,
+      "subject_id": 19,
+      "name": "Psychotic Disorders",
+      "icon": "🧠"
+    },
+    {
+      "id": 577,
+      "subject_id": 19,
+      "name": "Schizophrenia",
+      "icon": "🧠"
+    },
+    {
+      "id": 578,
+      "subject_id": 19,
+      "name": "Delusional Disorders",
+      "icon": "🧠"
+    },
+    {
+      "id": 579,
+      "subject_id": 19,
+      "name": "Personality Disorders",
+      "icon": "🧠"
+    },
+    {
+      "id": 580,
+      "subject_id": 19,
+      "name": "Somatic Symptom Disorders",
+      "icon": "🧠"
+    },
+    {
+      "id": 581,
+      "subject_id": 19,
+      "name": "Dissociative Disorders",
+      "icon": "🧠"
+    },
+    {
+      "id": 582,
+      "subject_id": 19,
+      "name": "Eating Disorders",
+      "icon": "🧠"
+    },
+    {
+      "id": 583,
+      "subject_id": 19,
+      "name": "Sleep Disorders",
+      "icon": "🧠"
+    },
+    {
+      "id": 584,
+      "subject_id": 19,
+      "name": "Substance Use Disorders",
+      "icon": "🧠"
+    },
+    {
+      "id": 585,
+      "subject_id": 19,
+      "name": "Child and Adolescent Psychiatry",
+      "icon": "👶"
+    },
+    {
+      "id": 586,
+      "subject_id": 19,
+      "name": "Geriatric Psychiatry",
+      "icon": "🧠"
+    },
+    {
+      "id": 587,
+      "subject_id": 19,
+      "name": "Psychopharmacology",
+      "icon": "💊"
+    },
+    {
+      "id": 588,
+      "subject_id": 19,
+      "name": "Psychotherapy",
+      "icon": "🧠"
+    },
+    {
+      "id": 589,
+      "subject_id": 19,
+      "name": "Community Psychiatry",
+      "icon": "🧠"
+    },
+    {
+      "id": 590,
+      "subject_id": 19,
+      "name": "Forensic Psychiatry",
+      "icon": "⚖️"
+    },
+    {
+      "id": 591,
+      "subject_id": 19,
+      "name": "Psychiatric Emergencies",
+      "icon": "🧠"
+    },
+    {
+      "id": 592,
+      "subject_id": 20,
+      "name": "Skin Structure and Function",
+      "icon": "🧴"
+    },
+    {
+      "id": 593,
+      "subject_id": 20,
+      "name": "Dermatological History",
+      "icon": "🧴"
+    },
+    {
+      "id": 594,
+      "subject_id": 20,
+      "name": "Skin Examination",
+      "icon": "🧴"
+    },
+    {
+      "id": 595,
+      "subject_id": 20,
+      "name": "Bacterial Skin Infections",
+      "icon": "🧴"
+    },
+    {
+      "id": 596,
+      "subject_id": 20,
+      "name": "Viral Skin Infections",
+      "icon": "🧴"
+    },
+    {
+      "id": 597,
+      "subject_id": 20,
+      "name": "Fungal Skin Infections",
+      "icon": "🧴"
+    },
+    {
+      "id": 598,
+      "subject_id": 20,
+      "name": "Parasitic Skin Diseases",
+      "icon": "🧴"
+    },
+    {
+      "id": 599,
+      "subject_id": 20,
+      "name": "Eczema",
+      "icon": "🧴"
+    },
+    {
+      "id": 600,
+      "subject_id": 20,
+      "name": "Atopic Dermatitis",
+      "icon": "🧴"
+    },
+    {
+      "id": 601,
+      "subject_id": 20,
+      "name": "Contact Dermatitis",
+      "icon": "🧴"
+    },
+    {
+      "id": 602,
+      "subject_id": 20,
+      "name": "Psoriasis",
+      "icon": "🧴"
+    },
+    {
+      "id": 603,
+      "subject_id": 20,
+      "name": "Acne",
+      "icon": "🧴"
+    },
+    {
+      "id": 604,
+      "subject_id": 20,
+      "name": "Urticaria",
+      "icon": "🧴"
+    },
+    {
+      "id": 605,
+      "subject_id": 20,
+      "name": "Drug Eruptions",
+      "icon": "💊"
+    },
+    {
+      "id": 606,
+      "subject_id": 20,
+      "name": "Autoimmune Skin Diseases",
+      "icon": "🧴"
+    },
+    {
+      "id": 607,
+      "subject_id": 20,
+      "name": "Blistering Disorders",
+      "icon": "🧴"
+    },
+    {
+      "id": 608,
+      "subject_id": 20,
+      "name": "Pigmentary Disorders",
+      "icon": "🧴"
+    },
+    {
+      "id": 609,
+      "subject_id": 20,
+      "name": "Hair Disorders",
+      "icon": "🧴"
+    },
+    {
+      "id": 610,
+      "subject_id": 20,
+      "name": "Nail Disorders",
+      "icon": "🧴"
+    },
+    {
+      "id": 611,
+      "subject_id": 20,
+      "name": "Sexually Transmitted Infections",
+      "icon": "🦠"
+    },
+    {
+      "id": 612,
+      "subject_id": 20,
+      "name": "Skin Tumours",
+      "icon": "🧴"
+    },
+    {
+      "id": 613,
+      "subject_id": 20,
+      "name": "Melanoma",
+      "icon": "🧴"
+    },
+    {
+      "id": 614,
+      "subject_id": 20,
+      "name": "Tropical Dermatology",
+      "icon": "🧴"
+    },
+    {
+      "id": 615,
+      "subject_id": 20,
+      "name": "Leprosy",
+      "icon": "🧴"
+    },
+    {
+      "id": 616,
+      "subject_id": 21,
+      "name": "Ocular Anatomy",
+      "icon": "👁️"
+    },
+    {
+      "id": 617,
+      "subject_id": 21,
+      "name": "Ocular Physiology",
+      "icon": "👁️"
+    },
+    {
+      "id": 618,
+      "subject_id": 21,
+      "name": "Visual Acuity",
+      "icon": "👁️"
+    },
+    {
+      "id": 619,
+      "subject_id": 21,
+      "name": "Refraction",
+      "icon": "🩻"
+    },
+    {
+      "id": 620,
+      "subject_id": 21,
+      "name": "External Eye Examination",
+      "icon": "👁️"
+    },
+    {
+      "id": 621,
+      "subject_id": 21,
+      "name": "Slit Lamp Examination",
+      "icon": "👁️"
+    },
+    {
+      "id": 622,
+      "subject_id": 21,
+      "name": "Intraocular Pressure",
+      "icon": "👁️"
+    },
+    {
+      "id": 623,
+      "subject_id": 21,
+      "name": "Visual Field Testing",
+      "icon": "👁️"
+    },
+    {
+      "id": 624,
+      "subject_id": 21,
+      "name": "Conjunctival Diseases",
+      "icon": "🩻"
+    },
+    {
+      "id": 625,
+      "subject_id": 21,
+      "name": "Corneal Diseases",
+      "icon": "👁️"
+    },
+    {
+      "id": 626,
+      "subject_id": 21,
+      "name": "Uveal Diseases",
+      "icon": "👁️"
+    },
+    {
+      "id": 627,
+      "subject_id": 21,
+      "name": "Cataract",
+      "icon": "🩻"
+    },
+    {
+      "id": 628,
+      "subject_id": 21,
+      "name": "Glaucoma",
+      "icon": "👁️"
+    },
+    {
+      "id": 629,
+      "subject_id": 21,
+      "name": "Retinal Diseases",
+      "icon": "👁️"
+    },
+    {
+      "id": 630,
+      "subject_id": 21,
+      "name": "Diabetic Retinopathy",
+      "icon": "👁️"
+    },
+    {
+      "id": 631,
+      "subject_id": 21,
+      "name": "Hypertensive Retinopathy",
+      "icon": "👁️"
+    },
+    {
+      "id": 632,
+      "subject_id": 21,
+      "name": "Retinal Detachment",
+      "icon": "👁️"
+    },
+    {
+      "id": 633,
+      "subject_id": 21,
+      "name": "Optic Nerve Diseases",
+      "icon": "🧠"
+    },
+    {
+      "id": 634,
+      "subject_id": 21,
+      "name": "Neuro-Ophthalmology",
+      "icon": "🧠"
+    },
+    {
+      "id": 635,
+      "subject_id": 21,
+      "name": "Strabismus",
+      "icon": "👁️"
+    },
+    {
+      "id": 636,
+      "subject_id": 21,
+      "name": "Paediatric Ophthalmology",
+      "icon": "👁️"
+    },
+    {
+      "id": 637,
+      "subject_id": 21,
+      "name": "Ocular Trauma",
+      "icon": "👁️"
+    },
+    {
+      "id": 638,
+      "subject_id": 21,
+      "name": "Eye Infections",
+      "icon": "👁️"
+    },
+    {
+      "id": 639,
+      "subject_id": 21,
+      "name": "Ocular Emergencies",
+      "icon": "👁️"
+    },
+    {
+      "id": 640,
+      "subject_id": 21,
+      "name": "Blindness",
+      "icon": "👁️"
+    },
+    {
+      "id": 641,
+      "subject_id": 21,
+      "name": "Low Vision",
+      "icon": "👁️"
+    },
+    {
+      "id": 642,
+      "subject_id": 21,
+      "name": "Ophthalmic Surgery",
+      "icon": "👁️"
+    },
+    {
+      "id": 643,
+      "subject_id": 22,
+      "name": "Ear Anatomy",
+      "icon": "👂"
+    },
+    {
+      "id": 644,
+      "subject_id": 22,
+      "name": "Nose and Sinus Anatomy",
+      "icon": "👃"
+    },
+    {
+      "id": 645,
+      "subject_id": 22,
+      "name": "Pharynx and Larynx",
+      "icon": "👂"
+    },
+    {
+      "id": 646,
+      "subject_id": 22,
+      "name": "Hearing Physiology",
+      "icon": "👂"
+    },
+    {
+      "id": 647,
+      "subject_id": 22,
+      "name": "Ear Examination",
+      "icon": "👂"
+    },
+    {
+      "id": 648,
+      "subject_id": 22,
+      "name": "Nose Examination",
+      "icon": "👃"
+    },
+    {
+      "id": 649,
+      "subject_id": 22,
+      "name": "Throat Examination",
+      "icon": "👂"
+    },
+    {
+      "id": 650,
+      "subject_id": 22,
+      "name": "Otitis Externa",
+      "icon": "👂"
+    },
+    {
+      "id": 651,
+      "subject_id": 22,
+      "name": "Otitis Media",
+      "icon": "👂"
+    },
+    {
+      "id": 652,
+      "subject_id": 22,
+      "name": "Chronic Ear Disease",
+      "icon": "👂"
+    },
+    {
+      "id": 653,
+      "subject_id": 22,
+      "name": "Hearing Loss",
+      "icon": "👂"
+    },
+    {
+      "id": 654,
+      "subject_id": 22,
+      "name": "Deafness",
+      "icon": "👂"
+    },
+    {
+      "id": 655,
+      "subject_id": 22,
+      "name": "Vertigo",
+      "icon": "👂"
+    },
+    {
+      "id": 656,
+      "subject_id": 22,
+      "name": "Tinnitus",
+      "icon": "👂"
+    },
+    {
+      "id": 657,
+      "subject_id": 22,
+      "name": "Facial Nerve Disorders",
+      "icon": "🧠"
+    },
+    {
+      "id": 658,
+      "subject_id": 22,
+      "name": "Epistaxis",
+      "icon": "👂"
+    },
+    {
+      "id": 659,
+      "subject_id": 22,
+      "name": "Rhinitis",
+      "icon": "👂"
+    },
+    {
+      "id": 660,
+      "subject_id": 22,
+      "name": "Sinusitis",
+      "icon": "👃"
+    },
+    {
+      "id": 661,
+      "subject_id": 22,
+      "name": "Nasal Polyps",
+      "icon": "👃"
+    },
+    {
+      "id": 662,
+      "subject_id": 22,
+      "name": "Tonsillitis",
+      "icon": "👂"
+    },
+    {
+      "id": 663,
+      "subject_id": 22,
+      "name": "Adenoid Disease",
+      "icon": "👂"
+    },
+    {
+      "id": 664,
+      "subject_id": 22,
+      "name": "Laryngitis",
+      "icon": "👂"
+    },
+    {
+      "id": 665,
+      "subject_id": 22,
+      "name": "Voice Disorders",
+      "icon": "👂"
+    },
+    {
+      "id": 666,
+      "subject_id": 22,
+      "name": "Airway Disorders",
+      "icon": "👂"
+    },
+    {
+      "id": 667,
+      "subject_id": 22,
+      "name": "Head and Neck Tumours",
+      "icon": "🎗️"
+    },
+    {
+      "id": 668,
+      "subject_id": 22,
+      "name": "ENT Infections",
+      "icon": "🦠"
+    },
+    {
+      "id": 669,
+      "subject_id": 22,
+      "name": "ENT Emergencies",
+      "icon": "👂"
+    },
+    {
+      "id": 670,
+      "subject_id": 22,
+      "name": "Paediatric ENT",
+      "icon": "👶"
+    },
+    {
+      "id": 671,
+      "subject_id": 23,
+      "name": "Radiation Physics",
+      "icon": "🩻"
+    },
+    {
+      "id": 672,
+      "subject_id": 23,
+      "name": "Radiation Protection",
+      "icon": "🩻"
+    },
+    {
+      "id": 673,
+      "subject_id": 23,
+      "name": "Plain Radiography",
+      "icon": "🩻"
+    },
+    {
+      "id": 674,
+      "subject_id": 23,
+      "name": "Chest X-Ray",
+      "icon": "🩻"
+    },
+    {
+      "id": 675,
+      "subject_id": 23,
+      "name": "Abdominal X-Ray",
+      "icon": "🩻"
+    },
+    {
+      "id": 676,
+      "subject_id": 23,
+      "name": "Skeletal Radiography",
+      "icon": "🦴"
+    },
+    {
+      "id": 677,
+      "subject_id": 23,
+      "name": "Contrast Studies",
+      "icon": "🩻"
+    },
+    {
+      "id": 678,
+      "subject_id": 23,
+      "name": "Ultrasound",
+      "icon": "🩻"
+    },
+    {
+      "id": 679,
+      "subject_id": 23,
+      "name": "Doppler Ultrasound",
+      "icon": "🩻"
+    },
+    {
+      "id": 680,
+      "subject_id": 23,
+      "name": "Computed Tomography",
+      "icon": "🩻"
+    },
+    {
+      "id": 681,
+      "subject_id": 23,
+      "name": "CT Brain",
+      "icon": "🧠"
+    },
+    {
+      "id": 682,
+      "subject_id": 23,
+      "name": "CT Chest",
+      "icon": "🩻"
+    },
+    {
+      "id": 683,
+      "subject_id": 23,
+      "name": "CT Abdomen",
+      "icon": "🫃"
+    },
+    {
+      "id": 684,
+      "subject_id": 23,
+      "name": "Magnetic Resonance Imaging",
+      "icon": "🩻"
+    },
+    {
+      "id": 685,
+      "subject_id": 23,
+      "name": "MRI Brain",
+      "icon": "🧠"
+    },
+    {
+      "id": 686,
+      "subject_id": 23,
+      "name": "MRI Spine",
+      "icon": "🩻"
+    },
+    {
+      "id": 687,
+      "subject_id": 23,
+      "name": "Nuclear Medicine",
+      "icon": "👂"
+    },
+    {
+      "id": 688,
+      "subject_id": 23,
+      "name": "Interventional Radiology",
+      "icon": "🩻"
+    },
+    {
+      "id": 689,
+      "subject_id": 23,
+      "name": "Paediatric Radiology",
+      "icon": "👶"
+    },
+    {
+      "id": 690,
+      "subject_id": 23,
+      "name": "Breast Imaging",
+      "icon": "🩻"
+    },
+    {
+      "id": 691,
+      "subject_id": 23,
+      "name": "Trauma Imaging",
+      "icon": "🩻"
+    },
+    {
+      "id": 692,
+      "subject_id": 23,
+      "name": "Emergency Radiology",
+      "icon": "🩻"
+    },
+    {
+      "id": 693,
+      "subject_id": 23,
+      "name": "Radiological Anatomy",
+      "icon": "🩻"
+    },
+    {
+      "id": 694,
+      "subject_id": 23,
+      "name": "Radiological Interpretation",
+      "icon": "🩻"
+    },
+    {
+      "id": 695,
+      "subject_id": 24,
+      "name": "Pre-Anaesthetic Assessment",
+      "icon": "💉"
+    },
+    {
+      "id": 696,
+      "subject_id": 24,
+      "name": "Airway Management",
+      "icon": "💉"
+    },
+    {
+      "id": 697,
+      "subject_id": 24,
+      "name": "Airway Devices",
+      "icon": "💉"
+    },
+    {
+      "id": 698,
+      "subject_id": 24,
+      "name": "General Anaesthesia",
+      "icon": "💉"
+    },
+    {
+      "id": 699,
+      "subject_id": 24,
+      "name": "Regional Anaesthesia",
+      "icon": "💉"
+    },
+    {
+      "id": 700,
+      "subject_id": 24,
+      "name": "Local Anaesthesia",
+      "icon": "💉"
+    },
+    {
+      "id": 701,
+      "subject_id": 24,
+      "name": "Spinal Anaesthesia",
+      "icon": "💉"
+    },
+    {
+      "id": 702,
+      "subject_id": 24,
+      "name": "Epidural Anaesthesia",
+      "icon": "💉"
+    },
+    {
+      "id": 703,
+      "subject_id": 24,
+      "name": "Intravenous Anaesthesia",
+      "icon": "💉"
+    },
+    {
+      "id": 704,
+      "subject_id": 24,
+      "name": "Inhalational Anaesthesia",
+      "icon": "💉"
+    },
+    {
+      "id": 705,
+      "subject_id": 24,
+      "name": "Muscle Relaxants",
+      "icon": "💪"
+    },
+    {
+      "id": 706,
+      "subject_id": 24,
+      "name": "Perioperative Monitoring",
+      "icon": "💉"
+    },
+    {
+      "id": 707,
+      "subject_id": 24,
+      "name": "Fluid Management",
+      "icon": "💉"
+    },
+    {
+      "id": 708,
+      "subject_id": 24,
+      "name": "Blood Transfusion",
+      "icon": "🩸"
+    },
+    {
+      "id": 709,
+      "subject_id": 24,
+      "name": "Pain Management",
+      "icon": "💉"
+    },
+    {
+      "id": 710,
+      "subject_id": 24,
+      "name": "Acute Pain",
+      "icon": "💉"
+    },
+    {
+      "id": 711,
+      "subject_id": 24,
+      "name": "Chronic Pain",
+      "icon": "💉"
+    },
+    {
+      "id": 712,
+      "subject_id": 24,
+      "name": "Postoperative Pain",
+      "icon": "💉"
+    },
+    {
+      "id": 713,
+      "subject_id": 24,
+      "name": "Anaesthetic Complications",
+      "icon": "💉"
+    },
+    {
+      "id": 714,
+      "subject_id": 24,
+      "name": "Cardiopulmonary Resuscitation",
+      "icon": "🫁"
+    },
+    {
+      "id": 715,
+      "subject_id": 24,
+      "name": "Basic Life Support",
+      "icon": "💉"
+    },
+    {
+      "id": 716,
+      "subject_id": 24,
+      "name": "Advanced Life Support",
+      "icon": "💉"
+    },
+    {
+      "id": 717,
+      "subject_id": 24,
+      "name": "Critical Care",
+      "icon": "💉"
+    },
+    {
+      "id": 718,
+      "subject_id": 24,
+      "name": "Paediatric Anaesthesia",
+      "icon": "👶"
+    },
+    {
+      "id": 719,
+      "subject_id": 24,
+      "name": "Obstetric Anaesthesia",
+      "icon": "🤰"
+    },
+    {
+      "id": 720,
+      "subject_id": 24,
+      "name": "Trauma Anaesthesia",
+      "icon": "🚑"
+    },
+    {
+      "id": 721,
+      "subject_id": 24,
+      "name": "Neuroanaesthesia",
+      "icon": "🧠"
+    },
+    {
+      "id": 722,
+      "subject_id": 25,
+      "name": "Musculoskeletal Examination",
+      "icon": "🦴"
+    },
+    {
+      "id": 723,
+      "subject_id": 25,
+      "name": "Fractures",
+      "icon": "🩻"
+    },
+    {
+      "id": 724,
+      "subject_id": 25,
+      "name": "Fracture Healing",
+      "icon": "🩻"
+    },
+    {
+      "id": 725,
+      "subject_id": 25,
+      "name": "Fracture Complications",
+      "icon": "🩻"
+    },
+    {
+      "id": 726,
+      "subject_id": 25,
+      "name": "Dislocations",
+      "icon": "🦴"
+    },
+    {
+      "id": 727,
+      "subject_id": 25,
+      "name": "Soft Tissue Injuries",
+      "icon": "🔬"
+    },
+    {
+      "id": 728,
+      "subject_id": 25,
+      "name": "Joint Injuries",
+      "icon": "🦴"
+    },
+    {
+      "id": 729,
+      "subject_id": 25,
+      "name": "Osteomyelitis",
+      "icon": "🦴"
+    },
+    {
+      "id": 730,
+      "subject_id": 25,
+      "name": "Arthritis",
+      "icon": "🦴"
+    },
+    {
+      "id": 731,
+      "subject_id": 25,
+      "name": "Osteoarthritis",
+      "icon": "🦴"
+    },
+    {
+      "id": 732,
+      "subject_id": 25,
+      "name": "Rheumatoid Arthritis",
+      "icon": "🦴"
+    },
+    {
+      "id": 733,
+      "subject_id": 25,
+      "name": "Osteoporosis",
+      "icon": "🦴"
+    },
+    {
+      "id": 734,
+      "subject_id": 25,
+      "name": "Bone Tumours",
+      "icon": "🦴"
+    },
+    {
+      "id": 735,
+      "subject_id": 25,
+      "name": "Joint Replacement",
+      "icon": "🦴"
+    },
+    {
+      "id": 736,
+      "subject_id": 25,
+      "name": "Spinal Disorders",
+      "icon": "🦴"
+    },
+    {
+      "id": 737,
+      "subject_id": 25,
+      "name": "Scoliosis",
+      "icon": "🦴"
+    },
+    {
+      "id": 738,
+      "subject_id": 25,
+      "name": "Spinal Trauma",
+      "icon": "🚑"
+    },
+    {
+      "id": 739,
+      "subject_id": 25,
+      "name": "Intervertebral Disc Disease",
+      "icon": "🦴"
+    },
+    {
+      "id": 740,
+      "subject_id": 25,
+      "name": "Peripheral Nerve Injuries",
+      "icon": "🧠"
+    },
+    {
+      "id": 741,
+      "subject_id": 25,
+      "name": "Sports Injuries",
+      "icon": "🦴"
+    },
+    {
+      "id": 742,
+      "subject_id": 25,
+      "name": "Paediatric Orthopaedics",
+      "icon": "🦴"
+    },
+    {
+      "id": 743,
+      "subject_id": 25,
+      "name": "Congenital Musculoskeletal Disorders",
+      "icon": "🦴"
+    },
+    {
+      "id": 744,
+      "subject_id": 25,
+      "name": "Limb Deformities",
+      "icon": "🦴"
+    },
+    {
+      "id": 745,
+      "subject_id": 25,
+      "name": "Amputations",
+      "icon": "🦴"
+    },
+    {
+      "id": 746,
+      "subject_id": 25,
+      "name": "Prosthetics",
+      "icon": "🦴"
+    },
+    {
+      "id": 747,
+      "subject_id": 25,
+      "name": "Orthopaedic Emergencies",
+      "icon": "🦴"
+    },
+    {
+      "id": 748,
+      "subject_id": 26,
+      "name": "Neurosurgical Anatomy",
+      "icon": "🧠"
+    },
+    {
+      "id": 749,
+      "subject_id": 26,
+      "name": "Neurosurgical Examination",
+      "icon": "🧠"
+    },
+    {
+      "id": 750,
+      "subject_id": 26,
+      "name": "Head Injury",
+      "icon": "🧠"
+    },
+    {
+      "id": 751,
+      "subject_id": 26,
+      "name": "Traumatic Brain Injury",
+      "icon": "🧠"
+    },
+    {
+      "id": 752,
+      "subject_id": 26,
+      "name": "Traumatic Spinal Cord Injury",
+      "icon": "🧠"
+    },
+    {
+      "id": 753,
+      "subject_id": 26,
+      "name": "Intracranial Haemorrhage",
+      "icon": "🩸"
+    },
+    {
+      "id": 754,
+      "subject_id": 26,
+      "name": "Epidural Haematoma",
+      "icon": "🩸"
+    },
+    {
+      "id": 755,
+      "subject_id": 26,
+      "name": "Subdural Haematoma",
+      "icon": "🩸"
+    },
+    {
+      "id": 756,
+      "subject_id": 26,
+      "name": "Subarachnoid Haemorrhage",
+      "icon": "🩸"
+    },
+    {
+      "id": 757,
+      "subject_id": 26,
+      "name": "Brain Tumours",
+      "icon": "🧠"
+    },
+    {
+      "id": 758,
+      "subject_id": 26,
+      "name": "Gliomas",
+      "icon": "🧠"
+    },
+    {
+      "id": 759,
+      "subject_id": 26,
+      "name": "Meningiomas",
+      "icon": "🧠"
+    },
+    {
+      "id": 760,
+      "subject_id": 26,
+      "name": "Pituitary Tumours",
+      "icon": "🎗️"
+    },
+    {
+      "id": 761,
+      "subject_id": 26,
+      "name": "Hydrocephalus",
+      "icon": "🧠"
+    },
+    {
+      "id": 762,
+      "subject_id": 26,
+      "name": "Congenital Neurosurgical Disorders",
+      "icon": "🧠"
+    },
+    {
+      "id": 763,
+      "subject_id": 26,
+      "name": "Spina Bifida",
+      "icon": "🧠"
+    },
+    {
+      "id": 764,
+      "subject_id": 26,
+      "name": "Craniosynostosis",
+      "icon": "🧠"
+    },
+    {
+      "id": 765,
+      "subject_id": 26,
+      "name": "Cerebral Aneurysms",
+      "icon": "🧠"
+    },
+    {
+      "id": 766,
+      "subject_id": 26,
+      "name": "Arteriovenous Malformations",
+      "icon": "🧠"
+    },
+    {
+      "id": 767,
+      "subject_id": 26,
+      "name": "Spinal Disorders",
+      "icon": "🧠"
+    },
+    {
+      "id": 768,
+      "subject_id": 26,
+      "name": "Spinal Tumours",
+      "icon": "🎗️"
+    },
+    {
+      "id": 769,
+      "subject_id": 26,
+      "name": "Degenerative Spine Disease",
+      "icon": "🧠"
+    },
+    {
+      "id": 770,
+      "subject_id": 26,
+      "name": "Peripheral Nerve Surgery",
+      "icon": "🧠"
+    },
+    {
+      "id": 771,
+      "subject_id": 26,
+      "name": "Neurovascular Surgery",
+      "icon": "🧠"
+    },
+    {
+      "id": 772,
+      "subject_id": 26,
+      "name": "Functional Neurosurgery",
+      "icon": "🧠"
+    },
+    {
+      "id": 773,
+      "subject_id": 26,
+      "name": "Paediatric Neurosurgery",
+      "icon": "🧠"
+    },
+    {
+      "id": 774,
+      "subject_id": 26,
+      "name": "Neuro-oncology",
+      "icon": "🧠"
+    },
+    {
+      "id": 775,
+      "subject_id": 26,
+      "name": "Neurotrauma",
+      "icon": "🧠"
+    },
+    {
+      "id": 776,
+      "subject_id": 26,
+      "name": "Neurosurgical Emergencies",
+      "icon": "🧠"
+    },
+    {
+      "id": 777,
+      "subject_id": 26,
+      "name": "Neurocritical Care",
+      "icon": "🧠"
+    },
+    {
+      "id": 778,
+      "subject_id": 27,
+      "name": "Urinary Tract Anatomy",
+      "icon": "🫘"
+    },
+    {
+      "id": 779,
+      "subject_id": 27,
+      "name": "Urological Examination",
+      "icon": "🚻"
+    },
+    {
+      "id": 780,
+      "subject_id": 27,
+      "name": "Urinary Tract Infection",
+      "icon": "🫘"
+    },
+    {
+      "id": 781,
+      "subject_id": 27,
+      "name": "Urolithiasis",
+      "icon": "🚻"
+    },
+    {
+      "id": 782,
+      "subject_id": 27,
+      "name": "Renal Stones",
+      "icon": "🫘"
+    },
+    {
+      "id": 783,
+      "subject_id": 27,
+      "name": "Urinary Obstruction",
+      "icon": "🫘"
+    },
+    {
+      "id": 784,
+      "subject_id": 27,
+      "name": "Acute Urinary Retention",
+      "icon": "🫘"
+    },
+    {
+      "id": 785,
+      "subject_id": 27,
+      "name": "Benign Prostatic Hyperplasia",
+      "icon": "📊"
+    },
+    {
+      "id": 786,
+      "subject_id": 27,
+      "name": "Prostate Cancer",
+      "icon": "📊"
+    },
+    {
+      "id": 787,
+      "subject_id": 27,
+      "name": "Bladder Cancer",
+      "icon": "🫘"
+    },
+    {
+      "id": 788,
+      "subject_id": 27,
+      "name": "Renal Cancer",
+      "icon": "🫘"
+    },
+    {
+      "id": 789,
+      "subject_id": 27,
+      "name": "Testicular Cancer",
+      "icon": "🎗️"
+    },
+    {
+      "id": 790,
+      "subject_id": 27,
+      "name": "Scrotal Disorders",
+      "icon": "🚻"
+    },
+    {
+      "id": 791,
+      "subject_id": 27,
+      "name": "Hydrocele",
+      "icon": "🚻"
+    },
+    {
+      "id": 792,
+      "subject_id": 27,
+      "name": "Varicocele",
+      "icon": "🚻"
+    },
+    {
+      "id": 793,
+      "subject_id": 27,
+      "name": "Testicular Torsion",
+      "icon": "🚻"
+    },
+    {
+      "id": 794,
+      "subject_id": 27,
+      "name": "Erectile Dysfunction",
+      "icon": "🩻"
+    },
+    {
+      "id": 795,
+      "subject_id": 27,
+      "name": "Male Infertility",
+      "icon": "🚻"
+    },
+    {
+      "id": 796,
+      "subject_id": 27,
+      "name": "Urinary Incontinence",
+      "icon": "🫘"
+    },
+    {
+      "id": 797,
+      "subject_id": 27,
+      "name": "Neurogenic Bladder",
+      "icon": "🧠"
+    },
+    {
+      "id": 798,
+      "subject_id": 27,
+      "name": "Congenital Urological Disorders",
+      "icon": "👶"
+    },
+    {
+      "id": 799,
+      "subject_id": 27,
+      "name": "Paediatric Urology",
+      "icon": "🫘"
+    },
+    {
+      "id": 800,
+      "subject_id": 27,
+      "name": "Urological Trauma",
+      "icon": "🚑"
+    },
+    {
+      "id": 801,
+      "subject_id": 27,
+      "name": "Urological Emergencies",
+      "icon": "🚻"
+    },
+    {
+      "id": 802,
+      "subject_id": 28,
+      "name": "Principles of Family Medicine",
+      "icon": "👨‍👩‍👧‍👦"
+    },
+    {
+      "id": 803,
+      "subject_id": 28,
+      "name": "Family-Oriented Care",
+      "icon": "👨‍👩‍👧‍👦"
+    },
+    {
+      "id": 804,
+      "subject_id": 28,
+      "name": "Continuity of Care",
+      "icon": "👨‍👩‍👧‍👦"
+    },
+    {
+      "id": 805,
+      "subject_id": 28,
+      "name": "Primary Care",
+      "icon": "🏥"
+    },
+    {
+      "id": 806,
+      "subject_id": 28,
+      "name": "Preventive Medicine",
+      "icon": "👨‍👩‍👧‍👦"
+    },
+    {
+      "id": 807,
+      "subject_id": 28,
+      "name": "Health Promotion",
+      "icon": "👨‍👩‍👧‍👦"
+    },
+    {
+      "id": 808,
+      "subject_id": 28,
+      "name": "Chronic Disease Management",
+      "icon": "👨‍👩‍👧‍👦"
+    },
+    {
+      "id": 809,
+      "subject_id": 28,
+      "name": "Common Acute Illnesses",
+      "icon": "👨‍👩‍👧‍👦"
+    },
+    {
+      "id": 810,
+      "subject_id": 28,
+      "name": "Maternal Health",
+      "icon": "👨‍👩‍👧‍👦"
+    },
+    {
+      "id": 811,
+      "subject_id": 28,
+      "name": "Child Health",
+      "icon": "👶"
+    },
+    {
+      "id": 812,
+      "subject_id": 28,
+      "name": "Adolescent Health",
+      "icon": "👨‍👩‍👧‍👦"
+    },
+    {
+      "id": 813,
+      "subject_id": 28,
+      "name": "Geriatric Care",
+      "icon": "👨‍👩‍👧‍👦"
+    },
+    {
+      "id": 814,
+      "subject_id": 28,
+      "name": "Mental Health in Primary Care",
+      "icon": "🧠"
+    },
+    {
+      "id": 815,
+      "subject_id": 28,
+      "name": "Occupational Health",
+      "icon": "👨‍👩‍👧‍👦"
+    },
+    {
+      "id": 816,
+      "subject_id": 28,
+      "name": "Community-Oriented Primary Care",
+      "icon": "🏥"
+    },
+    {
+      "id": 817,
+      "subject_id": 28,
+      "name": "Home-Based Care",
+      "icon": "👨‍👩‍👧‍👦"
+    },
+    {
+      "id": 818,
+      "subject_id": 28,
+      "name": "Palliative Care",
+      "icon": "👨‍👩‍👧‍👦"
+    },
+    {
+      "id": 819,
+      "subject_id": 28,
+      "name": "Health Education",
+      "icon": "👨‍👩‍👧‍👦"
+    },
+    {
+      "id": 820,
+      "subject_id": 28,
+      "name": "Family Planning",
+      "icon": "👨‍👩‍👧‍👦"
+    },
+    {
+      "id": 821,
+      "subject_id": 28,
+      "name": "Emergency Care in Primary Care",
+      "icon": "🚑"
+    },
+    {
+      "id": 822,
+      "subject_id": 28,
+      "name": "Referral Systems",
+      "icon": "👨‍👩‍👧‍👦"
+    },
+    {
+      "id": 823,
+      "subject_id": 28,
+      "name": "Patient-Centred Care",
+      "icon": "👨‍👩‍👧‍👦"
+    },
+    {
+      "id": 824,
+      "subject_id": 29,
+      "name": "Triage",
+      "icon": "🚑"
+    },
+    {
+      "id": 825,
+      "subject_id": 29,
+      "name": "Initial Assessment",
+      "icon": "🚑"
+    },
+    {
+      "id": 826,
+      "subject_id": 29,
+      "name": "ABCDE Approach",
+      "icon": "🚑"
+    },
+    {
+      "id": 827,
+      "subject_id": 29,
+      "name": "Basic Life Support",
+      "icon": "🚑"
+    },
+    {
+      "id": 828,
+      "subject_id": 29,
+      "name": "Advanced Life Support",
+      "icon": "🚑"
+    },
+    {
+      "id": 829,
+      "subject_id": 29,
+      "name": "Shock",
+      "icon": "🚑"
+    },
+    {
+      "id": 830,
+      "subject_id": 29,
+      "name": "Trauma",
+      "icon": "🚑"
+    },
+    {
+      "id": 831,
+      "subject_id": 29,
+      "name": "Head Injury",
+      "icon": "🚑"
+    },
+    {
+      "id": 832,
+      "subject_id": 29,
+      "name": "Spinal Injury",
+      "icon": "🚑"
+    },
+    {
+      "id": 833,
+      "subject_id": 29,
+      "name": "Chest Trauma",
+      "icon": "🚑"
+    },
+    {
+      "id": 834,
+      "subject_id": 29,
+      "name": "Abdominal Trauma",
+      "icon": "🚑"
+    },
+    {
+      "id": 835,
+      "subject_id": 29,
+      "name": "Burns",
+      "icon": "🚑"
+    },
+    {
+      "id": 836,
+      "subject_id": 29,
+      "name": "Poisoning",
+      "icon": "🚑"
+    },
+    {
+      "id": 837,
+      "subject_id": 29,
+      "name": "Acute Respiratory Failure",
+      "icon": "🫁"
+    },
+    {
+      "id": 838,
+      "subject_id": 29,
+      "name": "Acute Cardiac Conditions",
+      "icon": "❤️"
+    },
+    {
+      "id": 839,
+      "subject_id": 29,
+      "name": "Cardiac Arrest",
+      "icon": "❤️"
+    },
+    {
+      "id": 840,
+      "subject_id": 29,
+      "name": "Acute Coronary Syndrome",
+      "icon": "🚑"
+    },
+    {
+      "id": 841,
+      "subject_id": 29,
+      "name": "Stroke",
+      "icon": "🚑"
+    },
+    {
+      "id": 842,
+      "subject_id": 29,
+      "name": "Seizures",
+      "icon": "🚑"
+    },
+    {
+      "id": 843,
+      "subject_id": 29,
+      "name": "Anaphylaxis",
+      "icon": "🚑"
+    },
+    {
+      "id": 844,
+      "subject_id": 29,
+      "name": "Sepsis",
+      "icon": "🚑"
+    },
+    {
+      "id": 845,
+      "subject_id": 29,
+      "name": "Diabetic Emergencies",
+      "icon": "🚑"
+    },
+    {
+      "id": 846,
+      "subject_id": 29,
+      "name": "Hypertensive Emergencies",
+      "icon": "🚑"
+    },
+    {
+      "id": 847,
+      "subject_id": 29,
+      "name": "Electrolyte Emergencies",
+      "icon": "🩻"
+    },
+    {
+      "id": 848,
+      "subject_id": 29,
+      "name": "Obstetric Emergencies",
+      "icon": "🤰"
+    },
+    {
+      "id": 849,
+      "subject_id": 29,
+      "name": "Paediatric Emergencies",
+      "icon": "👶"
+    },
+    {
+      "id": 850,
+      "subject_id": 29,
+      "name": "Psychiatric Emergencies",
+      "icon": "🧠"
+    },
+    {
+      "id": 851,
+      "subject_id": 29,
+      "name": "Environmental Emergencies",
+      "icon": "🧠"
+    },
+    {
+      "id": 852,
+      "subject_id": 29,
+      "name": "Disaster Medicine",
+      "icon": "🚑"
+    },
+    {
+      "id": 853,
+      "subject_id": 30,
+      "name": "Medical Jurisprudence",
+      "icon": "⚖️"
+    },
+    {
+      "id": 854,
+      "subject_id": 30,
+      "name": "Identification of Persons",
+      "icon": "⚖️"
+    },
+    {
+      "id": 855,
+      "subject_id": 30,
+      "name": "Death and Dying",
+      "icon": "⚖️"
+    },
+    {
+      "id": 856,
+      "subject_id": 30,
+      "name": "Postmortem Changes",
+      "icon": "⚖️"
+    },
+    {
+      "id": 857,
+      "subject_id": 30,
+      "name": "Medico-Legal Autopsy",
+      "icon": "⚖️"
+    },
+    {
+      "id": 858,
+      "subject_id": 30,
+      "name": "Forensic Pathology",
+      "icon": "⚖️"
+    },
+    {
+      "id": 859,
+      "subject_id": 30,
+      "name": "Injuries",
+      "icon": "⚖️"
+    },
+    {
+      "id": 860,
+      "subject_id": 30,
+      "name": "Blunt Force Injuries",
+      "icon": "⚖️"
+    },
+    {
+      "id": 861,
+      "subject_id": 30,
+      "name": "Sharp Force Injuries",
+      "icon": "⚖️"
+    },
+    {
+      "id": 862,
+      "subject_id": 30,
+      "name": "Firearm Injuries",
+      "icon": "👂"
+    },
+    {
+      "id": 863,
+      "subject_id": 30,
+      "name": "Asphyxial Deaths",
+      "icon": "⚖️"
+    },
+    {
+      "id": 864,
+      "subject_id": 30,
+      "name": "Forensic Toxicology",
+      "icon": "💊"
+    },
+    {
+      "id": 865,
+      "subject_id": 30,
+      "name": "Poisoning",
+      "icon": "⚖️"
+    },
+    {
+      "id": 866,
+      "subject_id": 30,
+      "name": "Sexual Assault Examination",
+      "icon": "⚖️"
+    },
+    {
+      "id": 867,
+      "subject_id": 30,
+      "name": "Child Abuse",
+      "icon": "👶"
+    },
+    {
+      "id": 868,
+      "subject_id": 30,
+      "name": "Forensic Anthropology",
+      "icon": "⚖️"
+    },
+    {
+      "id": 869,
+      "subject_id": 30,
+      "name": "Forensic Odontology",
+      "icon": "⚖️"
+    },
+    {
+      "id": 870,
+      "subject_id": 30,
+      "name": "Age Estimation",
+      "icon": "⚖️"
+    },
+    {
+      "id": 871,
+      "subject_id": 30,
+      "name": "Paternity and Genetics",
+      "icon": "⚖️"
+    },
+    {
+      "id": 872,
+      "subject_id": 30,
+      "name": "Medical Negligence",
+      "icon": "⚖️"
+    },
+    {
+      "id": 873,
+      "subject_id": 30,
+      "name": "Consent",
+      "icon": "⚖️"
+    },
+    {
+      "id": 874,
+      "subject_id": 30,
+      "name": "Confidentiality",
+      "icon": "⚖️"
+    },
+    {
+      "id": 875,
+      "subject_id": 30,
+      "name": "Medical Certification",
+      "icon": "⚖️"
+    },
+    {
+      "id": 876,
+      "subject_id": 31,
+      "name": "Principles of Medical Ethics",
+      "icon": "⚖️"
+    },
+    {
+      "id": 877,
+      "subject_id": 31,
+      "name": "Autonomy",
+      "icon": "⚖️"
+    },
+    {
+      "id": 878,
+      "subject_id": 31,
+      "name": "Beneficence",
+      "icon": "⚖️"
+    },
+    {
+      "id": 879,
+      "subject_id": 31,
+      "name": "Non-Maleficence",
+      "icon": "⚖️"
+    },
+    {
+      "id": 880,
+      "subject_id": 31,
+      "name": "Justice",
+      "icon": "⚖️"
+    },
+    {
+      "id": 881,
+      "subject_id": 31,
+      "name": "Informed Consent",
+      "icon": "⚖️"
+    },
+    {
+      "id": 882,
+      "subject_id": 31,
+      "name": "Confidentiality",
+      "icon": "⚖️"
+    },
+    {
+      "id": 883,
+      "subject_id": 31,
+      "name": "Privacy",
+      "icon": "⚖️"
+    },
+    {
+      "id": 884,
+      "subject_id": 31,
+      "name": "Professionalism",
+      "icon": "⚖️"
+    },
+    {
+      "id": 885,
+      "subject_id": 31,
+      "name": "Doctor-Patient Relationship",
+      "icon": "🩻"
+    },
+    {
+      "id": 886,
+      "subject_id": 31,
+      "name": "Capacity and Competence",
+      "icon": "⚖️"
+    },
+    {
+      "id": 887,
+      "subject_id": 31,
+      "name": "End-of-Life Care",
+      "icon": "⚖️"
+    },
+    {
+      "id": 888,
+      "subject_id": 31,
+      "name": "Medical Negligence",
+      "icon": "⚖️"
+    },
+    {
+      "id": 889,
+      "subject_id": 31,
+      "name": "Malpractice",
+      "icon": "🩻"
+    },
+    {
+      "id": 890,
+      "subject_id": 31,
+      "name": "Professional Misconduct",
+      "icon": "🩻"
+    },
+    {
+      "id": 891,
+      "subject_id": 31,
+      "name": "Medical Records",
+      "icon": "⚖️"
+    },
+    {
+      "id": 892,
+      "subject_id": 31,
+      "name": "Data Protection",
+      "icon": "🩻"
+    },
+    {
+      "id": 893,
+      "subject_id": 31,
+      "name": "Research Ethics",
+      "icon": "👂"
+    },
+    {
+      "id": 894,
+      "subject_id": 31,
+      "name": "Human Subjects Research",
+      "icon": "👂"
+    },
+    {
+      "id": 895,
+      "subject_id": 31,
+      "name": "Organ Donation",
+      "icon": "⚖️"
+    },
+    {
+      "id": 896,
+      "subject_id": 31,
+      "name": "Transplantation Ethics",
+      "icon": "⚖️"
+    },
+    {
+      "id": 897,
+      "subject_id": 31,
+      "name": "Genetic Ethics",
+      "icon": "⚖️"
+    },
+    {
+      "id": 898,
+      "subject_id": 31,
+      "name": "Public Health Ethics",
+      "icon": "⚖️"
+    },
+    {
+      "id": 899,
+      "subject_id": 31,
+      "name": "Medical Law in Nigeria",
+      "icon": "⚖️"
+    },
+    {
+      "id": 900,
+      "subject_id": 32,
+      "name": "Macronutrients",
+      "icon": "🥗"
+    },
+    {
+      "id": 901,
+      "subject_id": 32,
+      "name": "Carbohydrates",
+      "icon": "🥗"
+    },
+    {
+      "id": 902,
+      "subject_id": 32,
+      "name": "Proteins",
+      "icon": "🥗"
+    },
+    {
+      "id": 903,
+      "subject_id": 32,
+      "name": "Lipids",
+      "icon": "🥗"
+    },
+    {
+      "id": 904,
+      "subject_id": 32,
+      "name": "Micronutrients",
+      "icon": "🥗"
+    },
+    {
+      "id": 905,
+      "subject_id": 32,
+      "name": "Vitamins",
+      "icon": "🥗"
+    },
+    {
+      "id": 906,
+      "subject_id": 32,
+      "name": "Minerals",
+      "icon": "🥗"
+    },
+    {
+      "id": 907,
+      "subject_id": 32,
+      "name": "Water and Electrolytes",
+      "icon": "🩻"
+    },
+    {
+      "id": 908,
+      "subject_id": 32,
+      "name": "Energy Balance",
+      "icon": "🥗"
+    },
+    {
+      "id": 909,
+      "subject_id": 32,
+      "name": "Basal Metabolic Rate",
+      "icon": "🥗"
+    },
+    {
+      "id": 910,
+      "subject_id": 32,
+      "name": "Nutritional Assessment",
+      "icon": "🥗"
+    },
+    {
+      "id": 911,
+      "subject_id": 32,
+      "name": "Malnutrition",
+      "icon": "🥗"
+    },
+    {
+      "id": 912,
+      "subject_id": 32,
+      "name": "Protein-Energy Malnutrition",
+      "icon": "🥗"
+    },
+    {
+      "id": 913,
+      "subject_id": 32,
+      "name": "Obesity",
+      "icon": "🥗"
+    },
+    {
+      "id": 914,
+      "subject_id": 32,
+      "name": "Nutritional Deficiencies",
+      "icon": "🥗"
+    },
+    {
+      "id": 915,
+      "subject_id": 32,
+      "name": "Infant Nutrition",
+      "icon": "🥗"
+    },
+    {
+      "id": 916,
+      "subject_id": 32,
+      "name": "Breastfeeding",
+      "icon": "🥗"
+    },
+    {
+      "id": 917,
+      "subject_id": 32,
+      "name": "Complementary Feeding",
+      "icon": "🥗"
+    },
+    {
+      "id": 918,
+      "subject_id": 32,
+      "name": "Maternal Nutrition",
+      "icon": "🥗"
+    },
+    {
+      "id": 919,
+      "subject_id": 32,
+      "name": "Nutrition in Pregnancy",
+      "icon": "🤰"
+    },
+    {
+      "id": 920,
+      "subject_id": 32,
+      "name": "Clinical Nutrition",
+      "icon": "🥗"
+    },
+    {
+      "id": 921,
+      "subject_id": 32,
+      "name": "Enteral Nutrition",
+      "icon": "🥗"
+    },
+    {
+      "id": 922,
+      "subject_id": 32,
+      "name": "Parenteral Nutrition",
+      "icon": "🥗"
+    },
+    {
+      "id": 923,
+      "subject_id": 32,
+      "name": "Therapeutic Diets",
+      "icon": "🥗"
+    },
+    {
+      "id": 924,
+      "subject_id": 32,
+      "name": "Nutrition in Diabetes",
+      "icon": "🥗"
+    },
+    {
+      "id": 925,
+      "subject_id": 32,
+      "name": "Nutrition in Renal Disease",
+      "icon": "🫘"
+    },
+    {
+      "id": 926,
+      "subject_id": 32,
+      "name": "Nutrition in Liver Disease",
+      "icon": "🧫"
+    },
+    {
+      "id": 927,
+      "subject_id": 32,
+      "name": "Public Health Nutrition",
+      "icon": "🥗"
+    },
+    {
+      "id": 928,
+      "subject_id": 33,
+      "name": "Research Questions",
+      "icon": "👂"
+    },
+    {
+      "id": 929,
+      "subject_id": 33,
+      "name": "Literature Review",
+      "icon": "🔎"
+    },
+    {
+      "id": 930,
+      "subject_id": 33,
+      "name": "Research Objectives",
+      "icon": "👂"
+    },
+    {
+      "id": 931,
+      "subject_id": 33,
+      "name": "Research Hypotheses",
+      "icon": "👂"
+    },
+    {
+      "id": 932,
+      "subject_id": 33,
+      "name": "Study Designs",
+      "icon": "🔎"
+    },
+    {
+      "id": 933,
+      "subject_id": 33,
+      "name": "Observational Studies",
+      "icon": "🔎"
+    },
+    {
+      "id": 934,
+      "subject_id": 33,
+      "name": "Experimental Studies",
+      "icon": "🧠"
+    },
+    {
+      "id": 935,
+      "subject_id": 33,
+      "name": "Cross-Sectional Studies",
+      "icon": "🩻"
+    },
+    {
+      "id": 936,
+      "subject_id": 33,
+      "name": "Case-Control Studies",
+      "icon": "🔎"
+    },
+    {
+      "id": 937,
+      "subject_id": 33,
+      "name": "Cohort Studies",
+      "icon": "🔎"
+    },
+    {
+      "id": 938,
+      "subject_id": 33,
+      "name": "Randomized Controlled Trials",
+      "icon": "🔎"
+    },
+    {
+      "id": 939,
+      "subject_id": 33,
+      "name": "Qualitative Research",
+      "icon": "👂"
+    },
+    {
+      "id": 940,
+      "subject_id": 33,
+      "name": "Mixed Methods Research",
+      "icon": "👂"
+    },
+    {
+      "id": 941,
+      "subject_id": 33,
+      "name": "Sampling Methods",
+      "icon": "🔎"
+    },
+    {
+      "id": 942,
+      "subject_id": 33,
+      "name": "Sample Size Calculation",
+      "icon": "🔎"
+    },
+    {
+      "id": 943,
+      "subject_id": 33,
+      "name": "Data Collection",
+      "icon": "🩻"
+    },
+    {
+      "id": 944,
+      "subject_id": 33,
+      "name": "Questionnaire Design",
+      "icon": "🔎"
+    },
+    {
+      "id": 945,
+      "subject_id": 33,
+      "name": "Research Ethics",
+      "icon": "👂"
+    },
+    {
+      "id": 946,
+      "subject_id": 33,
+      "name": "Research Protocols",
+      "icon": "👂"
+    },
+    {
+      "id": 947,
+      "subject_id": 33,
+      "name": "Data Analysis",
+      "icon": "💻"
+    },
+    {
+      "id": 948,
+      "subject_id": 33,
+      "name": "Scientific Writing",
+      "icon": "🔎"
+    },
+    {
+      "id": 949,
+      "subject_id": 33,
+      "name": "Referencing",
+      "icon": "🔎"
+    },
+    {
+      "id": 950,
+      "subject_id": 33,
+      "name": "Critical Appraisal",
+      "icon": "🔎"
+    },
+    {
+      "id": 951,
+      "subject_id": 33,
+      "name": "Evidence-Based Medicine",
+      "icon": "📊"
+    },
+    {
+      "id": 952,
+      "subject_id": 33,
+      "name": "Systematic Reviews",
+      "icon": "🔎"
+    },
+    {
+      "id": 953,
+      "subject_id": 33,
+      "name": "Meta-Analysis",
+      "icon": "🔎"
+    },
+    {
+      "id": 954,
+      "subject_id": 33,
+      "name": "Research Bias",
+      "icon": "👂"
+    },
+    {
+      "id": 955,
+      "subject_id": 33,
+      "name": "Confounding",
+      "icon": "🔎"
+    },
+    {
+      "id": 956,
+      "subject_id": 33,
+      "name": "Validity and Reliability",
+      "icon": "🔎"
+    },
+    {
+      "id": 957,
+      "subject_id": 34,
+      "name": "Clinical Questions",
+      "icon": "📚"
+    },
+    {
+      "id": 958,
+      "subject_id": 34,
+      "name": "PICO Framework",
+      "icon": "📚"
+    },
+    {
+      "id": 959,
+      "subject_id": 34,
+      "name": "Literature Searching",
+      "icon": "👂"
+    },
+    {
+      "id": 960,
+      "subject_id": 34,
+      "name": "Critical Appraisal",
+      "icon": "📚"
+    },
+    {
+      "id": 961,
+      "subject_id": 34,
+      "name": "Diagnostic Studies",
+      "icon": "📚"
+    },
+    {
+      "id": 962,
+      "subject_id": 34,
+      "name": "Therapeutic Studies",
+      "icon": "📚"
+    },
+    {
+      "id": 963,
+      "subject_id": 34,
+      "name": "Prognostic Studies",
+      "icon": "📚"
+    },
+    {
+      "id": 964,
+      "subject_id": 34,
+      "name": "Systematic Reviews",
+      "icon": "📚"
+    },
+    {
+      "id": 965,
+      "subject_id": 34,
+      "name": "Meta-Analysis",
+      "icon": "📚"
+    },
+    {
+      "id": 966,
+      "subject_id": 34,
+      "name": "Clinical Guidelines",
+      "icon": "📚"
+    },
+    {
+      "id": 967,
+      "subject_id": 34,
+      "name": "Levels of Evidence",
+      "icon": "📊"
+    },
+    {
+      "id": 968,
+      "subject_id": 34,
+      "name": "Risk of Bias",
+      "icon": "📚"
+    },
+    {
+      "id": 969,
+      "subject_id": 34,
+      "name": "Sensitivity and Specificity",
+      "icon": "📚"
+    },
+    {
+      "id": 970,
+      "subject_id": 34,
+      "name": "Likelihood Ratios",
+      "icon": "📚"
+    },
+    {
+      "id": 971,
+      "subject_id": 34,
+      "name": "Number Needed to Treat",
+      "icon": "📚"
+    },
+    {
+      "id": 972,
+      "subject_id": 34,
+      "name": "Number Needed to Harm",
+      "icon": "📚"
+    },
+    {
+      "id": 973,
+      "subject_id": 34,
+      "name": "Relative Risk",
+      "icon": "📚"
+    },
+    {
+      "id": 974,
+      "subject_id": 34,
+      "name": "Odds Ratio",
+      "icon": "📚"
+    },
+    {
+      "id": 975,
+      "subject_id": 34,
+      "name": "Absolute Risk Reduction",
+      "icon": "🩻"
+    },
+    {
+      "id": 976,
+      "subject_id": 34,
+      "name": "Clinical Decision Making",
+      "icon": "📚"
+    },
+    {
+      "id": 977,
+      "subject_id": 34,
+      "name": "Shared Decision Making",
+      "icon": "📚"
+    },
+    {
+      "id": 978,
+      "subject_id": 35,
+      "name": "Health Information Systems",
+      "icon": "💻"
+    },
+    {
+      "id": 979,
+      "subject_id": 35,
+      "name": "Electronic Health Records",
+      "icon": "🩻"
+    },
+    {
+      "id": 980,
+      "subject_id": 35,
+      "name": "Clinical Decision Support Systems",
+      "icon": "💻"
+    },
+    {
+      "id": 981,
+      "subject_id": 35,
+      "name": "Medical Databases",
+      "icon": "💻"
+    },
+    {
+      "id": 982,
+      "subject_id": 35,
+      "name": "Health Data Standards",
+      "icon": "💻"
+    },
+    {
+      "id": 983,
+      "subject_id": 35,
+      "name": "Medical Coding",
+      "icon": "💻"
+    },
+    {
+      "id": 984,
+      "subject_id": 35,
+      "name": "Telemedicine",
+      "icon": "💻"
+    },
+    {
+      "id": 985,
+      "subject_id": 35,
+      "name": "Digital Health",
+      "icon": "💻"
+    },
+    {
+      "id": 986,
+      "subject_id": 35,
+      "name": "Artificial Intelligence in Medicine",
+      "icon": "💻"
+    },
+    {
+      "id": 987,
+      "subject_id": 35,
+      "name": "Machine Learning in Healthcare",
+      "icon": "👂"
+    },
+    {
+      "id": 988,
+      "subject_id": 35,
+      "name": "Medical Data Privacy",
+      "icon": "💻"
+    },
+    {
+      "id": 989,
+      "subject_id": 35,
+      "name": "Health Information Security",
+      "icon": "💻"
+    },
+    {
+      "id": 990,
+      "subject_id": 35,
+      "name": "Bioinformatics",
+      "icon": "💻"
+    },
+    {
+      "id": 991,
+      "subject_id": 35,
+      "name": "Medical Imaging Informatics",
+      "icon": "🩻"
+    },
+    {
+      "id": 992,
+      "subject_id": 35,
+      "name": "Clinical Data Analysis",
+      "icon": "💻"
+    },
+    {
+      "id": 993,
+      "subject_id": 35,
+      "name": "Healthcare Interoperability",
+      "icon": "💻"
+    },
+    {
+      "id": 994,
+      "subject_id": 35,
+      "name": "Health Information Management",
+      "icon": "💻"
+    },
+    {
+      "id": 995,
+      "subject_id": 36,
+      "name": "Principles of Palliative Care",
+      "icon": "🕊️"
+    },
+    {
+      "id": 996,
+      "subject_id": 36,
+      "name": "Pain Management",
+      "icon": "💉"
+    },
+    {
+      "id": 997,
+      "subject_id": 36,
+      "name": "Symptom Control",
+      "icon": "🕊️"
+    },
+    {
+      "id": 998,
+      "subject_id": 36,
+      "name": "Cancer Palliative Care",
+      "icon": "🎗️"
+    },
+    {
+      "id": 999,
+      "subject_id": 36,
+      "name": "End-of-Life Care",
+      "icon": "🕊️"
+    },
+    {
+      "id": 1000,
+      "subject_id": 36,
+      "name": "Communication in Palliative Care",
+      "icon": "🕊️"
+    },
+    {
+      "id": 1001,
+      "subject_id": 36,
+      "name": "Psychosocial Care",
+      "icon": "🕊️"
+    },
+    {
+      "id": 1002,
+      "subject_id": 36,
+      "name": "Spiritual Care",
+      "icon": "🕊️"
+    },
+    {
+      "id": 1003,
+      "subject_id": 36,
+      "name": "Bereavement",
+      "icon": "🕊️"
+    },
+    {
+      "id": 1004,
+      "subject_id": 36,
+      "name": "Advance Care Planning",
+      "icon": "🕊️"
+    },
+    {
+      "id": 1005,
+      "subject_id": 36,
+      "name": "Ethical Issues in Palliative Care",
+      "icon": "⚖️"
+    },
+    {
+      "id": 1006,
+      "subject_id": 36,
+      "name": "Home-Based Palliative Care",
+      "icon": "🕊️"
+    },
+    {
+      "id": 1007,
+      "subject_id": 36,
+      "name": "Paediatric Palliative Care",
+      "icon": "👶"
+    },
+    {
+      "id": 1008,
+      "subject_id": 37,
+      "name": "Cancer Biology",
+      "icon": "🎗️"
+    },
+    {
+      "id": 1009,
+      "subject_id": 37,
+      "name": "Carcinogenesis",
+      "icon": "🎗️"
+    },
+    {
+      "id": 1010,
+      "subject_id": 37,
+      "name": "Cancer Genetics",
+      "icon": "🎗️"
+    },
+    {
+      "id": 1011,
+      "subject_id": 37,
+      "name": "Cancer Epidemiology",
+      "icon": "📊"
+    },
+    {
+      "id": 1012,
+      "subject_id": 37,
+      "name": "Cancer Prevention",
+      "icon": "🎗️"
+    },
+    {
+      "id": 1013,
+      "subject_id": 37,
+      "name": "Cancer Screening",
+      "icon": "🎗️"
+    },
+    {
+      "id": 1014,
+      "subject_id": 37,
+      "name": "Cancer Diagnosis",
+      "icon": "🎗️"
+    },
+    {
+      "id": 1015,
+      "subject_id": 37,
+      "name": "Cancer Staging",
+      "icon": "🎗️"
+    },
+    {
+      "id": 1016,
+      "subject_id": 37,
+      "name": "Cancer Grading",
+      "icon": "🎗️"
+    },
+    {
+      "id": 1017,
+      "subject_id": 37,
+      "name": "Surgical Oncology",
+      "icon": "🎗️"
+    },
+    {
+      "id": 1018,
+      "subject_id": 37,
+      "name": "Medical Oncology",
+      "icon": "🎗️"
+    },
+    {
+      "id": 1019,
+      "subject_id": 37,
+      "name": "Radiation Oncology",
+      "icon": "🎗️"
+    },
+    {
+      "id": 1020,
+      "subject_id": 37,
+      "name": "Chemotherapy",
+      "icon": "🎗️"
+    },
+    {
+      "id": 1021,
+      "subject_id": 37,
+      "name": "Targeted Therapy",
+      "icon": "🎗️"
+    },
+    {
+      "id": 1022,
+      "subject_id": 37,
+      "name": "Immunotherapy",
+      "icon": "🛡️"
+    },
+    {
+      "id": 1023,
+      "subject_id": 37,
+      "name": "Hormonal Therapy",
+      "icon": "🎗️"
+    },
+    {
+      "id": 1024,
+      "subject_id": 37,
+      "name": "Supportive Cancer Care",
+      "icon": "🎗️"
+    },
+    {
+      "id": 1025,
+      "subject_id": 37,
+      "name": "Paediatric Oncology",
+      "icon": "👶"
+    },
+    {
+      "id": 1026,
+      "subject_id": 37,
+      "name": "Haematological Malignancies",
+      "icon": "🩸"
+    },
+    {
+      "id": 1027,
+      "subject_id": 37,
+      "name": "Common Solid Tumours",
+      "icon": "🎗️"
+    },
+    {
+      "id": 1028,
+      "subject_id": 37,
+      "name": "Cancer Pain",
+      "icon": "💉"
+    },
+    {
+      "id": 1029,
+      "subject_id": 37,
+      "name": "Palliative Oncology",
+      "icon": "🎗️"
+    }
+  ]
+}

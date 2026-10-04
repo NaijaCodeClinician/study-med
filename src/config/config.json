@@ -1,0 +1,29 @@
+{
+    "ai": {
+        "provider": "groq",
+        "models": {
+            "groq": "openai/gpt-oss-20b",
+            "openai": "gpt-4o-mini"
+        },
+        "temperature": 0.4,
+        "MAX_COMPLETION_TOKENS": { 
+        "multiple_choice": 900,
+        "short_answer": 900,
+        "long_answer": 2200
+    },
+
+    "VALID_DIFFICULTIES": ["easy", "medium", "difficult"], 
+    "VALID_REASONS" : [
+        "TOO_VAGUE",
+        "INSUFFICIENT_INFORMATION",
+        "NOT_MEDICAL",
+        "UNSAFE_CONTENT",
+        "CONTRADICTORY_INFORMATION",
+        "NOT_STUDYABLE",
+        "OTHER"
+    ],
+        "max_regenerations": 3,
+        "max_retries": 2,
+        "timeout": 60.0
+    }
+}
