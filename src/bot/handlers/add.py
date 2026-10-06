@@ -380,7 +380,11 @@ async def receive_knowledge(message: Message, state: FSMContext):
             knowledge=knowledge, subject=subject_name, topics=topics_name
         )
         if result.status == "rejected":
-            await message.reply(f"{result.reason}")
+            await state.set_state(AddCardState.knowledge)
+            await message.reply(
+                f"{result.reason}\nPlease check and resend your 🧠knowledge, <b>OR</b> use any of the buttons below",
+                reply_markup=knowledge_keyboard(),
+            )
             return
 
     except Exception:  # If an error occurred during flashcard generation # noqa: BLE001
@@ -388,7 +392,11 @@ async def receive_knowledge(message: Message, state: FSMContext):
             AddCardState.knowledge
         )  # Set state back to the former FSM's state (knowledge)
         await message.answer(
-            "🙏 Sorry I couldn't generate the flashcard right now.\n\nPlease try sending the knowledge again."
+            "🙏 Sorry I couldn't generate the flashcard right now.\n\n"
+            "<b>Your source knowledge is stored temporarily on the system.</b>\n"
+            "Your can either; <b>✍Type</b> and send the knowledge, <b>Click</b> 🔃 Retry to retry generation\n"
+            "OR use any of the buttons below 👇",
+            reply_markup=knowledge_keyboard(retry=True),
         )
         return
 
@@ -425,8 +433,8 @@ async def knowledge_cancel(callback: CallbackQuery, state: FSMContext):
     await callback.answer()  # Answer the user
 
     await callback.message.edit_text(  # type:ignore
-        "❌ Knowledge input and flashcard creation cancelled."
-    )  # type:ignore # Edit the existing inline-keyboard and show flashcard cancelled to the user
+        "❌ Knowledge input and flashcard creation cancelled.\nYou can send /add to start over again"
+    )  # Edit the existing inline-keyboard and show flashcard cancelled to the user
 
 
 @router.callback_query(
@@ -445,17 +453,17 @@ async def knowledge_back(callback: CallbackQuery, state: FSMContext):
 
     if not subject:  # A safe fallback if user somehow bypasses subject selection
         await callback.answer(
-            "⛔ Your subject selection is missing.\n\nPlease start from the beginning with /add",
-            show_alert=True,
+            "⛔ Your subject selection is missing.\n\nPlease start from the beginning with /add"
         )  # Send message as alert
+        await callback.message.edit_reply_markup(reply_markup=None)  # type:ignore
         await state.clear()  # Clear existing FSM states
         return  # Exit, do not process any further for this case
 
     if not available_subjects:  # A safe fallback if subject.json is empty
         await callback.answer(
             "❌ No subjects available.\n\nPlease try again later with /add",
-            show_alert=True,
         )
+        await callback.message.edit_reply_markup(reply_markup=None)  # type:ignore
         await state.clear()
         return
 
@@ -467,8 +475,7 @@ async def knowledge_back(callback: CallbackQuery, state: FSMContext):
 
     if not topics:
         await callback.answer(
-            f"❌ No topics available yet for {subject}\n\n.Please try again with /add",
-            show_alert=True,
+            f"❌ No topics available yet for {subject['name']}\n\n.Please try again with /add",
         )
         await callback.message.edit_reply_markup(reply_markup=None)  # type:ignore
         await state.clear()
@@ -486,6 +493,66 @@ async def knowledge_back(callback: CallbackQuery, state: FSMContext):
             selected_topics=selected_topics,
         ),
     )  # Send the topics selection inline keyboard
+
+
+@router.callback_query(AddCardState.knowledge, F.data == "knowledge_retry")
+async def knowledge_retry(callback: CallbackQuery, state: FSMContext):
+    data = await state.get_data()
+
+    source_knowledge = data.get("source_knowledge", "")
+    subject = data.get("subject", "")
+    topics = data.get("topics", [])
+    topics_name = [topic["name"] for topic in topics]
+
+    await state.set_state(AddCardState.generating)  # Set FSM state to generating
+    await callback.answer(
+        "🧠 Retrying flashcard generation...\n\nPlease wait."
+    )  # Send generating indicator to user
+
+    try:  # Try generating flashcard from the user's knowledge
+        result = await study_med_ai.generate_flashcard(
+            knowledge=source_knowledge, subject=subject["name"], topics=topics_name
+        )
+
+        if result.status == "rejected":
+            await state.set_state(AddCardState.knowledge)
+            await callback.message.edit_text(  # type:ignore
+                f"{result.reason}\nPlease check and resend your 🧠knowledge, <b>OR</b> use any of the buttons below",
+                reply_markup=knowledge_keyboard(),
+            )
+            return
+
+    except Exception:  # If an error occurred during flashcard generation # noqa: BLE001
+        await state.set_state(
+            AddCardState.knowledge
+        )  # Set state back to the former FSM's state (knowledge)
+        await callback.message.edit_text(  # type:ignore
+            "🙏 Sorry I couldn't generate the flashcard right now.\n\n"
+            "<b>Your source knowledge is stored temporarily on the system.</b>\n"
+            "Your can either; <b>✍Type</b> and send the knowledge, <b>Click</b> 🔃 Retry to retry generation\n"
+            "OR use any of the buttons below 👇",
+            reply_markup=knowledge_keyboard(retry=True),
+        )
+        return
+
+    await state.update_data(
+        question=result.question,
+        answer=result.answer,
+        difficulty=result.difficulty,
+        case_sensitive=result.case_sensitive,
+        question_type=result.question_type,
+        multi_choices=result.multi_choices,
+    )
+
+    await state.set_state(
+        AddCardState.review
+    )  # Set FSM's state to review (user is reviewing the generated flashcard)
+    await callback.message.edit_text(  # type:ignore
+        f"❓ <b>Question</b>\n{result.question}\n\n"
+        f"✅ <b>Answer</b>\n{result.answer}\n\n"
+        f"🎚 <b>Difficulty:</b>{result.difficulty}",
+        reply_markup=review_keyboard(),  # User to reply using the customized review inline-keyboard
+    )
 
 
 # =========== REVIEW CARD FLOW =========
@@ -579,7 +646,11 @@ async def regenerate_card(callback: CallbackQuery, state: FSMContext):
             topics=topics,
         )
         if result.status == "rejected":
-            await callback.message.answer(f"{result.reason}", show_alert=True)  # type:ignore
+            await state.set_state(AddCardState.knowledge)
+            await callback.message.edit_text(  # type:ignore
+                f"{result.reason}\nPlease check and resend your 🧠knowledge, <b>OR</b> use any of the buttons below",
+                reply_markup=knowledge_keyboard(),
+            )
             return
 
     except Exception:  # noqa: BLE001 # Generation failed, so return the user to review

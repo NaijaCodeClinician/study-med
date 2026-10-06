@@ -115,22 +115,28 @@ def review_keyboard(can_regenerate: bool = True) -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(inline_keyboard=inline_keyboard)
 
 
-def knowledge_keyboard():
+def knowledge_keyboard(retry=False):
     """
     The knowledge input inline keyboard
     """
-
+    if retry:
+        retry_button = InlineKeyboardButton(
+            text="🔁 Retry", callback_data="knowledge_retry"
+        )
     inline_keyboard = [
         [
             InlineKeyboardButton(
                 text="◀ Back",
                 callback_data="knowledge_back",
             ),
+            *retry_button,
+        ],
+        [
             InlineKeyboardButton(
                 text="❌ Cancel",
                 callback_data="knowledge_cancel",
             ),
-        ]
+        ],
     ]
     return InlineKeyboardMarkup(inline_keyboard=inline_keyboard)
 
@@ -219,5 +225,19 @@ def quiz_location_keyboard(selected_button: str):
         [InlineKeyboardButton(text="📂 My Flashcards", callback_data="quiz_cards")],
         [InlineKeyboardButton(text="🎲 Random", callback_data="quiz_random")],
         [InlineKeyboardButton(text="❌ Cancel", callback_data="quiz_cancel")],
+    ]
+    return InlineKeyboardMarkup(inline_keyboard=buttons)
+
+
+def study_time_keyboard():
+    """
+    Inline keyboard in the add handler, for the study time FSM state
+    """
+
+    buttons = [
+        [
+            InlineKeyboardButton(text="◀ Back", callback_data="time_back"),
+            InlineKeyboardButton(text="❌ Cancel", callback_data="time_cancel"),
+        ]
     ]
     return InlineKeyboardMarkup(inline_keyboard=buttons)

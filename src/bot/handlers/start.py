@@ -14,6 +14,7 @@ from aiogram.types.message import Message
 
 from src.imports import (
     StartBotState,
+    study_time_keyboard,
     weak_subjects_keyboard,
     weak_topics_keyboard,
 )
@@ -119,7 +120,7 @@ async def finish_subjects(callback: CallbackQuery, state: FSMContext):
 
     if not available_topics:
         await callback.answer(
-            f"⛔ No topics available for {first_subject}", show_alert=True
+            f"⛔ No topics available for {first_subject['name']}", show_alert=True
         )
         return
 
@@ -154,6 +155,8 @@ async def skip_subjects(callback: CallbackQuery, state: FSMContext):
 
     await asyncio.sleep(2)
 
+    await state.update_data(previous_callback="weak_sub_skip")
+
     await state.set_state(StartBotState.study_time)
 
     await callback.message.edit_text(  # type:ignore
@@ -161,7 +164,8 @@ async def skip_subjects(callback: CallbackQuery, state: FSMContext):
         "Choose a time that fits naturally into your day. <b>Sleep comes first, </b>"
         "so StudyMed only allows study reminders between <b>6:00 AM and 10:00 PM</b>\n\n"
         "Please enter your preferred time in <b>24-hour format or 12-hour format.</b>\n\n"
-        "<b>Examples:</b> 07:00, 13:00, 7am, 01:00 AM\n\n"
+        "<b>Examples:</b> 07:00, 13:00, 7am, 01:00 AM\n\n",
+        reply_markup=study_time_keyboard(),
     )
 
 
@@ -237,13 +241,18 @@ async def select_topics(callback: CallbackQuery, state: FSMContext):
             "⛔ Subject selection is empty, skipping to 📚study ⏰time setting",
             show_alert=True,
         )
+
+        await state.update_data(previous_callback="weak_topic:")
+
         await state.set_state(StartBotState.study_time)
+
         await callback.message.edit_text(  # type:ignore
             "⏰ <b>When would you like StudyMed to remind you to study?</b>\n\n"
             "Choose a time that fits naturally into your day. <b>Sleep comes first, </b>"
             "so StudyMed only allows study reminders between <b>6:00 AM and 10:00 PM</b>\n\n"
             "Please enter your preferred time in <b>24-hour format or 12-hour format.</b>\n\n"
-            "<b>Examples:</b> 07:00, 13:00, 7am, 01:00 AM\n\n"
+            "<b>Examples:</b> 07:00, 13:00, 7am, 01:00 AM\n\n",
+            reply_markup=study_time_keyboard(),
         )
         return
     current_index = data.get("current_index", 0)
@@ -309,13 +318,17 @@ async def next_topic(callback: CallbackQuery, state: FSMContext):
             "⛔ Subject selection is empty, skipping to 📚study ⏰time setting",
             show_alert=True,
         )
+        await state.update_data(previous_callback="weak_topic_next")
+
         await state.set_state(StartBotState.study_time)
+
         await callback.message.edit_text(  # type:ignore
             "⏰ <b>When would you like StudyMed to remind you to study?</b>\n\n"
             "Choose a time that fits naturally into your day. <b>Sleep comes first, </b>"
             "so StudyMed only allows study reminders between <b>6:00 AM and 10:00 PM</b>\n\n"
             "Please enter your preferred time in <b>24-hour format or 12-hour format.</b>\n\n"
-            "<b>Examples:</b> 07:00, 13:00, 7am, 01:00 AM\n\n"
+            "<b>Examples:</b> 07:00, 13:00, 7am, 01:00 AM\n\n",
+            reply_markup=study_time_keyboard(),
         )
         return
 
@@ -416,18 +429,22 @@ async def topic_back(callback: CallbackQuery, state: FSMContext):
 async def finish_topics(callback: CallbackQuery, state: FSMContext):
     await callback.answer()
     await callback.message.edit_text(  # type:ignore
-        "✅ Your weak subjects and topics have successfully been saved 💾\n"
-        "🤚 Hold on while the changes are being processed..."
+        "<i>✅ Your weak subjects and topics have successfully been saved 💾</i>\n"
+        "✋ Hold on while the changes are being processed"
     )
+
+    await state.update_data(previous_callback="weak_topic_finish")
+
     await asyncio.sleep(2)
 
     await state.set_state(StartBotState.study_time)
-    await callback.edit_text(  # type:ignore
+    await callback.message.edit_text(  # type:ignore
         "⏰ <b>When would you like StudyMed to remind you to study?</b>\n\n"
         "Choose a time that fits naturally into your day. <b>Sleep comes first, </b>"
         "so StudyMed only allows study reminders between <b>6:00 AM and 10:00 PM</b>\n\n"
         "Please enter your preferred time in <b>24-hour format or 12-hour format.</b>\n\n"
-        "<b>Examples:</b> 07:00, 13:00, 7am, 01:00 AM\n\n"
+        "<b>Examples:</b> 07:00, 13:00, 7am, 01:00 AM\n\n",
+        reply_markup=study_time_keyboard(),
     )
 
 
@@ -483,7 +500,10 @@ async def set_study_time(message: Message, state: FSMContext):
     valid_time, time_format = validate_and_detect_format(time_input)
 
     if valid_time is None or time_format is None:  # Validate the inputted study time
-        await message.reply("⛔ <b>Invalid ⌚time</b>\n\nPlease enter a valid ⌚time")
+        await message.reply(
+            "⛔ <b>Invalid ⌚time</b>\n\nPlease enter a valid ⌚time",
+            reply_markup=study_time_keyboard(),
+        )
         return
 
     study_time = minutes_to_24h(valid_time)
@@ -498,6 +518,82 @@ async def set_study_time(message: Message, state: FSMContext):
         "➕ /add — Create a knowledge card\n"
         "🗃 /mycards — View your cards\n"
         "📊 /stats — View your statistics\n"
+    )
+
+
+@router.callback_query(StartBotState.study_time, F.data == "time_cancel")
+async def cancel_study_time(callback: CallbackQuery, state: FSMContext):
+
+    await callback.answer()
+
+    await state.clear()
+
+    await callback.message.edit_text(  # type:ignore
+        "❌ Setup session was cancelled by you.\nYou can send <b>/start</b> to start over again"
+    )
+
+
+@router.callback_query(StartBotState.study_time, F.data == "time_back")
+async def back_study_time(callback: CallbackQuery, state: FSMContext):
+    await callback.answer()
+
+    data = await state.get_data()
+
+    previous_callback = data.get("previous_callback", "")
+
+    if previous_callback in {"weak_topic:", "weak_topic_next", "weak_sub_skip"}:
+        await callback.message.edit_text(  # type:ignore
+            text=f"✋Hi <b>{callback.from_user.full_name if callback.from_user.full_name else callback.from_user.username}</b>"  # type: ignore
+            "\n<i>Let's continue with your setup.</i>\n\n<b>Select your weak subjects:</b>",
+            reply_markup=weak_subjects_keyboard(
+                subjects=available_subjects_dict,
+                selected_subjects=[],
+            ),
+        )
+        return
+
+    current_index = data.get("current_index", 0)
+
+    selected_subjects = data.get("subjects", [])  # Get user selected subjects
+    if not selected_subjects:
+        await callback.message.edit_text(  # type:ignore
+            "<b>⛔ An error occurred</b>\nPlease start all over with /start"
+        )
+        return
+
+    current_subject = selected_subjects[current_index]
+    available_topics = get_topics_id(subject_content, current_subject["id"])
+
+    if not available_topics:
+        await callback.answer(
+            f"⛔ No topics available for {current_subject['name']}", show_alert=True
+        )
+        return
+
+    await state.set_state(
+        StartBotState.topics
+    )  # Move FSM state to the next (FSM knowledge state)
+
+    weak_subjects = data.get(
+        "weak_subjects",
+        {},
+    )
+
+    weak_subjects.setdefault(current_subject["name"], [])
+
+    selected_topics = weak_subjects.get(current_subject["name"], [])
+
+    is_last = len(selected_subjects) == 1
+    await callback.message.edit_text(  # type:ignore
+        f"📚 <b>{current_subject['name']}</b>\n\n"
+        "Select one or more topics.\n\n"
+        "You must select at least one topic "
+        "before continuing.",
+        reply_markup=weak_topics_keyboard(
+            available_topics,
+            selected_topics=selected_topics,
+            is_last=is_last,
+        ),
     )
 
 

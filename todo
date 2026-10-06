@@ -1,0 +1,1 @@
+Add inline keyboards to generating FSM state in src/bot/handlers/add.py and study_time FSM state in src/bot/handlers/start.py

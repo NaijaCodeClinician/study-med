@@ -1,6 +1,11 @@
+"""
+The central instance and imports file
+"""
+
 from src.bot.keyboards import (
     knowledge_keyboard,
     review_keyboard,
+    study_time_keyboard,
     subject_keyboard,
     topics_keyboard,
     weak_subjects_keyboard,
@@ -23,6 +28,7 @@ __all__ = [
     "configs",
     "knowledge_keyboard",
     "review_keyboard",
+    "study_time_keyboard",
     "subject_keyboard",
     "topics_keyboard",
     "weak_subjects_keyboard",
