@@ -106,9 +106,10 @@ Rules:
 - Never silently fill important gaps.
 - If the knowledge is too vague, incomplete, non-medical, unsafe,
   contradictory, or otherwise unsuitable for a reliable flashcard, REJECT it.
+- If the user provided input is a question (even if medical related), instead of a statement of medical fact, REJECT it.
 - If a provided knowledge even though medically accurate doesn't match the provided
 subject and/or topics, REJECT it.
-- Set "status" to "success" if no rejection occurred and question generation was successful, else "failed"
+- Set "status" to "success" if no rejection occurred and question generation was successful, else "rejected"
 - Never return an empty response.
 - A rejection reason will be shown directly to the student, so make it concise,
   friendly, and actionable.

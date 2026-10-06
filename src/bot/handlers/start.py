@@ -111,9 +111,6 @@ async def finish_subjects(callback: CallbackQuery, state: FSMContext):
         )  # Send this alert
         return  # Exit, do not proceed any further
 
-    await state.set_state(
-        StartBotState.topics
-    )  # Move FSM state to the next (FSM knowledge state)
     current_index = 0
 
     await state.update_data(current_index=current_index)
@@ -125,6 +122,10 @@ async def finish_subjects(callback: CallbackQuery, state: FSMContext):
             f"⛔ No topics available for {first_subject}", show_alert=True
         )
         return
+
+    await state.set_state(
+        StartBotState.topics
+    )  # Move FSM state to the next (FSM knowledge state)
 
     await callback.answer()
     is_last = len(selected_subjects) == 1
@@ -143,6 +144,9 @@ async def finish_subjects(callback: CallbackQuery, state: FSMContext):
 
 @router.callback_query(StartBotState.subjects, F.data == "weak_sub_skip")
 async def skip_subjects(callback: CallbackQuery, state: FSMContext):
+
+    await callback.answer()
+
     await callback.message.edit_text(  # type:ignore
         "📢⚠ <b>NOTE:</b> Skipping overrides any previously inputted subject or topic\n\n"
         "⏩ Skipping weak subject and topic selection"
@@ -163,6 +167,8 @@ async def skip_subjects(callback: CallbackQuery, state: FSMContext):
 
 @router.callback_query(StartBotState.subjects, F.data == "weak_sub_cancel")
 async def cancel_subjects(callback: CallbackQuery, state: FSMContext):
+    await callback.answer()
+
     await callback.message.edit_text(  # type:ignore
         "❌ Setup cancelled please send /start to start all over"
     )
@@ -409,7 +415,7 @@ async def topic_back(callback: CallbackQuery, state: FSMContext):
 @router.callback_query(StartBotState.topics, F.data == "weak_topic_finish")
 async def finish_topics(callback: CallbackQuery, state: FSMContext):
     await callback.answer()
-    await callback.edit_text(  # type:ignore
+    await callback.message.edit_text(  # type:ignore
         "✅ Your weak subjects and topics have successfully been saved 💾\n"
         "🤚 Hold on while the changes are being processed..."
     )
@@ -488,10 +494,10 @@ async def set_study_time(message: Message, state: FSMContext):
         "<b>✅ Profile has been setup successfully 👏</b>\n"
         f"<i>🤖StudyMed will be sending study reminders every day at {study_time}</i>\n\n"
         "<b>🙄❓What would you like to do now?</b>\n<i>📚 Available commands:</i>\n\n"
-        '🧠 <a href="tg://bot_command?command=quiz">/quiz</a> — Take a quiz\n'
-        '➕ <a href="tg://bot_command?command=add">/add</a> — Create a knowledge card\n'
-        '🗃 <a href="tg://bot_command?command=mycards">/mycards</a> — View your cards\n'
-        '📊 <a href="tg://bot_command?command=stats">/stats</a> — View your statistics\n'
+        "🧠 /quiz — Take a quiz\n"
+        "➕ /add — Create a knowledge card\n"
+        "🗃 /mycards — View your cards\n"
+        "📊 /stats — View your statistics\n"
     )
 
 

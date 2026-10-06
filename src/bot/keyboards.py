@@ -6,7 +6,7 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
 def subject_keyboard(
-    subjects: list[dict], selected_subject: str = "", emoji_width=4
+    subjects: list[dict], selected_subject: str = ""
 ) -> InlineKeyboardMarkup:
     """
     This is the subjects inline keyboard for the Telegram add flow
@@ -15,7 +15,7 @@ def subject_keyboard(
     sorted_subjects = sorted(subjects, key=lambda subject: subject["name"])
     for subject in sorted_subjects:
         emoji = "🔘" if selected_subject != subject["id"] else "🟢"
-        text = f"{emoji:<{emoji_width}}{subject['icon']} {subject['name']}"
+        text = f"{emoji}    {subject['icon']} {subject['name']}"
         buttons.append(
             [
                 InlineKeyboardButton(
@@ -38,7 +38,6 @@ def subject_keyboard(
 def topics_keyboard(
     topics: list[dict],
     selected_topics: list[dict],
-    emoji_width=4,
 ) -> InlineKeyboardMarkup:
     """
     This is the topics inline keyboard for the Telegram add flow
@@ -51,7 +50,7 @@ def topics_keyboard(
             if not any(topic["id"] == sel_topic["id"] for sel_topic in selected_topics)
             else "🟢"
         )
-        text = f"{selected_emoji:<{emoji_width}}{topic['icon']} {topic['name']}"
+        text = f"{selected_emoji}   {topic['icon']} {topic['name']}"
         buttons.append(
             [
                 InlineKeyboardButton(
@@ -136,9 +135,7 @@ def knowledge_keyboard():
     return InlineKeyboardMarkup(inline_keyboard=inline_keyboard)
 
 
-def weak_subjects_keyboard(
-    subjects: list[dict], selected_subjects: list[dict], emoji_width=4
-):
+def weak_subjects_keyboard(subjects: list[dict], selected_subjects: list[dict]):
     """
     The inline keyboard for weak subjects
     """
@@ -154,7 +151,7 @@ def weak_subjects_keyboard(
             )
             else "🟢"
         )
-        text = f"{emoji:<{emoji_width}}{subject['icon']} {subject['name']}"
+        text = f"{emoji}    {subject['icon']} {subject['name']}"
         buttons.append(
             [InlineKeyboardButton(text=text, callback_data=f"weak_sub:{subject['id']}")]
         )
@@ -174,7 +171,6 @@ def weak_topics_keyboard(
     topics: list[dict],
     selected_topics: list[dict],
     is_last=False,
-    emoji_width=4,
 ):
     """
     The inline keyboard for weak topics
@@ -189,7 +185,7 @@ def weak_topics_keyboard(
             if not any(topic["id"] == sel_topic["id"] for sel_topic in selected_topics)
             else "🟢"
         )
-        text = f"{selected_emoji:<{emoji_width}}{topic['icon']} {topic['name']}"
+        text = f"{selected_emoji}   {topic['icon']} {topic['name']}"
         buttons.append(
             [InlineKeyboardButton(text=text, callback_data=f"weak_topic:{topic['id']}")]
         )
@@ -218,12 +214,9 @@ def quiz_location_keyboard(selected_button: str):
         "quiz_random": "🎲 Random",
     }
     buttons = [
-        [
-            InlineKeyboardButton(
-                text="🗃 StudyMed question bank", callback_data="quiz_bank"
-            )
-        ],
-        [InlineKeyboardButton(text="📚 Your Flashcards", callback_data="quiz_cards")],
+        [InlineKeyboardButton(text="🎯 Recommended", callback_data="quiz_recommend")],
+        [InlineKeyboardButton(text="📚 Question bank", callback_data="quiz_bank")],
+        [InlineKeyboardButton(text="📂 My Flashcards", callback_data="quiz_cards")],
         [InlineKeyboardButton(text="🎲 Random", callback_data="quiz_random")],
         [InlineKeyboardButton(text="❌ Cancel", callback_data="quiz_cancel")],
     ]

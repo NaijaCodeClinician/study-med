@@ -234,7 +234,7 @@ async def back_subjects(callback: CallbackQuery, state: FSMContext):
         "📚 <b>Choose a subject</b>\n\nSelect the subject for your knowledge card:",
         reply_markup=subject_keyboard(
             subjects=available_subjects_dict,
-            selected_subject=current_subject["name"],
+            selected_subject=current_subject["id"],
         ),  # Resend the subject selection inline keyboard,
     )
 
@@ -293,7 +293,7 @@ async def topics_cancel(callback: CallbackQuery, state: FSMContext):
 
 
 @router.message(
-    AddCardState.subject, F.entities
+    AddCardState.topics, F.entities
 )  # Handle and block text messages during topic selection
 async def topics_command_block(message: Message):
     """
@@ -355,11 +355,13 @@ async def receive_knowledge(message: Message, state: FSMContext):
     """
     data = await state.get_data()
 
-    subject = data.get("subject", "").get("name", "")
-
+    subject = data.get("subject", "")
+    subject_name = subject["name"]
     topics = data.get("topics", [])
     topics_name = [topic["name"] for topic in topics]
-    knowledge = message.text.strip()  # Convert knowledge to string  # type: ignore
+    knowledge = (
+        message.text or ""
+    ).strip()  # Convert knowledge to string  # type: ignore
 
     if not knowledge:  # If user sent an empty message
         await message.reply(
@@ -375,10 +377,10 @@ async def receive_knowledge(message: Message, state: FSMContext):
 
     try:  # Try generating flashcard from the user's knowledge
         result = await study_med_ai.generate_flashcard(
-            knowledge=knowledge, subject=subject, topics=topics_name
+            knowledge=knowledge, subject=subject_name, topics=topics_name
         )
-        if result.status == "failed":
-            await message.answer(f"{result.reason}")
+        if result.status == "rejected":
+            await message.reply(f"{result.reason}")
             return
 
     except Exception:  # If an error occurred during flashcard generation # noqa: BLE001
@@ -395,13 +397,17 @@ async def receive_knowledge(message: Message, state: FSMContext):
         answer=result.answer,
         difficulty=result.difficulty,
         case_sensitive=result.case_sensitive,
+        question_type=result.question_type,
+        multi_choices=result.multi_choices,
     )
 
     await state.set_state(
         AddCardState.review
     )  # Set FSM's state to review (user is reviewing the generated flashcard)
     await message.reply(
-        f"❓ <b>Question</b>\n{result.question}\n\n✅ <b>Answer</b>\n{result.answer}\n\n🎚 <b>Difficulty:</b>{result.difficulty}",
+        f"❓ <b>Question</b>\n{result.question}\n\n"
+        f"✅ <b>Answer</b>\n{result.answer}\n\n"
+        f"🎚 <b>Difficulty:</b>{result.difficulty}",
         reply_markup=review_keyboard(),  # User to reply using the customized review inline-keyboard
     )
 
@@ -560,6 +566,8 @@ async def regenerate_card(callback: CallbackQuery, state: FSMContext):
     old_answer = data.get("answer")
     old_difficulty = data.get("difficulty")
     old_case_sensitive = data.get("case_sensitive")
+    old_question_type = data.get("question_type")
+    old_multi_choices = data.get("multi_choices")
 
     await state.set_state(AddCardState.generating)
     await callback.message.edit_text("🔁 Regenerating your flashcard...\n\nPlease wait")  # type:ignore # Send the regeneration indicator
@@ -570,8 +578,8 @@ async def regenerate_card(callback: CallbackQuery, state: FSMContext):
             subject=subject,
             topics=topics,
         )
-        if result.status == "failed":
-            await callback.message.edit_text(f"{result.reason}")  # type:ignore
+        if result.status == "rejected":
+            await callback.message.answer(f"{result.reason}", show_alert=True)  # type:ignore
             return
 
     except Exception:  # noqa: BLE001 # Generation failed, so return the user to review
@@ -581,9 +589,11 @@ async def regenerate_card(callback: CallbackQuery, state: FSMContext):
             answer=old_answer,
             difficulty=old_difficulty,
             case_sensitive=old_case_sensitive,
+            question_type=old_question_type,
+            multi_choices=old_multi_choices,
         )  # Update FSM state data to old Knowledge card info
         await callback.message.edit_text(  # type: ignore
-            "❌ I couldn't regenerate the flashcard.\n\nPlease resend the flashcard.",
+            "❌ I couldn't regenerate the flashcard.",
             reply_markup=review_keyboard(
                 can_regenerate=regeneration_count < MAX_REGENERATIONS
             ),
@@ -598,6 +608,8 @@ async def regenerate_card(callback: CallbackQuery, state: FSMContext):
         answer=result.answer,
         difficulty=result.difficulty,
         case_sensitive=result.case_sensitive,
+        question_type=result.question_type,
+        multi_choices=result.multi_choices,
         regeneration_count=regeneration_count,
     )
 
@@ -653,7 +665,8 @@ async def back_knowledge(callback: CallbackQuery, state: FSMContext):
         "StudyMed to turn into a flashcard\n\n"
         "💁‍♂️ Example:\n"
         "<i>The brachial plexus is formed by "
-        "the anterior rami of C5-T1 spinal nerves.</i>"
+        "the anterior rami of C5-T1 spinal nerves.</i>",
+        reply_markup=knowledge_keyboard(),
     )
 
 
