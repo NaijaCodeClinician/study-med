@@ -70,7 +70,7 @@ async def select_subjects(callback: CallbackQuery, state: FSMContext):
 
     # Check or uncheck a subject
     if any(
-        sel_subject["id"] == subject_id for sel_subject in selected_subjects
+        sel_subject["id"] == subject["id"] for sel_subject in selected_subjects
     ):  # If a subject has already been selected before (user deselected / unchecked the subject)
         selected_subjects.remove(
             subject
@@ -161,6 +161,14 @@ async def skip_subjects(callback: CallbackQuery, state: FSMContext):
     )
 
 
+@router.callback_query(StartBotState.subjects, F.data == "weak_sub_cancel")
+async def cancel_subjects(callback: CallbackQuery, state: FSMContext):
+    await callback.message.edit_text(  # type:ignore
+        "❌ Setup cancelled please send /start to start all over"
+    )
+    await state.clear()
+
+
 @router.message(
     StartBotState.subjects, F.entities
 )  # Handle and block text messages during subject selection
@@ -225,7 +233,11 @@ async def select_topics(callback: CallbackQuery, state: FSMContext):
         )
         await state.set_state(StartBotState.study_time)
         await callback.message.edit_text(  # type:ignore
-            "⏰"
+            "⏰ <b>When would you like StudyMed to remind you to study?</b>\n\n"
+            "Choose a time that fits naturally into your day. <b>Sleep comes first, </b>"
+            "so StudyMed only allows study reminders between <b>6:00 AM and 10:00 PM</b>\n\n"
+            "Please enter your preferred time in <b>24-hour format or 12-hour format.</b>\n\n"
+            "<b>Examples:</b> 07:00, 13:00, 7am, 01:00 AM\n\n"
         )
         return
     current_index = data.get("current_index", 0)
@@ -250,9 +262,9 @@ async def select_topics(callback: CallbackQuery, state: FSMContext):
         {},
     )
 
-    weak_subjects.setdefault(current_subject, [])
+    weak_subjects.setdefault(current_subject["name"], [])
 
-    selected_topics = weak_subjects.get(current_subject, [])
+    selected_topics = weak_subjects.get(current_subject["name"], [])
 
     # Check or uncheck a topic
     if any(
@@ -262,7 +274,7 @@ async def select_topics(callback: CallbackQuery, state: FSMContext):
     else:  # Topic has not been selected before
         selected_topics.append(topic)  # Add topic to selected topics list
 
-    weak_subjects[current_subject] = selected_topics
+    weak_subjects[current_subject["name"]] = selected_topics
 
     await state.update_data(
         weak_subjects=weak_subjects
@@ -306,15 +318,15 @@ async def next_topic(callback: CallbackQuery, state: FSMContext):
 
     weak_subjects = data.get("weak_subjects", {})
 
-    weak_topics = weak_subjects.get(current_subject, [])
+    weak_topics = weak_subjects.get(current_subject["name"], [])
 
     if not weak_topics:
-        weak_subjects[current_subject] = []
+        weak_subjects[current_subject["name"]] = []
         await state.update_data(weak_subjects=weak_subjects)
 
     next_index = current_index + 1
 
-    if next_index >= len(user_selected_subjects) - 1:
+    if current_index >= len(user_selected_subjects) - 1:
         return
 
     next_subject = user_selected_subjects[next_index]
@@ -323,7 +335,7 @@ async def next_topic(callback: CallbackQuery, state: FSMContext):
         subject_content, next_subject["id"]
     )  # Get available topics for a selected subject
 
-    next_weak_topics = data.get("weak_subjects", {}).get(next_subject, [])
+    next_weak_topics = data.get("weak_subjects", {}).get(next_subject["name"], [])
 
     is_last = next_index >= len(user_selected_subjects) - 1
 
@@ -358,7 +370,7 @@ async def topic_back(callback: CallbackQuery, state: FSMContext):
     if current_index == 0:
         await state.set_state(StartBotState.subjects)
         await callback.answer()
-        await callback.edit_text(  # type:ignore
+        await callback.message.edit_text(  # type:ignore
             text=f"✋Hi <b>{callback.from_user.full_name if callback.from_user.full_name else callback.from_user.username}</b>"  # type: ignore
             "\n<i>Let's continue with your setup.</i>\n\n<b>Select your weak subjects:</b>",
             reply_markup=weak_subjects_keyboard(
@@ -374,10 +386,12 @@ async def topic_back(callback: CallbackQuery, state: FSMContext):
 
     weak_subjects = data.get("weak_subjects", {})
 
-    weak_topics = weak_subjects.get(back_subject, [])
+    weak_topics = weak_subjects.get(back_subject["name"], [])
     available_topics = get_topics_id(
         subject_content, back_subject["id"]
     )  # Get available topics for a selected subject
+
+    await state.update_data(current_index=back_index)
 
     await callback.answer()
 
@@ -409,6 +423,15 @@ async def finish_topics(callback: CallbackQuery, state: FSMContext):
         "Please enter your preferred time in <b>24-hour format or 12-hour format.</b>\n\n"
         "<b>Examples:</b> 07:00, 13:00, 7am, 01:00 AM\n\n"
     )
+
+
+@router.callback_query(StartBotState.topics, F.data == "weak_topic_cancel")
+async def cancel_topics(callback: CallbackQuery, state: FSMContext):
+    await callback.answer()
+    await callback.message.edit_text(  # type:ignore
+        "❌ Setup was cancelled, please send /start to start all over"
+    )
+    await state.clear()
 
 
 @router.message(

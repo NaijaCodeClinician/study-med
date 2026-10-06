@@ -14,7 +14,7 @@ def subject_keyboard(
     buttons = []
     sorted_subjects = sorted(subjects, key=lambda subject: subject["name"])
     for subject in sorted_subjects:
-        emoji = "🔘" if selected_subject != subject["name"] else "🟢"
+        emoji = "🔘" if selected_subject != subject["id"] else "🟢"
         text = f"{emoji:<{emoji_width}}{subject['icon']} {subject['name']}"
         buttons.append(
             [
@@ -37,7 +37,7 @@ def subject_keyboard(
 
 def topics_keyboard(
     topics: list[dict],
-    selected_topics: list[str],
+    selected_topics: list[dict],
     emoji_width=4,
 ) -> InlineKeyboardMarkup:
     """
@@ -46,7 +46,11 @@ def topics_keyboard(
     buttons = []
     sorted_topics = sorted(topics, key=lambda topic: topic["name"])
     for topic in sorted_topics:
-        selected_emoji = "🔘" if topic["name"] not in selected_topics else "🟢"
+        selected_emoji = (
+            "🔘"
+            if not any(topic["id"] == sel_topic["id"] for sel_topic in selected_topics)
+            else "🟢"
+        )
         text = f"{selected_emoji:<{emoji_width}}{topic['icon']} {topic['name']}"
         buttons.append(
             [
@@ -133,7 +137,7 @@ def knowledge_keyboard():
 
 
 def weak_subjects_keyboard(
-    subjects: list[dict], selected_subjects: list[str], emoji_width=4
+    subjects: list[dict], selected_subjects: list[dict], emoji_width=4
 ):
     """
     The inline keyboard for weak subjects
@@ -143,7 +147,13 @@ def weak_subjects_keyboard(
 
     sorted_subjects = sorted(subjects, key=lambda subject: subject["name"])
     for subject in sorted_subjects:
-        emoji = "🔘" if subject["name"] not in selected_subjects else "🟢"
+        emoji = (
+            "🔘"
+            if not any(
+                subject["id"] == sel_subject["id"] for sel_subject in selected_subjects
+            )
+            else "🟢"
+        )
         text = f"{emoji:<{emoji_width}}{subject['icon']} {subject['name']}"
         buttons.append(
             [InlineKeyboardButton(text=text, callback_data=f"weak_sub:{subject['id']}")]
@@ -162,7 +172,7 @@ def weak_subjects_keyboard(
 
 def weak_topics_keyboard(
     topics: list[dict],
-    selected_topics: list[str],
+    selected_topics: list[dict],
     is_last=False,
     emoji_width=4,
 ):
@@ -174,7 +184,11 @@ def weak_topics_keyboard(
 
     sorted_topics = sorted(topics, key=lambda topic: topic["name"])
     for topic in sorted_topics:
-        selected_emoji = "🔘" if topic["name"] not in selected_topics else "🟢"
+        selected_emoji = (
+            "🔘"
+            if not any(topic["id"] == sel_topic["id"] for sel_topic in selected_topics)
+            else "🟢"
+        )
         text = f"{selected_emoji:<{emoji_width}}{topic['icon']} {topic['name']}"
         buttons.append(
             [InlineKeyboardButton(text=text, callback_data=f"weak_topic:{topic['id']}")]

@@ -72,7 +72,7 @@ async def select_subject(callback: CallbackQuery, state: FSMContext):
 
     await callback.message.edit_reply_markup(  # type:ignore
         reply_markup=subject_keyboard(
-            available_subjects_dict, selected_subject=subject["name"]
+            available_subjects_dict, selected_subject=subject["id"]
         )  # Show that subject has been selected
     )
     await state.set_state(AddCardState.topics)  # Move to next FSM state (topics state)
@@ -180,15 +180,6 @@ async def select_topic(callback: CallbackQuery, state: FSMContext):
         subject_content, subject["id"]
     )  # Get available topics for a selected subject
 
-    if not any(
-        av_topic["id"] == topic_id for av_topic in available_topics
-    ):  # If the selected topic is not among the available topics (safe fallback, not likely to occur)
-        await callback.answer(
-            "⛔ Invalid topic.",
-            show_alert=True,
-        )  # Send message as an alert
-
-        return  # Exit, to not process any further
     selected_topics = data.get(
         "topics",
         [],
@@ -196,7 +187,7 @@ async def select_topic(callback: CallbackQuery, state: FSMContext):
 
     # Check or uncheck a topic
     if any(
-        sel_topic["name"] == topic["name"] for sel_topic in selected_topics
+        sel_topic["id"] == topic["id"] for sel_topic in selected_topics
     ):  # If a topic has already been selected before (user deselected / unchecked the topic)
         selected_topics.remove(topic)  # Remove topic from the selected topics list
     else:  # Topic has not been selected before
