@@ -213,12 +213,8 @@ def weak_topics_keyboard(
     return InlineKeyboardMarkup(inline_keyboard=buttons)
 
 
-def quiz_location_keyboard(selected_button: str):
-    button_mapping = {
-        "quiz_bank": "🗃 StudyMed question bank",
-        "quiz_cards": "📚 Your Flashcards",
-        "quiz_random": "🎲 Random",
-    }
+def quiz_location_keyboard():
+    
     buttons = [
         [InlineKeyboardButton(text="🎯 Recommended", callback_data="quiz_recommend")],
         [InlineKeyboardButton(text="📚 Question bank", callback_data="quiz_bank")],
