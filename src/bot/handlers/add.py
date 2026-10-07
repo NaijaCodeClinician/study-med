@@ -387,12 +387,12 @@ async def receive_knowledge(message: Message, state: FSMContext):
             )
             return
 
-    except Exception:  # If an error occurred during flashcard generation # noqa: BLE001
+    except ValueError as error:  # If an error occurred during flashcard generation # noqa: BLE001
         await state.set_state(
             AddCardState.knowledge
         )  # Set state back to the former FSM's state (knowledge)
         await message.answer(
-            "🙏 Sorry I couldn't generate the flashcard right now.\n\n"
+            f"{error}\n\n"
             "<b>Your source knowledge is stored temporarily on the system.</b>\n"
             "Your can either; <b>✍Type</b> and send the knowledge, <b>Click</b> 🔃 Retry to retry generation\n"
             "OR use any of the buttons below 👇",
@@ -522,12 +522,12 @@ async def knowledge_retry(callback: CallbackQuery, state: FSMContext):
             )
             return
 
-    except Exception:  # If an error occurred during flashcard generation # noqa: BLE001
+    except ValueError as error:  # If an error occurred during flashcard generation # noqa: BLE001
         await state.set_state(
             AddCardState.knowledge
         )  # Set state back to the former FSM's state (knowledge)
         await callback.message.edit_text(  # type:ignore
-            "🙏 Sorry I couldn't generate the flashcard right now.\n\n"
+            f"{error}\n\n"
             "<b>Your source knowledge is stored temporarily on the system.</b>\n"
             "Your can either; <b>✍Type</b> and send the knowledge, <b>Click</b> 🔃 Retry to retry generation\n"
             "OR use any of the buttons below 👇",
@@ -653,7 +653,7 @@ async def regenerate_card(callback: CallbackQuery, state: FSMContext):
             )
             return
 
-    except Exception:  # noqa: BLE001 # Generation failed, so return the user to review
+    except ValueError as error:  # noqa: BLE001 # Generation failed, so return the user to review
         await state.set_state(AddCardState.review)  # Set state back to the review
         await state.update_data(
             question=old_question,
@@ -664,7 +664,7 @@ async def regenerate_card(callback: CallbackQuery, state: FSMContext):
             multi_choices=old_multi_choices,
         )  # Update FSM state data to old Knowledge card info
         await callback.message.edit_text(  # type: ignore
-            "❌ I couldn't regenerate the flashcard.",
+            f"{error}",
             reply_markup=review_keyboard(
                 can_regenerate=regeneration_count < MAX_REGENERATIONS
             ),

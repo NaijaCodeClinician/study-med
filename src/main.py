@@ -3,7 +3,6 @@ import logging
 import os
 import sys
 
-from aiohttp import web
 from aiogram import Bot, Dispatcher
 from aiogram.client.default import DefaultBotProperties
 from aiogram.enums import ParseMode
@@ -11,11 +10,11 @@ from aiogram.webhook.aiohttp_server import (
     SimpleRequestHandler,
     setup_application,
 )
+from aiohttp import web
 from dotenv import load_dotenv
 
 from src.bot.handlers.add import router as add_router
 from src.bot.handlers.start import router as start_router
-
 
 # ---------------------------------------------------------
 # Configuration
@@ -23,9 +22,9 @@ from src.bot.handlers.start import router as start_router
 
 load_dotenv()
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")
-WEBHOOK_BASE_URL = os.getenv("WEBHOOK_BASE_URL")
-WEBHOOK_SECRET = os.getenv("WEBHOOK_SECRET")
+BOT_TOKEN = os.getenv("BOT_TOKEN", "")
+WEBHOOK_BASE_URL = os.getenv("WEBHOOK_BASE_URL", "")
+WEBHOOK_SECRET = os.getenv("WEBHOOK_SECRET", "")
 
 WEBHOOK_PATH = "/webhook"
 
@@ -50,6 +49,7 @@ logger = logging.getLogger(__name__)
 # Environment validation
 # ---------------------------------------------------------
 
+
 def validate_environment() -> None:
     """Make sure required environment variables exist."""
 
@@ -66,14 +66,14 @@ def validate_environment() -> None:
 
     if missing:
         raise RuntimeError(
-            "Missing required environment variables: "
-            + ", ".join(missing)
+            "Missing required environment variables: " + ", ".join(missing)
         )
 
 
 # ---------------------------------------------------------
 # Health check
 # ---------------------------------------------------------
+
 
 async def health_check(request: web.Request) -> web.Response:
     """
@@ -91,6 +91,7 @@ async def health_check(request: web.Request) -> web.Response:
 # ---------------------------------------------------------
 # Webhook configuration
 # ---------------------------------------------------------
+
 
 async def configure_webhook(
     bot: Bot,
@@ -126,6 +127,7 @@ async def configure_webhook(
 # Webhook startup task
 # ---------------------------------------------------------
 
+
 async def webhook_startup(
     bot: Bot,
     webhook_url: str,
@@ -149,6 +151,7 @@ async def webhook_startup(
 # ---------------------------------------------------------
 # Application creation
 # ---------------------------------------------------------
+
 
 def create_application(
     bot: Bot,
@@ -201,6 +204,7 @@ def create_application(
 # Main application
 # ---------------------------------------------------------
 
+
 async def main() -> None:
     """
     Start StudyMed's webhook server.
@@ -214,10 +218,7 @@ async def main() -> None:
 
     validate_environment()
 
-    webhook_url = (
-        f"{WEBHOOK_BASE_URL.rstrip('/')}"
-        f"{WEBHOOK_PATH}"
-    )
+    webhook_url = f"{WEBHOOK_BASE_URL.rstrip('/')}{WEBHOOK_PATH}"
 
     # -----------------------------------------------------
     # Bot
@@ -237,8 +238,7 @@ async def main() -> None:
     dp = Dispatcher()
 
     # Register routers
-    dp.include_router(start_router)
-    dp.include_router(add_router)
+    dp.include_routers(start_router,add_router)
 
     # -----------------------------------------------------
     # aiohttp application
@@ -308,14 +308,10 @@ async def main() -> None:
                 drop_pending_updates=False,
             )
 
-            logger.info(
-                "Telegram webhook removed."
-            )
+            logger.info("Telegram webhook removed.")
 
         except Exception:
-            logger.exception(
-                "Failed to remove Telegram webhook."
-            )
+            logger.exception("Failed to remove Telegram webhook.")
 
         # Clean up aiohttp / aiogram resources.
         await runner.cleanup()
@@ -338,7 +334,5 @@ if __name__ == "__main__":
         logger.info("StudyMed stopped by user.")
 
     except Exception:
-        logger.exception(
-            "StudyMed crashed during startup."
-        )
+        logger.exception("StudyMed crashed during startup.")
         raise
