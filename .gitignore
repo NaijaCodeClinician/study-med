@@ -1,7 +1,7 @@
 # Virtual environments
-.venv/
-venv/
-medstudy_venv/
+**/.venv/
+**/venv/
+**/medstudy_venv/
 
 # Configuration files
 **.ini
@@ -11,22 +11,22 @@ medstudy_venv/
 .env.*
 
 # Python cache
-**/__pycache__/
-**/.pytest_cache/
-**/.mypy_cache/
-**/.ruff_cache/
-**/*.py[cod]
+**/__pycache__/**
+**/.pytest_cache/**
+**/.mypy_cache/**
+**/.ruff_cache/**
+**/*.py[cod]**
 
 # Build artifacts
-**/build/
-**/dist/
-**/*.egg-info/
+**/build/**
+**/dist/**
+**/*.egg-info/**
 
 # Node
-**/node_modules/
+**/node_modules/**
 
 # Local databases
 *.db
 
 # VSCode
-**/.vscode/
+**/.vscode/**
