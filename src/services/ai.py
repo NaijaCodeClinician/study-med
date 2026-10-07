@@ -344,7 +344,7 @@ long_answer:
         # Validate the generated object before returning it to handlers.
         try:
             if not isinstance(data, dict):
-                raise ValueError(
+                raise ValueError(  # noqa: TRY004
                     "AI_RESPONSE_ERROR: StudyMed received an invalid "
                     "flashcard response."
                 )
@@ -387,25 +387,25 @@ long_answer:
                 )
 
             if not isinstance(data["question"], str):
-                raise ValueError(
+                raise ValueError(  # noqa: TRY004
                     "AI_RESPONSE_ERROR: The generated question is invalid."
                 )
 
             if not isinstance(data["answer"], str):
-                raise ValueError("AI_RESPONSE_ERROR: The generated answer is invalid.")
+                raise ValueError("AI_RESPONSE_ERROR: The generated answer is invalid.")  # noqa: TRY004
 
             if not isinstance(data["multi_choices"], list):
-                raise ValueError(
+                raise ValueError(  # noqa: TRY004
                     "AI_RESPONSE_ERROR: The generated choices are invalid."
                 )
 
             if not isinstance(data["case_sensitive"], bool):
-                raise ValueError(
+                raise ValueError(  # noqa: TRY004
                     "AI_RESPONSE_ERROR: The case-sensitivity setting is invalid."
                 )
 
             if not isinstance(data["reason"], str):
-                raise ValueError(
+                raise ValueError(  # noqa: TRY004
                     "AI_RESPONSE_ERROR: The AI returned an invalid rejection explanation."
                 )
 

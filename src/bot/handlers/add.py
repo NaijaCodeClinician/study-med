@@ -387,7 +387,7 @@ async def receive_knowledge(message: Message, state: FSMContext):
             )
             return
 
-    except ValueError as error:  # If an error occurred during flashcard generation # noqa: BLE001
+    except ValueError as error:  # If an error occurred during flashcard generation
         await state.set_state(
             AddCardState.knowledge
         )  # Set state back to the former FSM's state (knowledge)
@@ -522,7 +522,7 @@ async def knowledge_retry(callback: CallbackQuery, state: FSMContext):
             )
             return
 
-    except ValueError as error:  # If an error occurred during flashcard generation # noqa: BLE001
+    except ValueError as error:  # If an error occurred during flashcard generation
         await state.set_state(
             AddCardState.knowledge
         )  # Set state back to the former FSM's state (knowledge)
@@ -653,7 +653,7 @@ async def regenerate_card(callback: CallbackQuery, state: FSMContext):
             )
             return
 
-    except ValueError as error:  # noqa: BLE001 # Generation failed, so return the user to review
+    except ValueError as error:  # Generation failed, so return the user to review
         await state.set_state(AddCardState.review)  # Set state back to the review
         await state.update_data(
             question=old_question,
