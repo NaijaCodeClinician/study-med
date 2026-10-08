@@ -11,6 +11,7 @@
         "short_answer": 900,
         "long_answer": 2200
     },
+    "max_completion_tokens": 2200,
 
     "VALID_DIFFICULTIES": ["easy", "medium", "difficult"], 
     "VALID_REASONS" : [

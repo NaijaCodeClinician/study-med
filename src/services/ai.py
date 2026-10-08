@@ -85,14 +85,16 @@ class AIService:
             )
 
         try:
-            self.temperature = float(AI_CONFIG.get("temperature", 0.2))
+            self.temperature = float(AI_CONFIG.get("temperature", 0.4))
             self.max_completion_tokens = int(
-                AI_CONFIG.get("max_completion_tokens", 500)
+                AI_CONFIG.get("max_completion_tokens", 2200)
             )
+            self.max_retries = AI_CONFIG.get("max_retries", 2)
+            self.timeout = AI_CONFIG.get("timeout", 60.0)
         except (TypeError, ValueError):
             raise ValueError(
-                "AI_CONFIG_ERROR: The AI temperature or "
-                "max_completion_tokens setting is invalid."
+                "AI_CONFIG_ERROR: The AI temperature, "
+                "max_completion_tokens, max_retries or timeout setting is invalid."
             ) from None
 
         if self.max_completion_tokens <= 0:
@@ -138,7 +140,7 @@ class StudyMedAI(AIService):
                 messages=[
                     {
                         "role": "system",
-                        "content": """
+                        "content": f"""
 You are StudyMed's medical flashcard generation engine.
 
 Transform the student's submitted knowledge into ONE reliable study flashcard.
@@ -164,6 +166,11 @@ Rules:
 Rejection codes:
 TOO_VAGUE, INSUFFICIENT_INFORMATION, NOT_MEDICAL,
 UNSAFE_CONTENT, CONTRADICTORY_INFORMATION, NOT_STUDYABLE, DOESN'T_MATCH, OTHER.
+
+MAX_COMPLETION_TOKENS:
+multiple_choice: {AI_CONFIG.get("MAX_COMPLETION_TOKENS", {}).get("multiple_choice", 900)}
+short_answer: {AI_CONFIG.get("MAX_COMPLETION_TOKENS", {}).get("short_answer", 900)}
+long_answer: {AI_CONFIG.get("MAX_COMPLETION_TOKENS", {}).get("long_answer", 2200)}
 
 Question-type rules:
 multiple_choice:
@@ -243,6 +250,7 @@ long_answer:
                 },
                 temperature=self.temperature,
                 max_completion_tokens=self.max_completion_tokens,
+                timeout=self.timeout,
             )
 
         except RateLimitError:

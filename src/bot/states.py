@@ -42,3 +42,13 @@ class QuizState(StatesGroup):
     start = State()  # Quiz is ready / users starts
     review = State()  # Quiz in progress / answers are stored temporarily
     finish = State()  # User is done with quiz
+
+
+class MyCardState(StatesGroup):
+    """
+    The state class for the mycard flow
+    """
+
+    subject = State()
+    topic = State()
+    review = State()

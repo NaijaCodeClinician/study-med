@@ -6,7 +6,7 @@ from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
 def subject_keyboard(
-    subjects: list[dict], selected_subject: str = ""
+    subjects: list[dict], selected_subject: int | None = None
 ) -> InlineKeyboardMarkup:
     """
     This is the subjects inline keyboard for the Telegram add flow
@@ -119,9 +119,10 @@ def knowledge_keyboard(retry=False):
     """
     The knowledge input inline keyboard
     """
+    retry_button = []
     if retry:
-        retry_button = InlineKeyboardButton(
-            text="🔁 Retry", callback_data="knowledge_retry"
+        retry_button.append(
+            InlineKeyboardButton(text="🔁 Retry", callback_data="knowledge_retry")
         )
     inline_keyboard = [
         [
@@ -214,7 +215,7 @@ def weak_topics_keyboard(
 
 
 def quiz_location_keyboard():
-    
+
     buttons = [
         [InlineKeyboardButton(text="🎯 Recommended", callback_data="quiz_recommend")],
         [InlineKeyboardButton(text="📚 Question bank", callback_data="quiz_bank")],

@@ -65,6 +65,8 @@ async def select_subject(callback: CallbackQuery, state: FSMContext):
         )  # Send message as an alert (notification) not normal Telegram message
         return  # Exit, do not process any further for this case
 
+    await callback.answer()
+
     await state.update_data(
         subject=subject,
         topics=[],
@@ -105,7 +107,7 @@ async def subject_cancel(callback: CallbackQuery, state: FSMContext):
     await callback.answer()  # Answer the user
 
     await callback.message.edit_text(  # type:ignore
-        "❌ Subject selection and flashcard creation cancelled."
+        "❌ Subject selection and flashcard creation cancelled.\nYou can start again by clicking /add"
     )  # type:ignore # Edit the existing inline-keyboard and show flashcard cancelled to the user
 
 
@@ -122,10 +124,10 @@ async def subject_command_block(message: Message):
     if has_command:
         await message.answer(
             "⛔ You're currently selecting a subject\n\n"
-            "If you want to quit, kindly click ❌ Cancel"
+            "If you want to quit, kindly click ❌ Cancel above👆"
         )
         return
-    await message.answer("⛔ Please choose a subject using the inline keyboard")
+    await message.answer("⛔ Please choose a subject using the inline keyboard above👆")
 
 
 @router.message(AddCardState.subject)  # Fallback if the first block didn't work
@@ -134,7 +136,7 @@ async def subject_text_blocked(message: Message):
     Text blocker for FSM subject state (user can only select a subject using the inline keyboard)
     """
     await message.answer(
-        "⛔ Please choose a subject using the inline keyboard"
+        "⛔ Please choose a subject using the inline keyboard above👆"
     )  # Send the not allowed message
 
 
@@ -154,11 +156,12 @@ async def select_topic(callback: CallbackQuery, state: FSMContext):
     subject = data.get("subject")  # Get user selected subject
 
     if not subject:  # A safe fallback if user somehow bypasses subject selection
-        await callback.answer(
+        await callback.answer()
+
+        await callback.message.edit_text(  # type:ignore
             "⛔ Your subject selection is missing.\n\nPlease try again with /add",
-            show_alert=True,
         )  # Send message as alert
-        await callback.message.edit_reply_markup(reply_markup=None)  # type:ignore
+
         await state.clear()  # Clear existing FSM states
         return  # Exit, do not process any further for this case
 
@@ -222,15 +225,16 @@ async def back_subjects(callback: CallbackQuery, state: FSMContext):
     data = await state.get_data()
     current_subject = data.get("subject")
 
-    if not current_subject:
-        await callback.answer(
-            "⛔ Subject selection not found, please start afresh", show_alert=True
-        )
-        return
-
     await callback.answer()
 
-    await callback.edit_text(  # type: ignore
+    if not current_subject:
+        await callback.message.edit_text(  # type:ignore
+            "⛔ Subject selection not found, please start afresh by clicking /add"
+        )
+        await state.clear()
+        return
+
+    await callback.message.edit_text(  # type: ignore
         "📚 <b>Choose a subject</b>\n\nSelect the subject for your knowledge card:",
         reply_markup=subject_keyboard(
             subjects=available_subjects_dict,
@@ -288,7 +292,7 @@ async def topics_cancel(callback: CallbackQuery, state: FSMContext):
     await callback.answer()  # Answer the user
 
     await callback.message.edit_text(  # type:ignore
-        "❌ Topics selection and flashcard creation cancelled."
+        "❌ Topics selection and flashcard creation cancelled.\nTo start over, click /add"
     )  # type:ignore # Edit the existing inline-keyboard and show flashcard cancelled to the user
 
 
@@ -305,12 +309,12 @@ async def topics_command_block(message: Message):
     if has_command:
         await message.reply(
             "⛔ You're currently selecting your topics\n\n"
-            "If you want to quit, kindly click ❌ Cancel"
+            "If you want to quit, kindly click ❌ Cancel above👆"
         )
         return
     await message.reply(
         "⛔ Please choose your topic(s) using the buttons provided.\n\n"
-        "When you're finished, press ✅ Done."
+        "When you're finished, press ✅ Done. above👆"
     )
 
 
@@ -321,7 +325,7 @@ async def topics_text_blocked(message: Message):
     """
     await message.reply(
         "⛔ Please choose your topic(s) using the buttons provided.\n\n"
-        "When you're finished, press ✅ Done."
+        "When you're finished, press ✅ Done. above👆"
     )
 
 
@@ -343,7 +347,7 @@ async def knowledge_command_block(message: Message):
             "⛔ You're currently adding a flashcard.\n"
             "Please enter the medical knowledge "
             "for the card\n\n"
-            "If you want to quit, kindly click ❌ Cancel"
+            "If you want to quit, kindly click ❌ Cancel above👆"
         )
         return
 
@@ -368,11 +372,21 @@ async def receive_knowledge(message: Message, state: FSMContext):
             "🙏 Please provide the knowledge you want to turn into a 🔖flashcard",
         )
         return
+    text = f"""
+    👇Your input:
+    
+    📖 Subject: {subject_name}
+    
+    📍 Selected Topics:
+    {"\n🟢".join(topics_name)}
+    
+    🧠 Source knowledge:{knowledge}
+    """
 
     await state.update_data(source_knowledge=knowledge, regeneration_count=0)
     await state.set_state(AddCardState.generating)  # Set FSM state to generating
     await message.reply(
-        "🧠 Generating your flashcard...\n\nPlease wait."
+        f"{text}\n\n🧠 Generating your flashcard...\n\nPlease wait."
     )  # Send generating indicator to user
 
     try:  # Try generating flashcard from the user's knowledge
@@ -391,11 +405,11 @@ async def receive_knowledge(message: Message, state: FSMContext):
         await state.set_state(
             AddCardState.knowledge
         )  # Set state back to the former FSM's state (knowledge)
-        await message.answer(
+        await message.reply(
             f"{error}\n\n"
             "<b>Your source knowledge is stored temporarily on the system.</b>\n"
             "Your can either; <b>✍Type</b> and send the knowledge, <b>Click</b> 🔃 Retry to retry generation\n"
-            "OR use any of the buttons below 👇",
+            "OR use any of the buttons below👇",
             reply_markup=knowledge_keyboard(retry=True),
         )
         return
@@ -409,11 +423,27 @@ async def receive_knowledge(message: Message, state: FSMContext):
         multi_choices=result.multi_choices,
     )
 
+    question_type_map = {
+        "multiple_choice": "MCQ",
+        "long_answer": "Theory",
+        "short_answer": "Theory",
+    }
+    multi_choices = (
+        f"""
+    📌 Options:
+    {"\n🟢".join(result.multi_choices)}\n\n
+    """
+        if result.question_type == "multiple_choice"
+        else ""
+    )
+
     await state.set_state(
         AddCardState.review
     )  # Set FSM's state to review (user is reviewing the generated flashcard)
     await message.reply(
         f"❓ <b>Question</b>\n{result.question}\n\n"
+        f"👓 <b>Question Type</b>\n{question_type_map[result.question_type]}\n\n"
+        f"{multi_choices}"
         f"✅ <b>Answer</b>\n{result.answer}\n\n"
         f"🎚 <b>Difficulty:</b>{result.difficulty}",
         reply_markup=review_keyboard(),  # User to reply using the customized review inline-keyboard
@@ -450,20 +480,18 @@ async def knowledge_back(callback: CallbackQuery, state: FSMContext):
     subject = data.get("subject")  # Get user selected subject
 
     selected_topics = data.get("topics", [])
-
+    await callback.answer()
     if not subject:  # A safe fallback if user somehow bypasses subject selection
-        await callback.answer(
+        await callback.message.edit_text(  # type:ignore
             "⛔ Your subject selection is missing.\n\nPlease start from the beginning with /add"
-        )  # Send message as alert
-        await callback.message.edit_reply_markup(reply_markup=None)  # type:ignore
+        )
         await state.clear()  # Clear existing FSM states
         return  # Exit, do not process any further for this case
 
     if not available_subjects:  # A safe fallback if subject.json is empty
-        await callback.answer(
+        await callback.message.edit_text(  # type:ignore
             "❌ No subjects available.\n\nPlease try again later with /add",
         )
-        await callback.message.edit_reply_markup(reply_markup=None)  # type:ignore
         await state.clear()
         return
 
@@ -474,14 +502,11 @@ async def knowledge_back(callback: CallbackQuery, state: FSMContext):
     )  # Get the topics for particular subject
 
     if not topics:
-        await callback.answer(
+        await callback.message.edit_text(  # type:ignore
             f"❌ No topics available yet for {subject['name']}\n\n.Please try again with /add",
         )
-        await callback.message.edit_reply_markup(reply_markup=None)  # type:ignore
         await state.clear()
         return
-
-    await callback.answer()
 
     await callback.message.edit_text(  # type:ignore
         f"📚 <b>{subject['name']}</b>\n\n"
@@ -544,11 +569,27 @@ async def knowledge_retry(callback: CallbackQuery, state: FSMContext):
         multi_choices=result.multi_choices,
     )
 
+    question_type_map = {
+        "multiple_choice": "MCQ",
+        "long_answer": "Theory",
+        "short_answer": "Theory",
+    }
+    multi_choices = (
+        f"""
+        📌 Options:
+        {"\n🟢".join(result.multi_choices)}\n\n
+        """
+        if result.question_type == "multiple_choice"
+        else ""
+    )
+
     await state.set_state(
         AddCardState.review
     )  # Set FSM's state to review (user is reviewing the generated flashcard)
     await callback.message.edit_text(  # type:ignore
         f"❓ <b>Question</b>\n{result.question}\n\n"
+        f"👓 <b>Question Type</b>\n{question_type_map[result.question_type]}\n\n"
+        f"{multi_choices}"
         f"✅ <b>Answer</b>\n{result.answer}\n\n"
         f"🎚 <b>Difficulty:</b>{result.difficulty}",
         reply_markup=review_keyboard(),  # User to reply using the customized review inline-keyboard
@@ -605,6 +646,8 @@ async def regenerate_card(callback: CallbackQuery, state: FSMContext):
     subject = data.get("subject", "")
     topics = data.get("topics", [])
 
+    subject_name = subject["name"]
+    topics_name = [topic["name"] for topic in topics]
     regeneration_count = data.get("regeneration_count", 0)  # Get regeneration count
 
     # Check if user has used up the number of regeneration
@@ -642,8 +685,8 @@ async def regenerate_card(callback: CallbackQuery, state: FSMContext):
     try:  # Try regenerating the flashcard
         result = await study_med_ai.generate_flashcard(
             knowledge=knowledge,
-            subject=subject,
-            topics=topics,
+            subject=subject_name,
+            topics=topics_name,
         )
         if result.status == "rejected":
             await state.set_state(AddCardState.knowledge)
@@ -674,6 +717,7 @@ async def regenerate_card(callback: CallbackQuery, state: FSMContext):
 
     # Regeneration was successful
     regeneration_count += 1  # Increment the regeneration count
+
     await state.update_data(
         question=result.question,
         answer=result.answer,
@@ -697,13 +741,30 @@ async def regenerate_card(callback: CallbackQuery, state: FSMContext):
         if not can_regenerate
         else ""
     )
-    await callback.message.edit_text(  # type: ignore
+
+    question_type_map = {
+        "multiple_choice": "MCQ",
+        "long_answer": "Theory",
+        "short_answer": "Theory",
+    }
+    multi_choices = (
+        f"""
+            📌 Options:
+            {"\n🟢".join(result.multi_choices)}\n\n
+            """
+        if result.question_type == "multiple_choice"
+        else ""
+    )
+
+    await callback.message.edit_text(  # type:ignore
         f"❓ <b>Question</b>\n{result.question}\n\n"
+        f"👓 <b>Question Type</b>\n{question_type_map[result.question_type]}\n\n"
+        f"{multi_choices}"
         f"✅ <b>Answer</b>\n{result.answer}\n\n"
-        f"🎚 <b> Difficulty:</b>{result.difficulty}",
+        f"🎚 <b>Difficulty:</b>{result.difficulty}"
         f"{limit_message}",
-        reply_markup=review_keyboard(can_regenerate=can_regenerate),
-    )  # User to reply using the customized review inline-keyboard
+        reply_markup=review_keyboard(),  # User to reply using the customized review inline-keyboard
+    )
 
 
 @router.callback_query(
@@ -717,7 +778,9 @@ async def cancel_card(callback: CallbackQuery, state: FSMContext):
 
     await state.clear()  # Clear all states (FSM)
 
-    await callback.message.edit_text("❌ Flashcard creation cancelled.")  # type:ignore # Edit the existing inline-keyboard and show flashcard cancelled to the user
+    await callback.message.edit_text(  # type:ignore
+        "❌ Flashcard creation cancelled. Click /add to start over"
+    )  # Edit the existing inline-keyboard and show flashcard cancelled to the user
 
 
 @router.callback_query(AddCardState.review, F.data == "card_back")
@@ -760,10 +823,10 @@ async def review_command_block(message: Message, state: FSMContext):
         extra = ", 🔁 Regenerate, ◀ Back" if can_regenerate else ""
         await message.reply(
             "⛔ You're currently reviewing a flashcard\n\n"
-            f"Please use ✅ Save{extra} or ❌ Cancel.",
+            f"Please use ✅ Save{extra} or ❌ Cancel above👆",
         )
         return
-    await message.reply("⛔ Please use the buttons above to continue")
+    await message.reply("⛔ Please use the buttons above👆 to continue")
 
 
 @router.message(
@@ -780,7 +843,7 @@ async def review_text_blocked(message: Message, state: FSMContext):
     can_regenerate = MAX_REGENERATIONS > regeneration_count
     extra = ", 🔁 Regenerate, ◀ Back" if can_regenerate else ""
     await message.reply(
-        f"Please use the buttons below to continue.\n\nChoose ✅ Save{extra} or ❌ Cancel.",
+        f"Please use the buttons above👆 to continue.\n\nChoose ✅ Save{extra} or ❌ Cancel.",
     )
 
 

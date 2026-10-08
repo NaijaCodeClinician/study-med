@@ -192,12 +192,12 @@ async def subject_command_block(message: Message):
     if has_command:
         await message.reply(
             "⛔ You're currently selecting your subjects\n\n"
-            "If you want to quit, kindly click ❌ Cancel"
+            "If you want to quit, kindly click ❌ Cancel above👆"
         )
         return
     await message.reply(
         "⛔ Please choose your subject(s) using the buttons provided.\n\n"
-        "When you're finished, press ▶ Next."
+        "When you're finished, press ▶ Next above👆"
     )
 
 
@@ -208,7 +208,7 @@ async def subjects_text_blocked(message: Message):
     """
     await message.reply(
         "⛔ Please choose your subject(s) using the buttons provided.\n\n"
-        "When you're finished, press ▶ Next."
+        "When you're finished, press ▶ Next above👆"
     )
 
 
@@ -470,12 +470,12 @@ async def topics_command_block(message: Message):
     if has_command:
         await message.reply(
             "⛔ You're currently selecting your topics\n\n"
-            "If you want to quit, kindly click ❌ Cancel"
+            "If you want to quit, kindly click ❌ Cancel above👆"
         )
         return
     await message.reply(
         "⛔ Please choose your topic(s) using the buttons provided.\n\n"
-        "When you're finished, press ▶ Next."
+        "When you're finished, press ▶ Next above👆"
     )
 
 
@@ -486,8 +486,28 @@ async def topics_text_blocked(message: Message):
     """
     await message.reply(
         "⛔ Please choose your topic(s) using the buttons provided.\n\n"
-        "When you're finished, press ▶ Next."
+        "When you're finished, press ▶ Next above👆"
     )
+
+
+# =============== STUDY TIME FLOW ==================
+@router.message(
+    StartBotState.study_time, F.entities
+)  # Handle and block text messages during topics selection
+async def study_time_command_block(message: Message):
+    """
+    Text blocker for FSM study_time state user can't send commands
+    """
+
+    entities = message.entities or []
+    has_command = any(entity.type == "bot_command" for entity in entities)
+
+    if has_command:
+        await message.reply(
+            "⛔ You're currently setting your study time reminder\n\n"
+            "If you want to quit, kindly click ❌ Cancel above👆"
+        )
+        return
 
 
 @router.message(StartBotState.study_time)
@@ -529,19 +549,20 @@ async def cancel_study_time(callback: CallbackQuery, state: FSMContext):
     await state.clear()
 
     await callback.message.edit_text(  # type:ignore
-        "❌ Setup session was cancelled by you.\nYou can send <b>/start</b> to start over again"
+        "❌ Setup session was cancelled by you.\nYou can click <b>/start</b> to start over again"
     )
 
 
 @router.callback_query(StartBotState.study_time, F.data == "time_back")
 async def back_study_time(callback: CallbackQuery, state: FSMContext):
-    await callback.answer()
-
     data = await state.get_data()
 
     previous_callback = data.get("previous_callback", "")
 
     if previous_callback in {"weak_topic:", "weak_topic_next", "weak_sub_skip"}:
+        await callback.answer()
+
+        await state.set_state(StartBotState.subjects)
         await callback.message.edit_text(  # type:ignore
             text=f"✋Hi <b>{callback.from_user.full_name if callback.from_user.full_name else callback.from_user.username}</b>"  # type: ignore
             "\n<i>Let's continue with your setup.</i>\n\n<b>Select your weak subjects:</b>",
@@ -556,9 +577,13 @@ async def back_study_time(callback: CallbackQuery, state: FSMContext):
 
     selected_subjects = data.get("subjects", [])  # Get user selected subjects
     if not selected_subjects:
+        await callback.answer()
+
         await callback.message.edit_text(  # type:ignore
             "<b>⛔ An error occurred</b>\nPlease start all over with /start"
         )
+
+        await state.clear()
         return
 
     current_subject = selected_subjects[current_index]
@@ -583,7 +608,7 @@ async def back_study_time(callback: CallbackQuery, state: FSMContext):
 
     selected_topics = weak_subjects.get(current_subject["name"], [])
 
-    is_last = len(selected_subjects) == 1
+    is_last = current_index >= len(selected_subjects) - 1
     await callback.message.edit_text(  # type:ignore
         f"📚 <b>{current_subject['name']}</b>\n\n"
         "Select one or more topics.\n\n"

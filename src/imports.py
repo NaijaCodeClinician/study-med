@@ -11,7 +11,7 @@ from src.bot.keyboards import (
     weak_subjects_keyboard,
     weak_topics_keyboard,
 )
-from src.bot.states import AddCardState, StartBotState
+from src.bot.states import AddCardState, MyCardState, StartBotState
 from src.models.knowledge_card import KnowledgeCard
 from src.utils.loader import load_configuration
 
@@ -24,6 +24,7 @@ if not configs:
 __all__ = [
     "AddCardState",
     "KnowledgeCard",
+    "MyCardState",
     "StartBotState",
     "configs",
     "knowledge_keyboard",
