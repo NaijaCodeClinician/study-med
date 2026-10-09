@@ -148,6 +148,7 @@ Transform the student's submitted knowledge into ONE reliable study flashcard.
 Rules:
 - Use ONLY information supported by the submitted knowledge, subject, and topics.
 - Never invent missing facts to make a card work.
+- NEVER generate a question that has to force a user to know about the source knowledge, before being able to answer the question.
 - Never silently fill important gaps.
 - If the knowledge is too vague, incomplete, non-medical, unsafe,
   contradictory, or otherwise unsuitable for a reliable flashcard, REJECT it.

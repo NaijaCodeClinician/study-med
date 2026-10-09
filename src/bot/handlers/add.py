@@ -382,16 +382,18 @@ async def receive_knowledge(message: Message, state: FSMContext):
         )
         return
     text = f"""
-    👇Your input:
+✍Your input:
     
-    📖 Subject: {subject_name}
-    
-    📍 Selected Topics: {"\n🟢 " + "\n🟢 ".join(topics_name)}
-    
-    🧠 Source knowledge: {knowledge}
-    """
+<b>📖 Subject:</b>
+{subject_name}
 
-    await state.update_data(source_knowledge=knowledge, regeneration_count=0)
+<b>📍 Selected Topics:</b>{"\n🟢 " + "\n🟢 ".join(topics_name)}
+    
+<b>🧠 Source knowledge:</b>
+{knowledge}
+    """
+    regeneration_count = data.get("regeneration_count",0)
+    await state.update_data(source_knowledge=knowledge, regeneration_count=regeneration_count)
     await state.set_state(AddCardState.generating)  # Set FSM state to generating
     await message.reply(
         f"{text}\n\n🧠 Generating your flashcard...\n\nPlease wait."
@@ -438,7 +440,7 @@ async def receive_knowledge(message: Message, state: FSMContext):
     }
     multi_choices = (
         f"""
-    📌 Options: {"\n🟢 " + "\n🟢".join(result.multi_choices)}\n\n
+📌 <b>Options:</b>{"\n🟢 " + "\n🟢".join(result.multi_choices)}\n\n
     """
         if result.question_type == "multiple_choice"
         else ""
@@ -448,10 +450,10 @@ async def receive_knowledge(message: Message, state: FSMContext):
         AddCardState.review
     )  # Set FSM's state to review (user is reviewing the generated flashcard)
     await message.reply(
-        f"❓ <b>Question</b>\n{result.question}\n\n"
-        f"👓 <b>Question Type</b>\n{question_type_map[result.question_type]}\n\n"
+        f"❓ <b>Question:</b>\n{result.question}\n\n"
+        f"👓 <b>Question Type:</b>\n{question_type_map[result.question_type]}\n\n"
         f"{multi_choices}"
-        f"✅ <b>Answer</b>\n{result.answer}\n\n"
+        f"✅ <b>Answer:</b>\n{result.answer}\n\n"
         f"🎚 <b>Difficulty:</b>{result.difficulty}",
         reply_markup=review_keyboard(),  # User to reply using the customized review inline-keyboard
     )
@@ -583,8 +585,8 @@ async def knowledge_retry(callback: CallbackQuery, state: FSMContext):
     }
     multi_choices = (
         f"""
-        📌 Options: {"\n🟢 " + "\n🟢 ".join(result.multi_choices)}\n\n
-        """
+📌 <b>Options:</b>{"\n🟢 " + "\n🟢".join(result.multi_choices)}\n\n
+"""
         if result.question_type == "multiple_choice"
         else ""
     )
@@ -593,10 +595,10 @@ async def knowledge_retry(callback: CallbackQuery, state: FSMContext):
         AddCardState.review
     )  # Set FSM's state to review (user is reviewing the generated flashcard)
     await callback.message.edit_text(  # type:ignore
-        f"❓ <b>Question</b>\n{result.question}\n\n"
-        f"👓 <b>Question Type</b>\n{question_type_map[result.question_type]}\n\n"
+        f"❓ <b>Question:</b>\n{result.question}\n\n"
+        f"👓 <b>Question Type:</b>\n{question_type_map[result.question_type]}\n\n"
         f"{multi_choices}"
-        f"✅ <b>Answer</b>\n{result.answer}\n\n"
+        f"✅ <b>Answer:</b>\n{result.answer}\n\n"
         f"🎚 <b>Difficulty:</b>{result.difficulty}",
         reply_markup=review_keyboard(),  # User to reply using the customized review inline-keyboard
     )
@@ -755,17 +757,17 @@ async def regenerate_card(callback: CallbackQuery, state: FSMContext):
     }
     multi_choices = (
         f"""
-    📌 Options: {"\n🟢 " + "\n🟢 ".join(result.multi_choices)}\n\n
-    """
+📌 <b>Options:</b>{"\n🟢 " + "\n🟢".join(result.multi_choices)}\n\n
+"""
         if result.question_type == "multiple_choice"
         else ""
     )
 
     await callback.message.edit_text(  # type:ignore
-        f"❓ <b>Question</b>\n{result.question}\n\n"
-        f"👓 <b>Question Type</b>\n{question_type_map[result.question_type]}\n\n"
+        f"❓ <b>Question:</b>\n{result.question}\n\n"
+        f"👓 <b>Question Type:</b>\n{question_type_map[result.question_type]}\n\n"
         f"{multi_choices}"
-        f"✅ <b>Answer</b>\n{result.answer}\n\n"
+        f"✅ <b>Answer:</b>\n{result.answer}\n\n"
         f"🎚 <b>Difficulty:</b>{result.difficulty}"
         f"{limit_message}",
         reply_markup=review_keyboard(),  # User to reply using the customized review inline-keyboard
