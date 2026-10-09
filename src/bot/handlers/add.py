@@ -51,11 +51,12 @@ async def select_subject(callback: CallbackQuery, state: FSMContext):
     """
     The callback query handler for subjects (when the user chooses a subject)
     """
-
+    data = await state.get_data()
     subject_id = callback.data.removeprefix(  # type: ignore
         "subject:"
     )
     subject = get_subject_id(subject_content, subject_id)
+    current_subject = data.get("subject", "")
 
     if subject is None:
         # If user by chance selects a non-existing subject (a safe fallback, not likely to happen)
@@ -64,6 +65,16 @@ async def select_subject(callback: CallbackQuery, state: FSMContext):
             show_alert=True,
         )  # Send message as an alert (notification) not normal Telegram message
         return  # Exit, do not process any further for this case
+
+    if subject == current_subject:
+        await callback.answer()
+        await state.update_data(subject="")
+        await callback.message.edit_reply_markup(  # type:ignore
+            reply_markup=subject_keyboard(
+                available_subjects_dict
+            )  # Show that subject has been selected
+        )
+        return
 
     await callback.answer()
 
@@ -392,8 +403,10 @@ async def receive_knowledge(message: Message, state: FSMContext):
 <b>🧠 Source knowledge:</b>
 {knowledge}
     """
-    regeneration_count = data.get("regeneration_count",0)
-    await state.update_data(source_knowledge=knowledge, regeneration_count=regeneration_count)
+    regeneration_count = data.get("regeneration_count", 0)
+    await state.update_data(
+        source_knowledge=knowledge, regeneration_count=regeneration_count
+    )
     await state.set_state(AddCardState.generating)  # Set FSM state to generating
     await message.reply(
         f"{text}\n\n🧠 Generating your flashcard...\n\nPlease wait."
