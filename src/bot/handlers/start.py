@@ -112,15 +112,19 @@ async def finish_subjects(callback: CallbackQuery, state: FSMContext):
         )  # Send this alert
         return  # Exit, do not proceed any further
 
-    current_index = 0
+    current_index = data.get("current_index", 0)
 
     await state.update_data(current_index=current_index)
-    first_subject = selected_subjects[current_index]
-    available_topics = get_topics_id(subject_content, first_subject["id"])
+    current_subject = selected_subjects[current_index]
+    available_topics = get_topics_id(subject_content, current_subject["id"])
+
+    weak_subjects = data.get("weak_subjects", {})
+
+    weak_topics = weak_subjects.get(current_subject["name"], [])
 
     if not available_topics:
         await callback.answer(
-            f"⛔ No topics available for {first_subject['name']}", show_alert=True
+            f"⛔ No topics available for {current_subject['name']}", show_alert=True
         )
         return
 
@@ -131,13 +135,13 @@ async def finish_subjects(callback: CallbackQuery, state: FSMContext):
     await callback.answer()
     is_last = len(selected_subjects) == 1
     await callback.message.edit_text(  # type:ignore
-        f"📚 <b>{first_subject['name']}</b>\n\n"
+        f"📚 <b>{current_subject['name']}</b>\n\n"
         "Select one or more topics.\n\n"
         "You must select at least one topic "
         "before continuing.",
         reply_markup=weak_topics_keyboard(
             available_topics,
-            selected_topics=[],
+            selected_topics=weak_topics,
             is_last=is_last,
         ),
     )

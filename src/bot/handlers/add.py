@@ -122,12 +122,12 @@ async def subject_command_block(message: Message):
     has_command = any(entity.type == "bot_command" for entity in entities)
 
     if has_command:
-        await message.answer(
+        await message.reply(
             "⛔ You're currently selecting a subject\n\n"
             "If you want to quit, kindly click ❌ Cancel above👆"
         )
         return
-    await message.answer("⛔ Please choose a subject using the inline keyboard above👆")
+    await message.reply("⛔ Please choose a subject using the inline keyboard above👆")
 
 
 @router.message(AddCardState.subject)  # Fallback if the first block didn't work
@@ -135,7 +135,7 @@ async def subject_text_blocked(message: Message):
     """
     Text blocker for FSM subject state (user can only select a subject using the inline keyboard)
     """
-    await message.answer(
+    await message.reply(
         "⛔ Please choose a subject using the inline keyboard above👆"
     )  # Send the not allowed message
 
@@ -352,6 +352,15 @@ async def knowledge_command_block(message: Message):
         return
 
 
+@router.message(AddCardState.generating)
+async def generating_text_block(message: Message):
+
+    await message.reply(
+        "⛔ You're flashcard is currently being generated.\n"
+        "Please wait, <b>OR</b> or kindly click ❌ Cancel above👆 to quit"
+    )
+
+
 @router.message(AddCardState.knowledge)
 async def receive_knowledge(message: Message, state: FSMContext):
     """
@@ -377,10 +386,9 @@ async def receive_knowledge(message: Message, state: FSMContext):
     
     📖 Subject: {subject_name}
     
-    📍 Selected Topics:
-    {"\n🟢".join(topics_name)}
+    📍 Selected Topics: {"\n🟢 " + "\n🟢 ".join(topics_name)}
     
-    🧠 Source knowledge:{knowledge}
+    🧠 Source knowledge: {knowledge}
     """
 
     await state.update_data(source_knowledge=knowledge, regeneration_count=0)
@@ -430,8 +438,7 @@ async def receive_knowledge(message: Message, state: FSMContext):
     }
     multi_choices = (
         f"""
-    📌 Options:
-    {"\n🟢".join(result.multi_choices)}\n\n
+    📌 Options: {"\n🟢 " + "\n🟢".join(result.multi_choices)}\n\n
     """
         if result.question_type == "multiple_choice"
         else ""
@@ -576,8 +583,7 @@ async def knowledge_retry(callback: CallbackQuery, state: FSMContext):
     }
     multi_choices = (
         f"""
-        📌 Options:
-        {"\n🟢".join(result.multi_choices)}\n\n
+        📌 Options: {"\n🟢 " + "\n🟢 ".join(result.multi_choices)}\n\n
         """
         if result.question_type == "multiple_choice"
         else ""
@@ -749,9 +755,8 @@ async def regenerate_card(callback: CallbackQuery, state: FSMContext):
     }
     multi_choices = (
         f"""
-            📌 Options:
-            {"\n🟢".join(result.multi_choices)}\n\n
-            """
+    📌 Options: {"\n🟢 " + "\n🟢 ".join(result.multi_choices)}\n\n
+    """
         if result.question_type == "multiple_choice"
         else ""
     )

@@ -39,6 +39,7 @@ class Database:
                     username TEXT,
                     first_name TEXT,
                     last_name TEXT,
+                    study_time INTEGER
                     created_at TEXT NOT NULL
                         DEFAULT CURRENT_TIMESTAMP
                 );
