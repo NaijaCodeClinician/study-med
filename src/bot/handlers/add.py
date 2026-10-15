@@ -5,6 +5,7 @@ ranging from spanning over; subject selection, topics selection, knowledge input
 
 from aiogram import F, Router
 from aiogram.filters.command import Command
+from aiogram.filters.state import StateFilter
 from aiogram.fsm.context import FSMContext
 from aiogram.types.callback_query import CallbackQuery
 from aiogram.types.message import Message
@@ -13,6 +14,7 @@ from src.imports import (
     AddCardState,
     KnowledgeCard,
     configs,
+    edit_knowledge_keyboard,
     knowledge_keyboard,
     review_keyboard,
     subject_keyboard,
@@ -383,15 +385,14 @@ async def receive_knowledge(message: Message, state: FSMContext):
     subject_name = subject["name"]
     topics = data.get("topics", [])
     topics_name = [topic["name"] for topic in topics]
-    knowledge = (
-        message.text or ""
-    ).strip()  # Convert knowledge to string  # type: ignore
+    knowledge = (message.text or "").strip()  # Convert knowledge to string  # type: ignore
 
     if not knowledge:  # If user sent an empty message
         await message.reply(
             "🙏 Please provide the knowledge you want to turn into a 🔖flashcard",
         )
         return
+
     text = f"""
 ✍Your input:
     
@@ -403,11 +404,8 @@ async def receive_knowledge(message: Message, state: FSMContext):
 <b>🧠 Source knowledge:</b>
 {knowledge}
     """
-    regeneration_count = data.get("regeneration_count", 0)
-    await state.update_data(
-        source_knowledge=knowledge, regeneration_count=regeneration_count
-    )
     await state.set_state(AddCardState.generating)  # Set FSM state to generating
+    await state.update_data(source_knowledge=knowledge)
     await message.reply(
         f"{text}\n\n🧠 Generating your flashcard...\n\nPlease wait."
     )  # Send generating indicator to user
@@ -417,9 +415,9 @@ async def receive_knowledge(message: Message, state: FSMContext):
             knowledge=knowledge, subject=subject_name, topics=topics_name
         )
         if result.status == "rejected":
-            await state.set_state(AddCardState.knowledge)
+            await state.set_state(AddCardState.rechecking)
             await message.reply(
-                f"{result.reason}\nPlease check and resend your 🧠knowledge, <b>OR</b> use any of the buttons below",
+                f"{result.reason}\nPlease click <b>✍ Edit</b> to adjust your sent 🧠knowledge, <b>OR</b> use any of the other buttons below",
                 reply_markup=knowledge_keyboard(),
             )
             return
@@ -428,12 +426,13 @@ async def receive_knowledge(message: Message, state: FSMContext):
         await state.set_state(
             AddCardState.knowledge
         )  # Set state back to the former FSM's state (knowledge)
+        await state.update_data(current_state="knowledge")
         await message.reply(
             f"{error}\n\n"
             "<b>Your source knowledge is stored temporarily on the system.</b>\n"
-            "Your can either; <b>✍Type</b> and send the knowledge, <b>Click</b> 🔃 Retry to retry generation\n"
-            "OR use any of the buttons below👇",
-            reply_markup=knowledge_keyboard(retry=True),
+            "<b>Click</b>  <i>🔃 Retry</i> to retry generation or <i>✍ Edit</i> to edit your sent knowledge\n"
+            "OR use any of the other buttons below👇",
+            reply_markup=knowledge_keyboard(can_retry=True),
         )
         return
 
@@ -459,16 +458,28 @@ async def receive_knowledge(message: Message, state: FSMContext):
         else ""
     )
 
+    generation_count = data.get("generation_count", 0)
     await state.set_state(
         AddCardState.review
     )  # Set FSM's state to review (user is reviewing the generated flashcard)
+    generation_count += 1
+    can_regenerate = generation_count < MAX_REGENERATIONS
+    limit_message = (
+        "\n\n⚠ You have used all generations for this session."
+        if not can_regenerate
+        else f"You have {MAX_REGENERATIONS - generation_count} generation(s) remaining for this session."
+    )
+    await state.update_data(generation_count=generation_count)
     await message.reply(
         f"❓ <b>Question:</b>\n{result.question}\n\n"
         f"👓 <b>Question Type:</b>\n{question_type_map[result.question_type]}\n\n"
         f"{multi_choices}"
         f"✅ <b>Answer:</b>\n{result.answer}\n\n"
-        f"🎚 <b>Difficulty:</b>{result.difficulty}",
-        reply_markup=review_keyboard(),  # User to reply using the customized review inline-keyboard
+        f"🎚 <b>Difficulty:</b>{result.difficulty}\n\n"
+        f"{limit_message}",
+        reply_markup=review_keyboard(
+            can_regenerate=can_regenerate
+        ),  # User to reply using the customized review inline-keyboard
     )
 
 
@@ -542,7 +553,123 @@ async def knowledge_back(callback: CallbackQuery, state: FSMContext):
     )  # Send the topics selection inline keyboard
 
 
-@router.callback_query(AddCardState.knowledge, F.data == "knowledge_retry")
+# =========== RECHECKING CARD FLOW ========
+@router.message(AddCardState.rechecking, F.entities)
+async def rechecking_knowledge_command_text_blocker(message: Message):
+    entities = message.entities or []
+    has_command = any(entity.type == "bot_command" for entity in entities)
+
+    if has_command:
+        await message.reply(
+            "⛔ You're currently creating a flashcard and your command was blocked\n\n"
+            "If you want to quit, kindly click ❌ Cancel above👆"
+        )
+        return
+
+    await message.reply("⛔ Please use the buttons above👆")
+
+
+@router.message(AddCardState.rechecking)
+async def rechecking_text_blocker(message: Message):
+    await message.reply("⛔ Please use the buttons above👆")
+
+
+@router.callback_query(AddCardState.rechecking, F.data == "knowledge_edit")
+async def knowledge_edit(callback: CallbackQuery, state: FSMContext):
+    data = await state.get_data()
+
+    source_knowledge = data.get("source_knowledge")
+
+    attached_message = (
+        f"""
+    👇Your previously inputted knowledge
+    {source_knowledge}
+    """
+        if source_knowledge
+        else "Your previously inputted 🧠knowledge wasn't found"
+    )
+    await state.set_state(AddCardState.knowledge)
+    await callback.message.edit(  # type:ignore
+        f"{attached_message}\n\nPlease ✍enter the new knowledge below👇",
+        reply_markup=edit_knowledge_keyboard(),
+    )
+
+
+@router.callback_query(AddCardState.rechecking, F.data == "knowledge_back")
+async def knowledge_back_rechecking(callback: CallbackQuery, state: FSMContext):
+    data = await state.get_data()
+
+    previous_state = data.get("current_state")
+
+    if previous_state == "knowledge":
+        await state.set_state(AddCardState.knowledge)
+
+        await callback.answer()
+
+        await callback.message.edit_text(  # type:ignore
+            "📝 <b>Enter your knowledge</b>\n\n"
+            "Send the medical knowledge you want "
+            "StudyMed to turn into a flashcard\n\n"
+            "💁‍♂️ Example:\n"
+            "<i>The brachial plexus is formed by "
+            "the anterior rami of C5-T1 spinal nerves.</i>",
+            reply_markup=knowledge_keyboard(),
+        )
+        return
+
+    old_question = data.get("question")
+    old_answer = data.get("answer")
+    old_difficulty = data.get("difficulty")
+    old_question_type = data.get("question_type", "")
+    old_multi_choices = data.get("multi_choices", [])
+    question_type_map = {
+        "multiple_choice": "MCQ",
+        "long_answer": "Theory",
+        "short_answer": "Theory",
+    }
+
+    multi_choices = (
+        f"""
+    📌 <b>Options:</b>{"\n🟢 " + "\n🟢".join(old_multi_choices)}\n\n
+        """
+        if old_question_type == "multiple_choice"
+        else ""
+    )
+
+    await callback.answer()
+
+    await state.set_state(AddCardState.review)
+
+    regeneration_count = data.get("regeneration_count", 0)
+
+    can_regenerate = regeneration_count < MAX_REGENERATIONS
+
+    limit_message = (
+        "\n\n⚠ You have used all regenerations for this session."
+        if not can_regenerate
+        else f"You have {MAX_REGENERATIONS - regeneration_count} regeneration(s) remaining for this session."
+    )
+    await callback.message.edit_text(  # type:ignore
+        f"""
+<b>Your previous flashcard regeneration results👇</b>
+                    
+                    
+❓ <b>Question:</b>\n{old_question}
+                    
+👓 <b>Question Type:</b>\n{question_type_map[old_question_type]}
+                    
+{multi_choices}"
+✅ <b>Answer:</b>\n{old_answer}
+                    
+🎚 <b>Difficulty:</b>{old_difficulty}            
+
+{limit_message}
+""",
+        reply_markup=review_keyboard(),
+    )
+
+
+@router.callback_query(AddCardState.rechecking, F.data == "knowledge_retry")
 async def knowledge_retry(callback: CallbackQuery, state: FSMContext):
     data = await state.get_data()
 
@@ -550,6 +677,64 @@ async def knowledge_retry(callback: CallbackQuery, state: FSMContext):
     subject = data.get("subject", "")
     topics = data.get("topics", [])
     topics_name = [topic["name"] for topic in topics]
+
+    retry_count = data.get("retry_count", 0)
+    retry_count += 1
+
+    # Get old Knowledge card info (as a fallback)
+    old_question = data.get("question")
+    old_answer = data.get("answer")
+    old_difficulty = data.get("difficulty")
+    old_question_type = data.get("question_type", "")
+    old_multi_choices = data.get("multi_choices", [])
+    question_type_map = {
+        "multiple_choice": "MCQ",
+        "long_answer": "Theory",
+        "short_answer": "Theory",
+    }
+
+    multi_choices = (
+        f"""
+    📌 <b>Options:</b>{"\n🟢 " + "\n🟢".join(old_multi_choices)}\n\n
+        """
+        if old_question_type == "multiple_choice"
+        else ""
+    )
+    if retry_count >= MAX_REGENERATIONS:
+        text = (
+            f"""
+<b>Your previous flashcard regeneration results👇</b>
+                    
+                    
+❓ <b>Question:</b>\n{old_question}
+                    
+👓 <b>Question Type:</b>\n{question_type_map[old_question_type]}
+                    
+{multi_choices}"
+✅ <b>Answer:</b>\n{old_answer}
+                    
+🎚 <b>Difficulty:</b>{old_difficulty}
+            
+<b>YOU HAVE SURPASSED THE NUMBER OF RETRIES FOR THIS SESSION</b>
+                    
+<i>You can choose to either 🗳save your previous regenerated flashcard, or ❌cancel this session</i>
+"""
+            if old_question
+            else """
+                    <b>⛔YOU HAVE EXHAUSTED ALL YOUR AVAILABLE RETRIES, AND YOUR CURRENT SESSION HAS BEEN TERMINATED
+                    """
+        )
+
+        if not old_question:
+            await state.clear()
+            await callback.message.edit_text(text=text)  # type:ignore
+            return
+
+        await state.set_state(AddCardState.review)
+        await callback.message.edit_text(  # type:ignore
+            text=text, reply_markup=review_keyboard(can_regenerate=False)
+        )
+        return
 
     await state.set_state(AddCardState.generating)  # Set FSM state to generating
     await callback.answer(
@@ -562,23 +747,28 @@ async def knowledge_retry(callback: CallbackQuery, state: FSMContext):
         )
 
         if result.status == "rejected":
-            await state.set_state(AddCardState.knowledge)
+            await state.set_state(AddCardState.rechecking)
+            await state.update_data(retry_count=retry_count)
             await callback.message.edit_text(  # type:ignore
-                f"{result.reason}\nPlease check and resend your 🧠knowledge, <b>OR</b> use any of the buttons below",
-                reply_markup=knowledge_keyboard(),
+                f"{result.reason}\nYou can either; <b>Click</b> <i>🔃 Retry</i> to retry generation or "
+                "<i>✍ Edit</i> to edit your inputted knowledge\n"
+                "OR use any of the other buttons below 👇\n"
+                f"<i>You have {MAX_REGENERATIONS - retry_count} retries remaining.</i>",
+                reply_markup=knowledge_keyboard(can_retry=True),
             )
             return
 
     except ValueError as error:  # If an error occurred during flashcard generation
         await state.set_state(
-            AddCardState.knowledge
+            AddCardState.rechecking
         )  # Set state back to the former FSM's state (knowledge)
         await callback.message.edit_text(  # type:ignore
             f"{error}\n\n"
             "<b>Your source knowledge is stored temporarily on the system.</b>\n"
-            "Your can either; <b>✍Type</b> and send the knowledge, <b>Click</b> 🔃 Retry to retry generation\n"
-            "OR use any of the buttons below 👇",
-            reply_markup=knowledge_keyboard(retry=True),
+            "You can either; <b>Click</b> <i>🔃 Retry</i> to retry generation or "
+            "<i>✍ Edit</i> to edit your inputted knowledge\n"
+            "OR use any of the other buttons below 👇",
+            reply_markup=knowledge_keyboard(can_retry=True),
         )
         return
 
@@ -607,14 +797,43 @@ async def knowledge_retry(callback: CallbackQuery, state: FSMContext):
     await state.set_state(
         AddCardState.review
     )  # Set FSM's state to review (user is reviewing the generated flashcard)
+
+    regeneration_count = data.get("regeneration_count", 0) + 1
+
+    await state.update_data(regeneration_count=regeneration_count)
+
+    await state.update_data(retry_count=0)
+
+    can_regenerate = regeneration_count < MAX_REGENERATIONS
+
+    limit_message = (
+        "\n\n⚠ You have used all regenerations for this session."
+        if not can_regenerate
+        else f"You have {MAX_REGENERATIONS - regeneration_count} regeneration(s) remaining for this session."
+    )
+
     await callback.message.edit_text(  # type:ignore
         f"❓ <b>Question:</b>\n{result.question}\n\n"
         f"👓 <b>Question Type:</b>\n{question_type_map[result.question_type]}\n\n"
         f"{multi_choices}"
         f"✅ <b>Answer:</b>\n{result.answer}\n\n"
-        f"🎚 <b>Difficulty:</b>{result.difficulty}",
-        reply_markup=review_keyboard(),  # User to reply using the customized review inline-keyboard
+        f"🎚 <b>Difficulty:</b>{result.difficulty}\n\n"
+        f"{limit_message}",
+        reply_markup=review_keyboard(
+            can_regenerate=can_regenerate
+        ),  # User to reply using the customized review inline-keyboard
     )
+
+
+@router.callback_query(AddCardState.rechecking, F.data == "knowledge_cancel")
+async def cancel_knowledge_rechecking(callback: CallbackQuery, state: FSMContext):
+    await callback.answer()
+
+    await state.clear()
+
+    await callback.message.edit_text(  # type:ignore
+        "❌Flashcard creation was terminated, you can start again with /add"
+    )  # type:ignore
 
 
 # =========== REVIEW CARD FLOW =========
@@ -676,8 +895,8 @@ async def regenerate_card(callback: CallbackQuery, state: FSMContext):
     if regeneration_count >= MAX_REGENERATIONS:
         await callback.message.edit_text(  # type: ignore
             "⚠ You have reached the maximum number "
-            "of regenerations for this flashcard.\n\n"
-            "You can either save or cancel the current card.",
+            "of regenerations for this session.\n\n"
+            "You can either save or cancel.",
             reply_markup=review_keyboard(can_regenerate=False),
         )
 
@@ -711,9 +930,14 @@ async def regenerate_card(callback: CallbackQuery, state: FSMContext):
         )
         if result.status == "rejected":
             await state.set_state(AddCardState.knowledge)
+            await state.update_data(current_state="regenerating")
             await callback.message.edit_text(  # type:ignore
-                f"{result.reason}\nPlease check and resend your 🧠knowledge, <b>OR</b> use any of the buttons below",
-                reply_markup=knowledge_keyboard(),
+                f"{result.reason}\n"
+                "<b>Your source knowledge is stored temporarily on the system.</b>\n"
+                "You can either; <b>Click</b> <i>🔃 Retry</i> to retry generation or "
+                "<i>✍ Edit</i> to edit your inputted knowledge\n"
+                "OR use any of the other buttons below 👇",
+                reply_markup=knowledge_keyboard(can_retry=True),
             )
             return
 
@@ -758,9 +982,9 @@ async def regenerate_card(callback: CallbackQuery, state: FSMContext):
     # Display the new flashcard
 
     limit_message = (
-        "\n\n⚠ You have used all regenerations for this card."
+        "\n\n⚠ You have used all regenerations for this session."
         if not can_regenerate
-        else ""
+        else f"You have {MAX_REGENERATIONS - regeneration_count} regeneration(s) remaining for this session."
     )
 
     question_type_map = {
@@ -871,7 +1095,7 @@ async def review_text_blocked(message: Message, state: FSMContext):
 
 
 @router.message(
-    Command("add")
+    StateFilter(None), Command("add")
 )  # Handle the /add command, it is at the bottom of the file, so that the command blocker can run (if user is already in an active add session)
 async def add_entry(message: Message, state: FSMContext):
     """
