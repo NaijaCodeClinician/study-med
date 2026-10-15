@@ -115,12 +115,12 @@ def review_keyboard(can_regenerate: bool = True) -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(inline_keyboard=inline_keyboard)
 
 
-def knowledge_keyboard(retry=False):
+def knowledge_keyboard(can_retry=False):
     """
     The knowledge input inline keyboard
     """
     retry_button = []
-    if retry:
+    if can_retry:
         retry_button.append(
             InlineKeyboardButton(text="🔁 Retry", callback_data="knowledge_retry")
         )
@@ -138,8 +138,33 @@ def knowledge_keyboard(retry=False):
                 callback_data="knowledge_cancel",
             ),
         ],
+        [
+            InlineKeyboardButton(
+                text="✍ Edit",
+                callback_data="knowledge_edit",
+            ),
+        ],
     ]
     return InlineKeyboardMarkup(inline_keyboard=inline_keyboard)
+
+
+def edit_knowledge_keyboard():
+    """
+    The inline keyboard for editing a user's previously inputted knowledge
+    """
+    buttons = [
+        [
+            InlineKeyboardButton(
+                text="◀ Back",
+                callback_data="edit_back",
+            ),
+            InlineKeyboardButton(
+                text="❌ Cancel",
+                callback_data="edit_cancel",
+            ),
+        ]
+    ]
+    return InlineKeyboardMarkup(inline_keyboard=buttons)
 
 
 def weak_subjects_keyboard(subjects: list[dict], selected_subjects: list[dict]):
