@@ -3,6 +3,7 @@ The central instance and imports file
 """
 
 from src.bot.keyboards import (
+    edit_knowledge_keyboard,
     knowledge_keyboard,
     review_keyboard,
     study_time_keyboard,
@@ -27,6 +28,7 @@ __all__ = [
     "MyCardState",
     "StartBotState",
     "configs",
+    "edit_knowledge_keyboard",
     "knowledge_keyboard",
     "review_keyboard",
     "study_time_keyboard",

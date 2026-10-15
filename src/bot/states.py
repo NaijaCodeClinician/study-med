@@ -14,6 +14,7 @@ class AddCardState(StatesGroup):
     topics = State()  # The topics state (user is selecting topics)
     knowledge = State()  # The knowledge state (user is creating the knowledge card)
     generating = State()  # The generating state (AI is generating the question and answer from the created knowledge card)
+    rechecking = State()
     review = (
         State()
     )  # The review state (user is reviewing the generated question and answer)
