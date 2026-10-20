@@ -115,11 +115,18 @@ def review_keyboard(can_regenerate: bool = True) -> InlineKeyboardMarkup:
     return InlineKeyboardMarkup(inline_keyboard=inline_keyboard)
 
 
-def knowledge_keyboard(can_retry=False):
+def knowledge_keyboard(can_retry=False, can_edit=True):
     """
     The knowledge input inline keyboard
     """
     retry_button = []
+    edit_button = []
+
+    if can_edit:
+        edit_button.append(
+            InlineKeyboardButton(text="✍ Edit", callback_data="knowledge_edit")
+        )
+
     if can_retry:
         retry_button.append(
             InlineKeyboardButton(text="🔁 Retry", callback_data="knowledge_retry")
@@ -138,12 +145,7 @@ def knowledge_keyboard(can_retry=False):
                 callback_data="knowledge_cancel",
             ),
         ],
-        [
-            InlineKeyboardButton(
-                text="✍ Edit",
-                callback_data="knowledge_edit",
-            ),
-        ],
+        [*edit_button],
     ]
     return InlineKeyboardMarkup(inline_keyboard=inline_keyboard)
 
