@@ -14,7 +14,10 @@ from aiohttp import web
 from dotenv import load_dotenv
 
 from src.bot.handlers.add import router as add_router
+from src.bot.handlers.mycards import router as mycards_router
+from src.bot.handlers.quiz import router as quiz_router
 from src.bot.handlers.start import router as start_router
+from src.bot.handlers.stats import router as stats_router
 
 # ---------------------------------------------------------
 # Configuration
@@ -238,7 +241,9 @@ async def main() -> None:
     dp = Dispatcher()
 
     # Register routers
-    dp.include_routers(start_router,add_router)
+    dp.include_routers(
+        start_router, add_router, quiz_router, stats_router, mycards_router
+    )
 
     # -----------------------------------------------------
     # aiohttp application
