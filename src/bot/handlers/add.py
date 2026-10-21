@@ -387,10 +387,47 @@ async def receive_knowledge(message: Message, state: FSMContext):
     topics_name = [topic["name"] for topic in topics]
     knowledge = (message.text or "").strip()  # Convert knowledge to string  # type: ignore
 
+    old_question = data.get("question")
+    old_answer = data.get("answer")
+    old_difficulty = data.get("difficulty")
+    old_question_type = data.get("question_type", "")
+    old_multi_choices = data.get("multi_choices", [])
+    question_type_map = {
+        "multiple_choice": "MCQ",
+        "long_answer": "Theory",
+        "short_answer": "Theory",
+    }
+
+    multi_choices = (
+        f"""
+        📌 <b>Options:</b>{"\n🟢 " + "\n🟢".join(old_multi_choices)}\n\n
+            """
+        if old_question_type == "multiple_choice"
+        else ""
+    )
+
+    await state.set_state(AddCardState.review)
+
+    previous_generated_message = f"""
+        <b>Your previous flashcard generation results👇</b>
+                            
+                            
+        ❓ <b>Question:</b>\n{old_question}
+                            
+        👓 <b>Question Type:</b>\n{question_type_map[old_question_type]}
+                            
+        {multi_choices}"
+        ✅ <b>Answer:</b>\n{old_answer}
+                            
+        🎚 <b>Difficulty:</b>{old_difficulty}
+        """
     generation_count = data.get("generation_count", 0)
 
     if generation_count >= MAX_REGENERATIONS:
-        await message.edit_text(  # type: ignore
+        await state.set_state(AddCardState.review)
+
+        await message.reply(  # type: ignore
+            f"{previous_generated_message}\n\n"
             "⚠ You have reached the maximum number "
             "of generations for this session.\n\n"
             "You can either save or cancel.",
